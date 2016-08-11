@@ -100,11 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				F00F2E541D5B60F6005F19AE /* iPose */,
-				F00F2E691D5B60F7005F19AE /* iPoseTests */,
-				F00F2E741D5B60F7005F19AE /* iPoseUITests */,
-				F00F2E531D5B60F6005F19AE /* Products */,
 				233D7B5CF67CE8DD4B3C124D /* Pods */,
-				08AE55E2939D5E6DD5C6AF82 /* Frameworks */,
+				F02082401D5C82D300708062 /* Resource */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +144,17 @@
 				F00F2E771D5B60F7005F19AE /* Info.plist */,
 			);
 			path = iPoseUITests;
+			sourceTree = "<group>";
+		};
+		F02082401D5C82D300708062 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				08AE55E2939D5E6DD5C6AF82 /* Frameworks */,
+				F00F2E691D5B60F7005F19AE /* iPoseTests */,
+				F00F2E741D5B60F7005F19AE /* iPoseUITests */,
+				F00F2E531D5B60F6005F19AE /* Products */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -5,4 +5,5 @@ use_frameworks!
 target 'iPose' do
 pod 'Alamofire'
 pod 'Kingfisher'
+pod 'SwiftyJSON'
 end
