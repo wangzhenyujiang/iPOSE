@@ -1,0 +1,6 @@
+framework module Pods_iPose {
+  umbrella header "Pods-iPose-umbrella.h"
+
+  export *
+  module * { export * }
+}
