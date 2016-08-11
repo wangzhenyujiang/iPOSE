@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kzU-6D-FlT" customClass="PoseImageCollectionCell" customModule="iPose" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PoseImageCollectionCell" id="kzU-6D-FlT" customClass="PoseImageCollectionCell" customModule="iPose" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -27,9 +27,6 @@
                 <constraint firstAttribute="bottom" secondItem="9Gp-fj-3H2" secondAttribute="bottom" id="YyQ-eo-YOu"/>
             </constraints>
             <size key="customSize" width="186" height="164"/>
-            <connections>
-                <outlet property="imageView" destination="9Gp-fj-3H2" id="cgh-jy-vnr"/>
-            </connections>
             <point key="canvasLocation" x="330" y="319"/>
         </collectionViewCell>
     </objects>

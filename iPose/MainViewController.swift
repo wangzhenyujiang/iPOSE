@@ -11,6 +11,8 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 
+let Titles = ["推荐", "一人", "两人", "多人"]
+
 class MainViewController: IPViewController {
     
     @IBOutlet weak var topCollectionView: UICollectionView!
@@ -37,17 +39,17 @@ class MainViewController: IPViewController {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CategoryLabelCollectionCell
+        cell.titleLabel.text = Titles[indexPath.row]
         return cell
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return Titles.count
     }
 }
 
 //MARK: Private 
 extension MainViewController {
     private func setupUI() {
-        topCollectionView.register(CategoryLabelCollectionCell)
     }
 }
 
