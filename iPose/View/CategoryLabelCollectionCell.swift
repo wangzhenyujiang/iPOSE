@@ -15,5 +15,4 @@ class CategoryLabelCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         titleLabel.text = "title"
     }
-    
 }

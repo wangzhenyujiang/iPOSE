@@ -50,6 +50,13 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //MARK: Private 
 extension MainViewController {
     private func setupUI() {
+        setupCollectionViewLatout()
+    }
+    private func setupCollectionViewLatout() {
+        let flowLayout = topCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.itemSize = CGSize(width: 100, height: 50)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
     }
 }
 
