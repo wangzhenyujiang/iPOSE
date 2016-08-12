@@ -33,6 +33,7 @@
 		F0C885BC1D5D652400B2ECF0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BB1D5D652400B2ECF0 /* OpenGLES.framework */; };
 		F0C885BE1D5D653000B2ECF0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BD1D5D653000B2ECF0 /* AVFoundation.framework */; };
 		F0C885C01D5D654C00B2ECF0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BF1D5D654C00B2ECF0 /* CoreMedia.framework */; };
+		F0C885C51D5D6A7200B2ECF0 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,19 @@
 			remoteInfo = GPUImage;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0C885C21D5D6A1400B2ECF0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F0C885C51D5D6A7200B2ECF0 /* GPUImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F5C3EB97DCCD54893638D0D /* Pods-iPose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPose.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPose/Pods-iPose.release.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +317,7 @@
 				F00F2E501D5B60F6005F19AE /* Resources */,
 				E85F69CCF97C4B52C9CCDDF3 /* 📦 Embed Pods Frameworks */,
 				C1B5DFF128BFD348C20AC3E1 /* 📦 Copy Pods Resources */,
+				F0C885C21D5D6A1400B2ECF0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
