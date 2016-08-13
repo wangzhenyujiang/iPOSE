@@ -217,6 +217,7 @@
 				F00F2E571D5B60F6005F19AE /* MainViewController.swift */,
 				F02082461D5CB4ED00708062 /* PoseChildViewController.swift */,
 				F00F2E591D5B60F6005F19AE /* Main.storyboard */,
+				F0A6299D1D5ECD9600ABDBEC /* Model */,
 				F0C1F3131D5EBECE008F365F /* Global */,
 				F020824C1D5CBAE900708062 /* Extension */,
 				F02082481D5CB52C00708062 /* Common */,
@@ -302,6 +303,13 @@
 				F02082521D5CBCAC00708062 /* NibLoadableView.swift */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		F0A6299D1D5ECD9600ABDBEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F0C1F3131D5EBECE008F365F /* Global */ = {

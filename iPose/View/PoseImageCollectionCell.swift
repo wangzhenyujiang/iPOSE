@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PoseImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
-    
+}
+
+extension PoseImageCollectionCell {
+    func fillData(url: String) {
+        imageView.kf_setImageWithURL(NSURL(string: url)!)
+    }
 }

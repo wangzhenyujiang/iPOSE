@@ -10,12 +10,15 @@ import UIKit
 
 class PoseChildViewController: UIViewController {
     @IBOutlet weak var collection: UICollectionView!
+    var dataSource = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
 }
 
+//MARK: Private 
 extension PoseChildViewController {
     private func setupUI() {
         collection.register(PoseImageCollectionCell)
