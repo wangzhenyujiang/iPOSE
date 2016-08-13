@@ -20,9 +20,11 @@ class MainViewController: IPViewController {
     var dataSource = [PoseItem]()
     var controllers: [PoseChildViewController] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
         
         Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
             guard let strongSelf = self else  { return }
@@ -49,7 +51,8 @@ class MainViewController: IPViewController {
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(poseItem: PoseItem, controllerIndex: Int) {
-        print("\(poseItem.poseImage)  controller: \(Titles[controllerIndex])")
+        guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
+        presentViewController(controller, animated: true, completion: nil)
     }
 }
 

@@ -123,23 +123,27 @@
             </objects>
             <point key="canvasLocation" x="1202" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="Gea-xY-TTi">
             <objects>
-                <viewController id="7O7-5g-PO0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraViewController" id="7O7-5g-PO0" customClass="CameraViewController" customModule="iPose" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4dy-MD-KaS"/>
                         <viewControllerLayoutGuide type="bottom" id="AiE-DO-lQ8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BOi-TU-gbk" customClass="RenderView" customModule="GPUImage">
+                    <view key="view" contentMode="scaleToFill" id="BOi-TU-gbk" customClass="CameraSessionView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WAJ-Gy-yy6"/>
+                    <connections>
+                        <outlet property="cameraView" destination="BOi-TU-gbk" id="O3K-Ye-lOL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfv-Zs-tGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="1008"/>
+            <point key="canvasLocation" x="1202" y="1008"/>
         </scene>
         <!--Pose Child View Controller-->
         <scene sceneID="meb-Nt-d2h">
@@ -211,6 +215,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLZ-xo-rAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="390" y="337"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xZn-h3-AHJ">
+            <objects>
+                <navigationController storyboardIdentifier="CameraViewControllerNav" automaticallyAdjustsScrollViewInsets="NO" id="qp0-ed-H8L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rCD-h5-3o0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7O7-5g-PO0" kind="relationship" relationship="rootViewController" id="Qle-kh-GAl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJl-4d-04v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="1008"/>
         </scene>
     </scenes>
     <resources>
