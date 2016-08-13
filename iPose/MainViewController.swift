@@ -49,7 +49,7 @@ class MainViewController: IPViewController {
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(poseItem: PoseItem, controllerIndex: Int) {
-        print("\(poseItem.poseImage)  controllerIndex: \(controllerIndex)")
+        print("\(poseItem.poseImage)  controller: \(Titles[controllerIndex])")
     }
 }
 
