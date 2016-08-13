@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let Titles = ["推荐", "一人", "两人", "多人", "景色"]
+let Titles = ["推荐", "一人", "两人", "多人", "景色", "很多人"]
 
 class MainViewController: IPViewController {
     
@@ -49,14 +49,15 @@ class MainViewController: IPViewController {
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(poseItem: PoseItem, controllerIndex: Int) {
-        
+        print("\(poseItem.poseImage)  controllerIndex: \(controllerIndex)")
     }
 }
 
 //MARK: UIScrollViewDelegate
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+        if scrollView == self.scrollView {
+        }
     }
 }
 
@@ -113,7 +114,6 @@ extension MainViewController {
         return index
     }
     private func showChildControllerByIndex(index: Int) {
-        if index == currentShowControllerIndex() { return }
         UIView.animateWithDuration(0.25) {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(index) * ScreenWidth , y: 0)
         }

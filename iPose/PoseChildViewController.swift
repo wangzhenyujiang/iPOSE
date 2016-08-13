@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+let Space: CGFloat = 8
+
 protocol PoseChildViewControllerDelegate {
     func poseItemSelected(poseItem: PoseItem, controllerIndex: Int)
 }
@@ -40,9 +42,11 @@ extension PoseChildViewController {
     }
     private func configLayout() {
         let flowLayout = collection.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSize(width: 100, height: 100)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
+        let itemWidth = (ScreenWidth - 4 * Space) / 3
+        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        flowLayout.minimumInteritemSpacing = Space
+        flowLayout.minimumLineSpacing = Space
+        flowLayout.sectionInset = UIEdgeInsets(top: Space, left: Space, bottom: 0, right: Space)
     }
 }
 
