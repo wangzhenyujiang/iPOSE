@@ -10,9 +10,17 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+protocol PoseChildViewControllerDelegate {
+    func poseItemSelected(poseItem: PoseItem, controllerIndex: Int)
+}
+
 class PoseChildViewController: UIViewController {
     @IBOutlet weak var collection: UICollectionView!
+    
+    var index: Int = 0
     var dataSource = [PoseItem]()
+    
+    var delegate: PoseChildViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +39,6 @@ class PoseChildViewController: UIViewController {
                 print(error)
             }
         }
-
     }
 }
 
@@ -60,5 +67,8 @@ extension PoseChildViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return dataSource.count
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        delegate?.poseItemSelected(dataSource[indexPath.row], controllerIndex: index)
     }
 }

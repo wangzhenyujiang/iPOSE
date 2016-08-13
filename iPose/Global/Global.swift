@@ -10,3 +10,5 @@ import UIKit
 
 let ScreenWidth = UIScreen.mainScreen().bounds.width
 let ScreenHeight = UIScreen.mainScreen().bounds.height
+
+let MainViewTopTitleItemViewWidth: CGFloat = 100
