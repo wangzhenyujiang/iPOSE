@@ -25,20 +25,6 @@ class PoseChildViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
-            guard let strongSelf = self else  { return }
-            switch response.result {
-            case .Success:
-                guard let value = response.result.value else { return }
-                for (_,subJson):(String, JSON) in JSON(value)["data"]["list"] {
-                    guard let item = PoseItem(subJson) else { continue }
-                    strongSelf.dataSource.append(item)
-                }
-                strongSelf.collection.reloadData()
-            case .Failure(let error):
-                print(error)
-            }
-        }
     }
 }
 
@@ -48,6 +34,8 @@ extension PoseChildViewController {
         collection.register(PoseImageCollectionCell)
         view.backgroundColor = UIColor.whiteColor()
         collection.backgroundColor = UIColor.clearColor()
+        collection.showsVerticalScrollIndicator = false
+        collection.showsHorizontalScrollIndicator = false
         configLayout()
     }
     private func configLayout() {

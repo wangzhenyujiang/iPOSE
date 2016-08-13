@@ -17,11 +17,27 @@ class MainViewController: IPViewController {
     @IBOutlet weak var topCollectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var dataSource = [PoseItem]()
     var controllers: [PoseChildViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
+            guard let strongSelf = self else  { return }
+            switch response.result {
+            case .Success:
+                guard let value = response.result.value else { return }
+                for (_,subJson):(String, JSON) in JSON(value)["data"]["list"] {
+                    guard let item = PoseItem(subJson) else { continue }
+                    strongSelf.dataSource.append(item)
+                }
+                strongSelf.fillAndReloadChildData()
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,13 +56,7 @@ extension MainViewController: PoseChildViewControllerDelegate {
 //MARK: UIScrollViewDelegate
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let topContentSize = topCollectionView.contentSize
-        let contentScrollViewSize = scrollView.contentSize
-        var x = scrollView.contentOffset.x / contentScrollViewSize.width * topContentSize.width
-        if abs(x) >= MainViewTopTitleItemViewWidth * CGFloat(Titles.count) {
-            x = topContentSize.width
-        }
-        topCollectionView.contentOffset = CGPoint(x: x, y: 0)
+        
     }
 }
 
@@ -69,8 +79,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension MainViewController {
     private func setupUI() {
         setupCollectionViewLatout()
+        automaticallyAdjustsScrollViewInsets = false
     }
     private func displayControllers() {
+        if controllers.count > 0 { return }
         let contentSize = CGSize(width: ScreenWidth * CGFloat(Titles.count), height: scrollView.frame.height)
         scrollView.contentSize = contentSize
         
@@ -85,6 +97,7 @@ extension MainViewController {
             controller.didMoveToParentViewController(self)
             controller.index = i
             controller.delegate = self
+            controllers.append(controller)
             i = i + 1
         }
     }
@@ -105,7 +118,11 @@ extension MainViewController {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(index) * ScreenWidth , y: 0)
         }
     }
+    private func fillAndReloadChildData() {
+        if controllers.count <= 0  { return }
+        for controller in self.controllers {
+            controller.dataSource = dataSource
+            controller.collection.reloadData()
+        }
+    }
 }
-
-
-

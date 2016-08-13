@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yr2-L4-LAs">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--iPOSE-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="iPose" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9W3-SS-SRk" userLabel="MainScrollView">
-                                <rect key="frame" x="0.0" y="70" width="600" height="470"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W3-SS-SRk" userLabel="MainScrollView">
+                                <rect key="frame" x="0.0" y="114" width="600" height="426"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Gk2-h9-KNt"/>
                                 </connections>
@@ -39,7 +39,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-x0-RdB" userLabel="TopCollectionView">
-                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.9857972733" blue="0.51578382180000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7FD-nu-j9g"/>
@@ -97,18 +97,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nlk-x0-RdB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2hn-NG-ksm"/>
                             <constraint firstItem="yvq-s2-17a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5HY-MY-gBZ"/>
                             <constraint firstItem="9W3-SS-SRk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8fD-KQ-Y7T"/>
                             <constraint firstItem="nlk-x0-RdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ASH-mT-m5w"/>
                             <constraint firstAttribute="trailing" secondItem="9W3-SS-SRk" secondAttribute="trailing" id="IaG-xh-Aiy"/>
                             <constraint firstItem="9W3-SS-SRk" firstAttribute="top" secondItem="nlk-x0-RdB" secondAttribute="bottom" id="JL6-xj-KNc"/>
-                            <constraint firstItem="nlk-x0-RdB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="K15-Yc-Tny"/>
                             <constraint firstAttribute="trailing" secondItem="nlk-x0-RdB" secondAttribute="trailing" id="e5O-rD-nWp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yvq-s2-17a" secondAttribute="bottom" id="hr3-3d-G5X"/>
                             <constraint firstItem="yvq-s2-17a" firstAttribute="top" secondItem="9W3-SS-SRk" secondAttribute="bottom" id="tx2-xK-d4E"/>
                             <constraint firstAttribute="trailing" secondItem="yvq-s2-17a" secondAttribute="trailing" id="xnz-a8-nL0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="iPOSE" id="fQH-By-bLo"/>
                     <connections>
                         <outlet property="scrollView" destination="9W3-SS-SRk" id="DIx-Xh-9VC"/>
                         <outlet property="topCollectionView" destination="nlk-x0-RdB" id="I4Y-lb-U8I"/>
@@ -116,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="337"/>
+            <point key="canvasLocation" x="1202" y="337"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Gea-xY-TTi">
@@ -187,7 +188,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="El5-Bp-MLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1104" y="338"/>
+            <point key="canvasLocation" x="1916" y="338"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B3v-Ld-U0e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yr2-L4-LAs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kMW-ll-CBm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z6v-RS-ZUL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLZ-xo-rAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="337"/>
         </scene>
     </scenes>
 </document>
