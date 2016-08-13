@@ -131,14 +131,43 @@
                         <viewControllerLayoutGuide type="top" id="4dy-MD-KaS"/>
                         <viewControllerLayoutGuide type="bottom" id="AiE-DO-lQ8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BOi-TU-gbk" customClass="CameraSessionView">
+                    <view key="view" contentMode="scaleToFill" id="BOi-TU-gbk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-dH-sS1" customClass="CameraSessionView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpL-pp-9Xi">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEF-HU-Ucd">
+                                <rect key="frame" x="522" y="94" width="48" height="30"/>
+                                <state key="normal" title="Cancle"/>
+                                <connections>
+                                    <action selector="click:" destination="7O7-5g-PO0" eventType="touchUpInside" id="LIt-L3-ukf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rcP-dH-sS1" secondAttribute="trailing" id="8PZ-SS-bmf"/>
+                            <constraint firstItem="dpL-pp-9Xi" firstAttribute="top" secondItem="4dy-MD-KaS" secondAttribute="bottom" id="L0X-qE-5LJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dpL-pp-9Xi" secondAttribute="trailing" id="QSM-pr-mBW"/>
+                            <constraint firstItem="dpL-pp-9Xi" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="Sos-j8-dMM"/>
+                            <constraint firstAttribute="trailing" secondItem="bEF-HU-Ucd" secondAttribute="trailing" constant="30" id="TDp-ak-WdD"/>
+                            <constraint firstItem="AiE-DO-lQ8" firstAttribute="top" secondItem="dpL-pp-9Xi" secondAttribute="bottom" id="ecw-Br-ZMo"/>
+                            <constraint firstItem="rcP-dH-sS1" firstAttribute="top" secondItem="4dy-MD-KaS" secondAttribute="bottom" id="foU-dy-FYw"/>
+                            <constraint firstItem="AiE-DO-lQ8" firstAttribute="top" secondItem="rcP-dH-sS1" secondAttribute="bottom" id="lzd-k3-tqx"/>
+                            <constraint firstItem="bEF-HU-Ucd" firstAttribute="top" secondItem="4dy-MD-KaS" secondAttribute="bottom" constant="30" id="p2R-ak-RBG"/>
+                            <constraint firstItem="rcP-dH-sS1" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="tWC-kl-pbv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WAJ-Gy-yy6"/>
                     <connections>
-                        <outlet property="cameraView" destination="BOi-TU-gbk" id="O3K-Ye-lOL"/>
+                        <outlet property="cameraView" destination="rcP-dH-sS1" id="5m4-nI-DYl"/>
+                        <outlet property="poseImageView" destination="dpL-pp-9Xi" id="epn-T1-t25"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfv-Zs-tGr" userLabel="First Responder" sceneMemberID="firstResponder"/>

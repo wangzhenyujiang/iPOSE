@@ -7,20 +7,35 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CameraViewController: UIViewController {
 
     @IBOutlet var cameraView: CameraSessionView!
+    @IBOutlet weak var poseImageView: UIImageView!
+    
+    var poseItem: PoseItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addCamera()
+        addCamera()        
+        poseImageView.kf_setImageWithURL(NSURL(string: poseItem!.poseImage)!)
+        
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    @IBAction func click(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
 //MARK: CACameraSessionDelegate
 extension CameraViewController: CACameraSessionDelegate {
-    
+    func didCaptureImage(image: UIImage!) {
+        poseImageView.image = image
+    }
 }
 
 //MARK: Private

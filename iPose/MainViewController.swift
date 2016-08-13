@@ -52,6 +52,7 @@ class MainViewController: IPViewController {
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(poseItem: PoseItem, controllerIndex: Int) {
         guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
+        controller.poseItem = poseItem
         presentViewController(controller, animated: true, completion: nil)
     }
 }
