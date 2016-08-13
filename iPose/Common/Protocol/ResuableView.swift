@@ -15,3 +15,9 @@ extension ResuableView where Self: UIView {
         return String(self)
     }
 }
+
+extension ResuableView where Self: UIViewController {
+    static var storyBoardID: String {
+        return String(self)
+    }
+}

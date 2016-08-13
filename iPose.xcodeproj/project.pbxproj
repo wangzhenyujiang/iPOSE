@@ -24,6 +24,9 @@
 		F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082521D5CBCAC00708062 /* NibLoadableView.swift */; };
 		F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */; };
 		F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */; };
+		F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */; };
+		F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */; };
+		F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1F3141D5EBEEB008F365F /* Global.swift */; };
 		F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; };
 		F0C885B41D5D64F900B2ECF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */; };
 		F0C885B51D5D64F900B2ECF0 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885B21D5D64F900B2ECF0 /* Kingfisher.framework */; };
@@ -113,6 +116,9 @@
 		F02082521D5CBCAC00708062 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = Common/Protocol/NibLoadableView.swift; sourceTree = "<group>"; };
 		F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UICollectionViewCellExtension.swift; path = Extension/UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryLabelCollectionCell.swift; path = View/CategoryLabelCollectionCell.swift; sourceTree = "<group>"; };
+		F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extension/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryBoardExtension.swift; path = Extension/StoryBoardExtension.swift; sourceTree = "<group>"; };
+		F0C1F3141D5EBEEB008F365F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Global/Global.swift; sourceTree = "<group>"; };
 		F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "iPose/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
 		F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/iPose-erctzadvebfqnbgafqorbrvmhgyf/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		F0C885B21D5D64F900B2ECF0 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/iPose-erctzadvebfqnbgafqorbrvmhgyf/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 				F00F2E571D5B60F6005F19AE /* MainViewController.swift */,
 				F02082461D5CB4ED00708062 /* PoseChildViewController.swift */,
 				F00F2E591D5B60F6005F19AE /* Main.storyboard */,
+				F0C1F3131D5EBECE008F365F /* Global */,
 				F020824C1D5CBAE900708062 /* Extension */,
 				F02082481D5CB52C00708062 /* Common */,
 				F02082411D5CB14A00708062 /* View */,
@@ -282,6 +289,8 @@
 			children = (
 				F020824D1D5CBB1500708062 /* UICollectionViewExtension.swift */,
 				F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */,
+				F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */,
+				F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -293,6 +302,14 @@
 				F02082521D5CBCAC00708062 /* NibLoadableView.swift */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		F0C1F3131D5EBECE008F365F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				F0C1F3141D5EBEEB008F365F /* Global.swift */,
+			);
+			name = Global;
 			sourceTree = "<group>";
 		};
 		F0C885A61D5D64E400B2ECF0 /* Products */ = {
@@ -518,10 +535,13 @@
 				F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */,
 				F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */,
 				F00F2E581D5B60F6005F19AE /* MainViewController.swift in Sources */,
+				F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */,
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,
 				F02082471D5CB4ED00708062 /* PoseChildViewController.swift in Sources */,
 				F00F2E561D5B60F6005F19AE /* AppDelegate.swift in Sources */,
+				F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */,
 				F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */,
+				F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */,
 				F020824E1D5CBB1500708062 /* UICollectionViewExtension.swift in Sources */,
 				F020824B1D5CB57300708062 /* IPViewController.swift in Sources */,
 				F02082511D5CBC5000708062 /* ResuableView.swift in Sources */,

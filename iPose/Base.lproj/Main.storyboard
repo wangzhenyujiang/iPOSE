@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9W3-SS-SRk" userLabel="MainScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9W3-SS-SRk" userLabel="MainScrollView">
                                 <rect key="frame" x="0.0" y="70" width="600" height="470"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvq-s2-17a" userLabel="ButtomView">
@@ -115,10 +115,28 @@
             </objects>
             <point key="canvasLocation" x="390" y="337"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Gea-xY-TTi">
+            <objects>
+                <viewController id="7O7-5g-PO0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4dy-MD-KaS"/>
+                        <viewControllerLayoutGuide type="bottom" id="AiE-DO-lQ8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BOi-TU-gbk" customClass="RenderView" customModule="GPUImage">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfv-Zs-tGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="1008"/>
+        </scene>
         <!--Pose Child View Controller-->
         <scene sceneID="meb-Nt-d2h">
             <objects>
-                <viewController id="xLu-CU-sKV" customClass="PoseChildViewController" customModule="iPose" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PoseChildViewController" id="xLu-CU-sKV" customClass="PoseChildViewController" customModule="iPose" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MDo-uD-ZLE"/>
                         <viewControllerLayoutGuide type="bottom" id="B54-38-xea"/>
@@ -146,6 +164,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="xLu-CU-sKV" id="Sww-23-L7l"/>
+                                    <outlet property="delegate" destination="xLu-CU-sKV" id="PZv-oL-Ll6"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
