@@ -26,6 +26,7 @@
 		F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */; };
 		F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */; };
 		F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */; };
+		F0A629A01D5ED42B00ABDBEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299F1D5ED42B00ABDBEC /* Model.swift */; };
 		F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1F3141D5EBEEB008F365F /* Global.swift */; };
 		F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; };
 		F0C885B41D5D64F900B2ECF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */; };
@@ -118,6 +119,7 @@
 		F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryLabelCollectionCell.swift; path = View/CategoryLabelCollectionCell.swift; sourceTree = "<group>"; };
 		F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extension/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryBoardExtension.swift; path = Extension/StoryBoardExtension.swift; sourceTree = "<group>"; };
+		F0A6299F1D5ED42B00ABDBEC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		F0C1F3141D5EBEEB008F365F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Global/Global.swift; sourceTree = "<group>"; };
 		F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "iPose/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
 		F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/iPose-erctzadvebfqnbgafqorbrvmhgyf/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 		F0A6299D1D5ECD9600ABDBEC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F0A6299F1D5ED42B00ABDBEC /* Model.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,
 				F02082471D5CB4ED00708062 /* PoseChildViewController.swift in Sources */,
 				F00F2E561D5B60F6005F19AE /* AppDelegate.swift in Sources */,
+				F0A629A01D5ED42B00ABDBEC /* Model.swift in Sources */,
 				F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */,
 				F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */,
 				F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */,

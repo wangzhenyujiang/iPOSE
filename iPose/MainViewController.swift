@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import Kingfisher
 import SwiftyJSON
 
 let Titles = ["推荐", "一人", "两人", "多人"]
@@ -17,6 +16,8 @@ class MainViewController: IPViewController {
     
     @IBOutlet weak var topCollectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var dataSource:[PoseItem] = []
     
     var controllers: [PoseChildViewController] = []
     
@@ -77,16 +78,5 @@ extension MainViewController {
     }
 }
 
-//        Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON { response in
-//            switch response.result {
-//            case .Success:
-//                if let value = response.result.value {
-//                    let json = JSON(value)
-//                    print("JSON: \(json)")
-//                }
-//            case .Failure(let error):
-//                print(error)
-//            }
-//        }
 
 

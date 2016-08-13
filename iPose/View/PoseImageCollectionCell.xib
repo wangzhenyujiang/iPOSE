@@ -28,6 +28,9 @@
                 <constraint firstAttribute="bottom" secondItem="9Gp-fj-3H2" secondAttribute="bottom" id="YyQ-eo-YOu"/>
             </constraints>
             <size key="customSize" width="186" height="164"/>
+            <connections>
+                <outlet property="imageView" destination="9Gp-fj-3H2" id="mzD-bk-7ow"/>
+            </connections>
             <point key="canvasLocation" x="330" y="319"/>
         </collectionViewCell>
     </objects>
