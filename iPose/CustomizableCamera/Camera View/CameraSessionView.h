@@ -20,6 +20,9 @@
 //Delegate Property
 @property (nonatomic, weak) id <CACameraSessionDelegate> delegate;
 
+- (void)captureShutter;
+- (void)captureToggle;
+
 //API Functions
 - (void)setTopBarColor:(UIColor *)topBarColor;
 - (void)hideFlashButton;

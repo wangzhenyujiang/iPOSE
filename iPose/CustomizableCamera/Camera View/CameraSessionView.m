@@ -145,7 +145,7 @@
         
         //Button target
         [_cameraShutter addTarget:self action:@selector(inputManager:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_cameraShutter];
+//        [self addSubview:_cameraShutter];
     }
     
     //Create the top bar and add the buttons to it
@@ -475,6 +475,12 @@
 - (void)hideDismissButton
 {
     _cameraDismiss.hidden = YES;
+}
+- (void)captureShutter {
+    [_captureManager captureStillImage];
+}
+- (void)captureToggle {
+    [self onTapToggleButton];
 }
 
 - (void)dealloc

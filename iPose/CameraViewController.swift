@@ -29,6 +29,11 @@ class CameraViewController: UIViewController {
     @IBAction func click(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    @IBAction func captureImage(sender: AnyObject) {
+        cameraView.captureShutter()
+    }
+    
 }
 
 //MARK: CACameraSessionDelegate
