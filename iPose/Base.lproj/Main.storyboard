@@ -264,6 +264,38 @@
             </objects>
             <point key="canvasLocation" x="1916" y="338"/>
         </scene>
+        <!--Filter Image View Controller-->
+        <scene sceneID="wR0-gb-9wN">
+            <objects>
+                <viewController storyboardIdentifier="FilterImageViewController" id="htF-UM-PUq" customClass="FilterImageViewController" customModule="iPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F4R-7Q-qME"/>
+                        <viewControllerLayoutGuide type="bottom" id="3w4-Vm-UVj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KEW-Yj-PLh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-Te-CpF">
+                                <rect key="frame" x="0.0" y="20" width="600" height="480"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m8E-Te-CpF" secondAttribute="trailing" id="QKt-mV-NeA"/>
+                            <constraint firstItem="m8E-Te-CpF" firstAttribute="top" secondItem="F4R-7Q-qME" secondAttribute="bottom" id="Vte-rg-Ftx"/>
+                            <constraint firstItem="3w4-Vm-UVj" firstAttribute="top" secondItem="m8E-Te-CpF" secondAttribute="bottom" constant="100" id="frC-Tm-jfp"/>
+                            <constraint firstItem="m8E-Te-CpF" firstAttribute="leading" secondItem="KEW-Yj-PLh" secondAttribute="leading" id="vqu-ya-swc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="m8E-Te-CpF" id="p2Q-uR-qwc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OB4-3S-LuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="1000"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="B3v-Ld-U0e">
             <objects>

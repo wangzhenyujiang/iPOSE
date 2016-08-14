@@ -20,7 +20,11 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         addCamera()        
         poseImageView.kf_setImageWithURL(NSURL(string: poseItem!.poseImage)!)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -39,7 +43,9 @@ class CameraViewController: UIViewController {
 //MARK: CACameraSessionDelegate
 extension CameraViewController: CACameraSessionDelegate {
     func didCaptureImage(image: UIImage!) {
-        poseImageView.image = image
+        guard let controller  = storyboard?.instantiateViewController(FilterImageViewController) else { return }
+        controller.image = image
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
