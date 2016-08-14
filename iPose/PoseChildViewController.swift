@@ -13,7 +13,7 @@ import SwiftyJSON
 let Space: CGFloat = 8
 
 protocol PoseChildViewControllerDelegate {
-    func poseItemSelected(poseItem: PoseItem, controllerIndex: Int)
+    func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseItem], controllerIndex: Int)
 }
 
 class PoseChildViewController: UIViewController {
@@ -61,6 +61,6 @@ extension PoseChildViewController: UICollectionViewDelegate, UICollectionViewDat
          return dataSource.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        delegate?.poseItemSelected(dataSource[indexPath.row], controllerIndex: index)
+        delegate?.poseItemSelected(indexPath, poseList: dataSource,controllerIndex: index)
     }
 }

@@ -50,9 +50,10 @@ class MainViewController: IPViewController {
 
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
-    func poseItemSelected(poseItem: PoseItem, controllerIndex: Int) {
+    func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseItem],controllerIndex: Int) {
         guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
-        controller.poseItem = poseItem
+        controller.currentIndexPath = indexPath
+        controller.dataSource = dataSource
         let nav = UINavigationController(rootViewController: controller)
         presentViewController(nav, animated: true, completion: nil)
     }
