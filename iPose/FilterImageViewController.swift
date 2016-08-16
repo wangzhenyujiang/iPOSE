@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import GPUImage
 
 private let itemWH: CGFloat = 100
 
-class FilterImageViewController: UIViewController {
+class FilterImageViewController: IPViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage?
     
+    var picture:PictureInput!
+    var filter:MonochromeFilter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       commonInit()
+        commonInit()
+        
+        let tview: RenderView = RenderView(frame: self.view.bounds)
+        view.addSubview(tview)
+        picture = PictureInput(image:image!.normalizedImage())
+        filter = MonochromeFilter()
+        picture --> filter --> tview
+        picture.processImage()
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

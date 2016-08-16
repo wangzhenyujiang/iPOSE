@@ -10,4 +10,7 @@ import UIKit
 
 class IPViewController: UIViewController {
     
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
 }

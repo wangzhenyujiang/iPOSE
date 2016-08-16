@@ -244,14 +244,10 @@
                             <constraint firstItem="dpL-pp-9Xi" firstAttribute="leading" secondItem="rcP-dH-sS1" secondAttribute="leading" id="8xK-jA-RX6"/>
                             <constraint firstItem="kXl-rT-Wzd" firstAttribute="top" secondItem="rcP-dH-sS1" secondAttribute="bottom" id="Fkp-Tf-qYj"/>
                             <constraint firstItem="kXl-rT-Wzd" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="IB3-br-P1G"/>
-                            <constraint firstItem="dpL-pp-9Xi" firstAttribute="top" secondItem="4dy-MD-KaS" secondAttribute="bottom" id="L0X-qE-5LJ"/>
                             <constraint firstItem="dpL-pp-9Xi" firstAttribute="bottom" secondItem="rcP-dH-sS1" secondAttribute="bottom" id="ORr-Jg-B0K"/>
-                            <constraint firstAttribute="trailing" secondItem="dpL-pp-9Xi" secondAttribute="trailing" id="QSM-pr-mBW"/>
-                            <constraint firstItem="dpL-pp-9Xi" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="Sos-j8-dMM"/>
                             <constraint firstAttribute="trailing" secondItem="bEF-HU-Ucd" secondAttribute="trailing" constant="30" id="TDp-ak-WdD"/>
                             <constraint firstAttribute="trailing" secondItem="kXl-rT-Wzd" secondAttribute="trailing" id="VVw-Lt-Nl8"/>
                             <constraint firstItem="dpL-pp-9Xi" firstAttribute="top" secondItem="rcP-dH-sS1" secondAttribute="top" id="ccQ-Wl-aeY"/>
-                            <constraint firstItem="AiE-DO-lQ8" firstAttribute="top" secondItem="dpL-pp-9Xi" secondAttribute="bottom" id="ecw-Br-ZMo"/>
                             <constraint firstItem="rcP-dH-sS1" firstAttribute="top" secondItem="4dy-MD-KaS" secondAttribute="bottom" id="foU-dy-FYw"/>
                             <constraint firstItem="dpL-pp-9Xi" firstAttribute="trailing" secondItem="rcP-dH-sS1" secondAttribute="trailing" id="gcr-Hw-8wc"/>
                             <constraint firstAttribute="trailing" secondItem="Ad5-jz-FD6" secondAttribute="trailing" id="iGN-ux-8dZ"/>
@@ -260,14 +256,6 @@
                             <constraint firstItem="rcP-dH-sS1" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="tWC-kl-pbv"/>
                             <constraint firstItem="kXl-rT-Wzd" firstAttribute="top" secondItem="Ad5-jz-FD6" secondAttribute="bottom" id="yIh-Qk-JUA"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="L0X-qE-5LJ"/>
-                                <exclude reference="QSM-pr-mBW"/>
-                                <exclude reference="Sos-j8-dMM"/>
-                                <exclude reference="ecw-Br-ZMo"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="WAJ-Gy-yy6"/>
                     <connections>
@@ -348,6 +336,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m8E-Te-CpF">
                                 <rect key="frame" x="0.0" y="20" width="600" height="480"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WoI-Pe-Gn3">
                                 <rect key="frame" x="0.0" y="500" width="600" height="100"/>

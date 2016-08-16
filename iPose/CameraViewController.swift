@@ -11,7 +11,7 @@ import Kingfisher
 
 private let itemWH: CGFloat = 100
 
-class CameraViewController: UIViewController {
+class CameraViewController: IPViewController {
     @IBOutlet var cameraView: CameraSessionView!
     @IBOutlet weak var poseImageView: UIImageView!
     @IBOutlet weak var collectionViewHeightConstraints: NSLayoutConstraint!
