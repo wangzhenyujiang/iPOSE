@@ -9,6 +9,8 @@
 import UIKit
 import Kingfisher
 
+private let itemWH: CGFloat = 100
+
 class CameraViewController: UIViewController {
     @IBOutlet var cameraView: CameraSessionView!
     @IBOutlet weak var poseImageView: UIImageView!
@@ -29,8 +31,9 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         addCamera()
         commonInit()
-        
         poseImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
+        
+      
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,6 +72,7 @@ extension CameraViewController {
         navigationController?.setToolbarHidden(true, animated: false)
         collectionView.register(PoseImageCollectionCell)
         collectionView.backgroundColor = UIColor.clearColor()
+        setupCollectionViewOffset()
     }
     private func addCamera() {
         cameraView.delegate = self
@@ -79,9 +83,14 @@ extension CameraViewController {
     }
     private func configLayout() {
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSize(width: 100, height: 100)
+        flowLayout.itemSize = CGSize(width: itemWH, height: itemWH)
         flowLayout.minimumInteritemSpacing = Space
         flowLayout.minimumLineSpacing = Space
+    }
+    private func setupCollectionViewOffset() {
+        if CGFloat(currentIndexPath.row) * itemWH  > ScreenWidth {
+            collectionView.contentOffset = CGPoint(x: CGFloat(currentIndexPath.row) * itemWH, y: 0)
+        }
     }
 }
 
