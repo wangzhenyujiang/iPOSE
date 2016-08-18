@@ -6,4 +6,5 @@ target 'iPose' do
 pod 'Alamofire'
 pod 'Kingfisher'
 pod 'SwiftyJSON'
+pod 'BaiduMapKit'
 end

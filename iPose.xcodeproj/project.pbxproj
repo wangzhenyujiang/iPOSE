@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E86B30A84DCC7407C43B935 /* Pods_iPose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A63AFCDD2D82DBB929408A /* Pods_iPose.framework */; };
+		9ED0C0DC1A906B81EF2A0BDD /* Pods_iPose.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EDE7436E4C18EDA8B75D56 /* Pods_iPose.framework */; };
 		F006348D1D63224900B72006 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F006348C1D63224900B72006 /* UIImageExtension.swift */; };
 		F00F2E561D5B60F6005F19AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F2E551D5B60F6005F19AE /* AppDelegate.swift */; };
 		F00F2E581D5B60F6005F19AE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F2E571D5B60F6005F19AE /* MainViewController.swift */; };
@@ -109,6 +110,7 @@
 
 /* Begin PBXFileReference section */
 		0F5C3EB97DCCD54893638D0D /* Pods-iPose.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPose.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPose/Pods-iPose.release.xcconfig"; sourceTree = "<group>"; };
+		41EDE7436E4C18EDA8B75D56 /* Pods_iPose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A63AFCDD2D82DBB929408A /* Pods_iPose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EE30DF3386ABCE19A5B21D /* Pods-iPose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPose/Pods-iPose.debug.xcconfig"; sourceTree = "<group>"; };
 		F006348C1D63224900B72006 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = Extension/UIImageExtension.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				F0C885B61D5D64F900B2ECF0 /* SwiftyJSON.framework in Frameworks */,
 				F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */,
 				3E86B30A84DCC7407C43B935 /* Pods_iPose.framework in Frameworks */,
+				9ED0C0DC1A906B81EF2A0BDD /* Pods_iPose.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,12 +239,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8B2E7D0BC2A56BA83BBD60FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41EDE7436E4C18EDA8B75D56 /* Pods_iPose.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F00F2E491D5B60F6005F19AE = {
 			isa = PBXGroup;
 			children = (
 				F00F2E541D5B60F6005F19AE /* iPose */,
 				233D7B5CF67CE8DD4B3C124D /* Pods */,
 				F02082401D5C82D300708062 /* Resource */,
+				8B2E7D0BC2A56BA83BBD60FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,8 +272,8 @@
 			children = (
 				F00F2E551D5B60F6005F19AE /* AppDelegate.swift */,
 				F00F2E571D5B60F6005F19AE /* MainViewController.swift */,
-				F02082461D5CB4ED00708062 /* PoseChildViewController.swift */,
 				F0634E391D5F6D8F0052A4AE /* CameraViewController.swift */,
+				F02082461D5CB4ED00708062 /* PoseChildViewController.swift */,
 				F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */,
 				F00F2E591D5B60F6005F19AE /* Main.storyboard */,
 				F0A6299D1D5ECD9600ABDBEC /* Model */,

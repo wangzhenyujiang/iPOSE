@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (3.3.1)
+  - BaiduMapKit (2.10.2)
   - Kingfisher (2.3.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
+  - BaiduMapKit
   - Kingfisher
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
   Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 4560c8f87ff5d3e0a66fb807747a990749958b76
+PODFILE CHECKSUM: 8bdb41d84e3c990d1c599e9c536d10922925bf43
 
 COCOAPODS: 1.0.0
