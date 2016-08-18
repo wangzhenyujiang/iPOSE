@@ -20,11 +20,15 @@ class MainViewController: IPViewController {
     var dataSource = [PoseItem]()
     var controllers: [PoseChildViewController] = []
     
+    var locService: BMKLocationService!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         
+        locService = BMKLocationService()
+        locService.delegate = self;
+        locService.startUserLocationService()
         
         Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
             guard let strongSelf = self else  { return }
@@ -45,6 +49,13 @@ class MainViewController: IPViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         displayControllers()
+    }
+}
+
+//MARK: BMKLocationServiceDelegate
+extension MainViewController: BMKLocationServiceDelegate {
+    func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
+        print("\(userLocation.location.coordinate.latitude)   \(userLocation.location.coordinate.longitude)")
     }
 }
 

@@ -7,17 +7,21 @@
 //
 
 import UIKit
-import BaiduMapAPI_Map
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
 
     var window: UIWindow?
+    var _mapManager: BMKMapManager?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        _mapManager = BMKMapManager()
+        let ret = _mapManager?.start("qNKq8qwjF6CPphYA1OuOxqijKqwdylyx", generalDelegate: self)
+        if ret == false {
+            print("Manager Start Failed")
+        }
         
         return true
     }
