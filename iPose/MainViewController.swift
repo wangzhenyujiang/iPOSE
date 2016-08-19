@@ -21,6 +21,8 @@ class MainViewController: IPViewController {
     var controllers: [PoseChildViewController] = []
     
     var locService: BMKLocationService!
+    var searcher: BMKGeoCodeSearch!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,10 @@ class MainViewController: IPViewController {
         locService = BMKLocationService()
         locService.delegate = self;
         locService.startUserLocationService()
+        
+        searcher = BMKGeoCodeSearch()
+        searcher.delegate = self
+        
         
         Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
             guard let strongSelf = self else  { return }
@@ -46,6 +52,18 @@ class MainViewController: IPViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        locService.delegate = self
+        searcher.delegate = self
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        locService.delegate = nil
+        searcher.delegate = nil
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         displayControllers()
@@ -56,6 +74,28 @@ class MainViewController: IPViewController {
 extension MainViewController: BMKLocationServiceDelegate {
     func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
         print("\(userLocation.location.coordinate.latitude)   \(userLocation.location.coordinate.longitude)")
+        locService.delegate = nil
+        
+        let pt = CLLocationCoordinate2D(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
+        let reserseGeoCodeSearchOption = BMKReverseGeoCodeOption()
+        reserseGeoCodeSearchOption.reverseGeoPoint = pt
+        let flag = searcher.reverseGeoCode(reserseGeoCodeSearchOption)
+        if flag {
+            print("反 GEO 检索发送成功")
+        }else {
+            print("反 GEO 检索发送失败")
+        }
+    }
+}
+
+//MARK: BMKGeoCodeSearchDelegate
+extension MainViewController: BMKGeoCodeSearchDelegate {
+    func onGetReverseGeoCodeResult(searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
+        if error == BMK_SEARCH_NO_ERROR {
+            print(result.address)
+        }else {
+            print("Sorrt no result founded")
+        }
     }
 }
 
