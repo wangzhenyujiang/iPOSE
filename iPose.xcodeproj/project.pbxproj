@@ -43,6 +43,9 @@
 		F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */; };
 		F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */; };
 		F0A629A01D5ED42B00ABDBEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299F1D5ED42B00ABDBEC /* Model.swift */; };
+		F0BE9B941D66D0670003CB2E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BE9B8E1D66D0670003CB2E /* libWeChatSDK.a */; };
+		F0BE9B951D66D0670003CB2E /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0BE9B8F1D66D0670003CB2E /* read_me.txt */; };
+		F0BE9B961D66D0670003CB2E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0BE9B901D66D0670003CB2E /* README.txt */; };
 		F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1F3141D5EBEEB008F365F /* Global.swift */; };
 		F0C78B131D60152C00791FD7 /* FilterImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */; };
 		F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; };
@@ -164,6 +167,13 @@
 		F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extension/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryBoardExtension.swift; path = Extension/StoryBoardExtension.swift; sourceTree = "<group>"; };
 		F0A6299F1D5ED42B00ABDBEC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
+		F0BE9B8E1D66D0670003CB2E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		F0BE9B8F1D66D0670003CB2E /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		F0BE9B901D66D0670003CB2E /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		F0BE9B911D66D0670003CB2E /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		F0BE9B921D66D0670003CB2E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		F0BE9B931D66D0670003CB2E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		F0BE9B981D66D0950003CB2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F0C1F3141D5EBEEB008F365F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Global/Global.swift; sourceTree = "<group>"; };
 		F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterImageViewController.swift; sourceTree = "<group>"; };
 		F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "iPose/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
@@ -184,6 +194,7 @@
 			files = (
 				F0C885C01D5D654C00B2ECF0 /* CoreMedia.framework in Frameworks */,
 				F0C885BE1D5D653000B2ECF0 /* AVFoundation.framework in Frameworks */,
+				F0BE9B941D66D0670003CB2E /* libWeChatSDK.a in Frameworks */,
 				F0C885BC1D5D652400B2ECF0 /* OpenGLES.framework in Frameworks */,
 				F0C885BA1D5D651D00B2ECF0 /* CoreVideo.framework in Frameworks */,
 				F0C885B81D5D650B00B2ECF0 /* QuartzCore.framework in Frameworks */,
@@ -242,6 +253,7 @@
 		8B2E7D0BC2A56BA83BBD60FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0BE9B981D66D0950003CB2E /* SystemConfiguration.framework */,
 				41EDE7436E4C18EDA8B75D56 /* Pods_iPose.framework */,
 			);
 			name = Frameworks;
@@ -311,6 +323,7 @@
 				F00F2E5C1D5B60F7005F19AE /* Assets.xcassets */,
 				F00F2E5E1D5B60F7005F19AE /* LaunchScreen.storyboard */,
 				F00F2E611D5B60F7005F19AE /* Info.plist */,
+				F0BE9B8D1D66D0670003CB2E /* SDKExport */,
 				08AE55E2939D5E6DD5C6AF82 /* Frameworks */,
 				F00F2E691D5B60F7005F19AE /* iPoseTests */,
 				F00F2E741D5B60F7005F19AE /* iPoseUITests */,
@@ -459,6 +472,19 @@
 				F0A6299F1D5ED42B00ABDBEC /* Model.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		F0BE9B8D1D66D0670003CB2E /* SDKExport */ = {
+			isa = PBXGroup;
+			children = (
+				F0BE9B8E1D66D0670003CB2E /* libWeChatSDK.a */,
+				F0BE9B8F1D66D0670003CB2E /* read_me.txt */,
+				F0BE9B901D66D0670003CB2E /* README.txt */,
+				F0BE9B911D66D0670003CB2E /* WechatAuthSDK.h */,
+				F0BE9B921D66D0670003CB2E /* WXApi.h */,
+				F0BE9B931D66D0670003CB2E /* WXApiObject.h */,
+			);
+			path = SDKExport;
 			sourceTree = "<group>";
 		};
 		F0C1F3131D5EBECE008F365F /* Global */ = {
@@ -619,6 +645,8 @@
 				F02082431D5CB19900708062 /* PoseImageCollectionCell.xib in Resources */,
 				F0634E331D5F69D70052A4AE /* Cool Camera Mockup.sketch in Resources */,
 				F00F2E5B1D5B60F6005F19AE /* Main.storyboard in Resources */,
+				F0BE9B961D66D0670003CB2E /* README.txt in Resources */,
+				F0BE9B951D66D0670003CB2E /* read_me.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +900,10 @@
 				INFOPLIST_FILE = iPose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExport",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
@@ -886,6 +918,10 @@
 				INFOPLIST_FILE = iPose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDKExport",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;

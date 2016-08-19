@@ -32,8 +32,13 @@ class MainViewController: IPViewController {
         locService.delegate = self;
         locService.startUserLocationService()
         
+       
         searcher = BMKGeoCodeSearch()
         searcher.delegate = self
+        
+        Alamofire.request(.POST, "http://iposeserverbae.duapp.com/GetPics.do", parameters: ["popleNumber":"sin"], encoding: .URL, headers: nil).responseJSON { response in
+            print(JSON(response.result.value!))
+        }
         
         
         Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
@@ -68,6 +73,13 @@ class MainViewController: IPViewController {
         super.viewDidLayoutSubviews()
         displayControllers()
     }
+    @IBAction func mainViewCaptureButtonAction(sender: AnyObject) {
+        let wxReq = SendMessageToWXReq()
+        wxReq.text = "iPOSE 分享"
+        wxReq.bText = true
+        wxReq.scene = 1
+        WXApi.sendReq(wxReq)
+    }
 }
 
 //MARK: BMKLocationServiceDelegate
@@ -93,6 +105,7 @@ extension MainViewController: BMKGeoCodeSearchDelegate {
     func onGetReverseGeoCodeResult(searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
         if error == BMK_SEARCH_NO_ERROR {
             print(result.address)
+            title = result.address
         }else {
             print("Sorrt no result founded")
         }
