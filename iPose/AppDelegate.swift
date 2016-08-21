@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     var _mapManager: BMKMapManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
+        
         //WX
         WXApi .registerApp("wx2ce113b555a78738")
         

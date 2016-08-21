@@ -421,6 +421,48 @@
             </objects>
             <point key="canvasLocation" x="1910" y="1008"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="oN8-PQ-qjP">
+            <objects>
+                <viewController storyboardIdentifier="IPCameraViewController" id="0y5-QG-q2l" customClass="IPCameraViewController" customModule="iPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6c-Xf-MRj"/>
+                        <viewControllerLayoutGuide type="bottom" id="xZc-Qb-F1f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="01M-Ih-hHv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBe-Cf-dm8" customClass="IPPreviewView" customModule="iPose" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkN-5z-VcJ">
+                                <rect key="frame" x="277" y="570" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="snapImage:" destination="0y5-QG-q2l" eventType="touchUpInside" id="XPp-tl-NPM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GBe-Cf-dm8" firstAttribute="top" secondItem="f6c-Xf-MRj" secondAttribute="bottom" id="L0t-KQ-i81"/>
+                            <constraint firstItem="pkN-5z-VcJ" firstAttribute="centerX" secondItem="01M-Ih-hHv" secondAttribute="centerX" id="XZJ-KT-q5D"/>
+                            <constraint firstAttribute="trailing" secondItem="GBe-Cf-dm8" secondAttribute="trailing" id="kiC-cf-5B7"/>
+                            <constraint firstItem="xZc-Qb-F1f" firstAttribute="top" secondItem="GBe-Cf-dm8" secondAttribute="bottom" constant="50" id="m69-Co-7Ud"/>
+                            <constraint firstItem="GBe-Cf-dm8" firstAttribute="leading" secondItem="01M-Ih-hHv" secondAttribute="leading" id="oN6-pg-PKo"/>
+                            <constraint firstItem="xZc-Qb-F1f" firstAttribute="top" secondItem="pkN-5z-VcJ" secondAttribute="bottom" id="ubG-O1-bnH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="GBe-Cf-dm8" id="ljX-zD-oVX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rDx-nK-aGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2577" y="1008"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="B3v-Ld-U0e">
             <objects>

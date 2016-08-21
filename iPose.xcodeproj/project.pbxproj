@@ -46,6 +46,8 @@
 		F0BE9B941D66D0670003CB2E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BE9B8E1D66D0670003CB2E /* libWeChatSDK.a */; };
 		F0BE9B951D66D0670003CB2E /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0BE9B8F1D66D0670003CB2E /* read_me.txt */; };
 		F0BE9B961D66D0670003CB2E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0BE9B901D66D0670003CB2E /* README.txt */; };
+		F0BE9B9E1D674F510003CB2E /* IPCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BE9B9D1D674F510003CB2E /* IPCameraViewController.swift */; };
+		F0BE9BA11D674F790003CB2E /* IPPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */; };
 		F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1F3141D5EBEEB008F365F /* Global.swift */; };
 		F0C78B131D60152C00791FD7 /* FilterImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */; };
 		F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; };
@@ -174,6 +176,8 @@
 		F0BE9B921D66D0670003CB2E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		F0BE9B931D66D0670003CB2E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		F0BE9B981D66D0950003CB2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F0BE9B9D1D674F510003CB2E /* IPCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPCameraViewController.swift; sourceTree = "<group>"; };
+		F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPPreviewView.swift; path = View/IPPreviewView.swift; sourceTree = "<group>"; };
 		F0C1F3141D5EBEEB008F365F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Global/Global.swift; sourceTree = "<group>"; };
 		F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterImageViewController.swift; sourceTree = "<group>"; };
 		F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "iPose/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 				F0634E391D5F6D8F0052A4AE /* CameraViewController.swift */,
 				F02082461D5CB4ED00708062 /* PoseChildViewController.swift */,
 				F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */,
+				F0BE9B9D1D674F510003CB2E /* IPCameraViewController.swift */,
 				F00F2E591D5B60F6005F19AE /* Main.storyboard */,
 				F0A6299D1D5ECD9600ABDBEC /* Model */,
 				F0C1F3131D5EBECE008F365F /* Global */,
@@ -338,6 +343,7 @@
 				F02082441D5CB1DE00708062 /* PoseImageCollectionCell.swift */,
 				F02082421D5CB19900708062 /* PoseImageCollectionCell.xib */,
 				F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */,
+				F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -741,9 +747,11 @@
 				F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */,
 				F0634E311D5F69D70052A4AE /* CameraToggleButton.m in Sources */,
 				F0C78B131D60152C00791FD7 /* FilterImageViewController.swift in Sources */,
+				F0BE9B9E1D674F510003CB2E /* IPCameraViewController.swift in Sources */,
 				F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */,
 				F006348D1D63224900B72006 /* UIImageExtension.swift in Sources */,
 				F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */,
+				F0BE9BA11D674F790003CB2E /* IPPreviewView.swift in Sources */,
 				F020824E1D5CBB1500708062 /* UICollectionViewExtension.swift in Sources */,
 				F020824B1D5CB57300708062 /* IPViewController.swift in Sources */,
 				F02082511D5CBC5000708062 /* ResuableView.swift in Sources */,
