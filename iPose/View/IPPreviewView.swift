@@ -20,7 +20,6 @@ class IPPreviewView: UIView {
             return previewLayer.session
         }
     }
-    
     override class func layerClass() -> AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }

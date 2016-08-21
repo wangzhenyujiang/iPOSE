@@ -24,12 +24,14 @@ class FilterImageViewController: IPViewController {
         super.viewDidLoad()
         commonInit()
         
-        let tview: RenderView = RenderView(frame: self.view.bounds)
-        view.addSubview(tview)
-        picture = PictureInput(image:image!.normalizedImage())
-        filter = MonochromeFilter()
-        picture --> filter --> tview
-        picture.processImage()
+//        let tview: RenderView = RenderView(frame: self.view.bounds)
+//        view.addSubview(tview)
+//        picture = PictureInput(image:image!.normalizedImage())
+//        filter = MonochromeFilter()
+//        picture --> filter --> tview
+//        picture.processImage()
+        
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,5 +76,23 @@ extension FilterImageViewController: UICollectionViewDelegate, UICollectionViewD
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+    }
+}
+
+//MARK: IBAction
+extension FilterImageViewController {
+    @IBAction func shareActionClick() {
+        let message = WXMediaMessage()
+        message.setThumbImage(UIImage(named: "photo_camera")!)
+        
+        let object = WXImageObject()
+        object.imageData = UIImagePNGRepresentation(image!)
+        message.mediaObject = object
+        
+        let request = SendMessageToWXReq()
+        request.bText = false
+        request.message = message
+        request.scene = 1
+        WXApi.sendReq(request)
     }
 }

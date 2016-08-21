@@ -32,8 +32,6 @@ class CameraViewController: IPViewController {
         addCamera()
         commonInit()
         poseImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
-        
-      
     }
     
     override func viewWillAppear(animated: Bool) {

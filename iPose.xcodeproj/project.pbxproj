@@ -915,6 +915,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -933,6 +934,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
