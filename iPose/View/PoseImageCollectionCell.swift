@@ -11,11 +11,14 @@ import Kingfisher
 
 class PoseImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.clearColor()
         contentView.backgroundColor = UIColor.clearColor()
         imageView.backgroundColor = UIColor.clearColor()
+        imageView.kf_showIndicatorWhenLoading = true
     }
 }
 
@@ -23,5 +26,12 @@ extension PoseImageCollectionCell {
     func fillData(url: String) {
         guard let url = NSURL(string: url) else { return }
         imageView.kf_setImageWithURL(url)
+    }
+    func fillData(item: PoseItem) {
+        guard let url = NSURL(string: item.preview) else { return }
+        imageView.kf_setImageWithURL(url)
+    }
+    func fillImage(image: UIImage) {
+        imageView.image = image
     }
 }

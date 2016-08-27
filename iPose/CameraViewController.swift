@@ -12,8 +12,30 @@ import Kingfisher
 private let itemWH: CGFloat = 80
 
 class CameraViewController: IPViewController {
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.alpha = 0
+            scrollView.delegate = self
+        }
+    }
+    @IBOutlet weak var pageControl: UIPageControl! {
+        didSet {
+            pageControl.numberOfPages = 3
+            pageControl.currentPage = Int(pageControl.numberOfPages) / 2
+        }
+    }
     @IBOutlet var cameraView: CameraSessionView!
-    @IBOutlet weak var poseImageView: UIImageView!
+    @IBOutlet weak var preImageView: UIImageView! {
+        didSet {
+            preImageView.kf_showIndicatorWhenLoading = true
+        }
+    }
+    @IBOutlet weak var borderImageView: UIImageView! {
+        didSet {
+            borderImageView.kf_showIndicatorWhenLoading = true
+        }
+    }
     @IBOutlet weak var collectionViewHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -31,16 +53,21 @@ class CameraViewController: IPViewController {
         super.viewDidLoad()
         addCamera()
         commonInit()
-        poseImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
+
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollView.setContentOffset(CGPoint(x: ScreenWidth, y: 0), animated: false)
+        UIView.animateWithDuration(0.25) { 
+            self.scrollView.alpha = 1
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+    override func prefersStatusBarHidden() -> Bool { return true }
 }
 
 //MARK: IBAction
@@ -49,7 +76,6 @@ extension CameraViewController {
         cameraView.captureToggle()
     }
     @IBAction func flashClick(sender: AnyObject) {
-        
     }
     @IBAction func click(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -82,7 +108,8 @@ extension CameraViewController {
         navigationController?.setToolbarHidden(true, animated: false)
         collectionView.register(PoseImageCollectionCell)
         collectionView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
-        
+        preImageView.kf_setImageWithURL(NSURL(string: poseItem.preview)!)
+        borderImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
     }
     private func addCamera() {
         cameraView.delegate = self
@@ -117,6 +144,15 @@ extension CameraViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         currentIndexPath = indexPath
-        poseImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
+        preImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
+    }
+}
+
+//MARK: UIScrollView
+extension CameraViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView == self.scrollView {
+            pageControl.currentPage = Int(scrollView.contentOffset.x / view.bounds.width)
+        }
     }
 }
