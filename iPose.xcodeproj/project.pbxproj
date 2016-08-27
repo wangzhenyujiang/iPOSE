@@ -916,7 +916,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.iPose;
+				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
@@ -938,7 +938,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.iPose;
+				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;

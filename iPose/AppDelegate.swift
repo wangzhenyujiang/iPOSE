@@ -36,13 +36,13 @@ extension AppDelegate {
         setupBaiduMap()
     }
     private func setupBaiduMap() {
-        WXApi .registerApp(weixinKey)
-    }
-    private func setupWXApi() {
         mapManager = BMKMapManager()
         let ret = mapManager?.start(baiduMapKey, generalDelegate: self)
         if ret == false {
             print("Manager Start Failed")
         }
+    }
+    private func setupWXApi() {
+        WXApi.registerApp(weixinKey)
     }
 }
