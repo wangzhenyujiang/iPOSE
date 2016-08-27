@@ -8,11 +8,14 @@
 
 import UIKit
 
+let PoseImageShowViewNotification = "PoseImageShowViewNotifications"
+
 class PoseImageShowView: UIView {
     private static let shareInstance = PoseImageShowView()
     
     private var view: UIView!
     private var showing: Bool = false
+    private var currentShowIndexPath: NSIndexPath?
     private var dataSource = [PoseItem]() {
         didSet {
             guard let collection = collectionView else { return }
@@ -73,6 +76,7 @@ extension PoseImageShowView  {
         })
         UIApplication.sharedApplication().keyWindow?.addSubview(shareInstance)
         shareInstance.showing = true
+        shareInstance.currentShowIndexPath = currentIndex
     }
     class func hide() {
         if !shareInstance.showing { return }
@@ -82,6 +86,7 @@ extension PoseImageShowView  {
                 shareInstance.removeFromSuperview()
                 shareInstance.alpha = 1
                 shareInstance.showing = false
+                shareInstance.currentShowIndexPath = nil
         }
     }
 }
@@ -115,7 +120,7 @@ extension PoseImageShowView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
-        cell.fillData(dataSource[indexPath.row])
+        cell.fillData(dataSource[indexPath.row].preview)
         return cell
     }
 }
@@ -123,8 +128,14 @@ extension PoseImageShowView: UICollectionViewDelegate, UICollectionViewDataSourc
 //MARK: IBAction
 extension PoseImageShowView {
     @IBAction private func crameaButtonClick(sender: AnyObject) {
-        
+        guard let index = currentShowIndexPath else { return }
+        PoseImageShowView.hide()
+        let arr = dataSource.map() {item in
+            return item.preview
+        }
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewNotification, object: nil, userInfo: ["indexPath": index, "dataList": arr]))
     }
     @IBAction private func saveButtonClick(sender: AnyObject) {
+        
     }
 }

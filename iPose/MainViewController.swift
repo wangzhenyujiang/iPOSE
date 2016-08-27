@@ -27,6 +27,7 @@ class MainViewController: IPViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addObsever()
         
         locService = BMKLocationService()
         locService.delegate = self;
@@ -56,24 +57,23 @@ class MainViewController: IPViewController {
             }
         }
     }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         locService.delegate = self
         searcher.delegate = self
     }
-    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         locService.delegate = nil
         searcher.delegate = nil
     }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         displayControllers()
     }
-   
+    deinit {
+        removeOberver()
+    }
 }
 
 //MARK: IBAction
@@ -120,12 +120,6 @@ extension MainViewController: BMKGeoCodeSearchDelegate {
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseItem],controllerIndex: Int) {
-//        guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
-//        controller.currentIndexPath = indexPath
-//        controller.dataSource = dataSource
-//        let nav = UINavigationController(rootViewController: controller)
-//        presentViewController(nav, animated: true, completion: nil)
-//        navigationController?.pushViewController(controller, animated: true)
         PoseImageShowView.show(indexPath,items: poseList)
     }
 }
@@ -201,5 +195,23 @@ extension MainViewController {
             controller.dataSource = dataSource
             controller.collection.reloadData()
         }
+    }
+    private func addObsever() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(poseViewCallback(_:)), name: PoseImageShowViewNotification, object: nil)
+    }
+    private func removeOberver() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+}
+
+//MARK: Selector
+extension MainViewController {
+    @objc private func poseViewCallback(notification: NSNotification) {
+        guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
+        let dic = notification.userInfo! as NSDictionary
+        controller.currentIndexPath = dic["indexPath"] as! NSIndexPath
+        controller.dataSource = dataSource
+        let nav = UINavigationController(rootViewController: controller)
+        presentViewController(nav, animated: true, completion: nil)
     }
 }

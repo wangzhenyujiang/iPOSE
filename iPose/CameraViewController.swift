@@ -112,7 +112,7 @@ extension CameraViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
-        cell.fillData(dataSource[indexPath.row])
+        cell.fillData(dataSource[indexPath.row].preview)
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

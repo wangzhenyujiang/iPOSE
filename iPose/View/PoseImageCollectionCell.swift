@@ -20,8 +20,8 @@ class PoseImageCollectionCell: UICollectionViewCell {
 }
 
 extension PoseImageCollectionCell {
-    func fillData(item: PoseItem) {
-        guard let url = NSURL(string: item.preview) else { return }
+    func fillData(url: String) {
+        guard let url = NSURL(string: url) else { return }
         imageView.kf_setImageWithURL(url)
     }
 }
