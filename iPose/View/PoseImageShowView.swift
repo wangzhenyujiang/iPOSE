@@ -125,6 +125,22 @@ extension PoseImageShowView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 }
 
+//MARK: UIScrollViewDelegate
+extension PoseImageShowView: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            let index = collectionView.indexPathForItemAtPoint(collectionView.convertPoint(center, fromView: self))
+            guard let indexPath = index else { return }
+            currentShowIndexPath = indexPath
+        }
+    }
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        let index = collectionView.indexPathForItemAtPoint(collectionView.convertPoint(center, fromView: self))
+        guard let indexPath = index else { return }
+        currentShowIndexPath = indexPath
+    }
+}
+
 //MARK: IBAction
 extension PoseImageShowView {
     @IBAction private func crameaButtonClick(sender: AnyObject) {

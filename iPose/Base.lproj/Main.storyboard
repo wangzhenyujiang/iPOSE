@@ -117,6 +117,9 @@
                                 <rect key="frame" x="0.0" y="50" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-bR-sEb">
+                                <rect key="frame" x="280" y="493" width="39" height="37"/>
+                            </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-rT-Wzd" userLabel="Buttom View">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <subviews>
@@ -233,9 +236,6 @@
                                     <constraint firstAttribute="trailing" secondItem="4oB-3f-dFB" secondAttribute="trailing" id="nDr-d2-xwn"/>
                                 </constraints>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-bR-sEb">
-                                <rect key="frame" x="280" y="493" width="39" height="37"/>
-                            </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHG-if-fqF" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="20" width="600" height="30"/>
                                 <subviews>
@@ -261,7 +261,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="32Z-ds-0KT"/>
                                     <constraint firstAttribute="trailing" secondItem="ZOA-W5-CJB" secondAttribute="trailing" constant="8" id="3nT-iG-cwl"/>
