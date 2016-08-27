@@ -10,14 +10,15 @@ import UIKit
 
 class PoseImageShowView: UIView {
     private static let shareInstance = PoseImageShowView()
+    
+    private var view: UIView!
+    private var showing: Bool = false
     private var dataSource = [PoseItem]() {
         didSet {
             guard let collection = collectionView else { return }
             collection.reloadData()
         }
     }
-    private var view: UIView!
-    private var showing: Bool = false
     
     @IBOutlet private weak var buttomView: UIView! {
         didSet {
@@ -36,6 +37,7 @@ class PoseImageShowView: UIView {
         }
     }
 
+    //MARK: Life Cycle
     override init(frame: CGRect) {
         super.init(frame: CGRectMake(0, 0, ScreenWidth, ScreenHeight))
         commonInit()
@@ -52,7 +54,6 @@ class PoseImageShowView: UIView {
         PoseImageShowView.hide()
     }
 }
-
 
 //MARK: Public
 extension PoseImageShowView  {
@@ -75,15 +76,20 @@ extension PoseImageShowView  {
     }
     class func hide() {
         if !shareInstance.showing { return }
-        shareInstance.removeFromSuperview()
-        shareInstance.showing = false
+        UIView.animateWithDuration(0.25, animations: {
+            shareInstance.alpha = 0
+            }) { finished in
+                shareInstance.removeFromSuperview()
+                shareInstance.alpha = 1
+                shareInstance.showing = false
+        }
     }
 }
 
 //MARK: Private
 extension PoseImageShowView {
     private func commonInit() {
-        backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.4)
+        backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         let contentFrame = CGRectMake(0, 0, ScreenWidth, ScreenWidth * 4 / 3)
         view = NSBundle.mainBundle().loadNibNamed(String(PoseImageShowView), owner: self, options: nil).first as! UIView
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
