@@ -8,6 +8,9 @@
 
 import UIKit
 
+let weixinKey = "wx2ce113b555a78738"
+let baiduMapKey = "qNKq8qwjF6CPphYA1OuOxqijKqwdylyx"
+
 let ScreenWidth = UIScreen.mainScreen().bounds.width
 let ScreenHeight = UIScreen.mainScreen().bounds.height
 

@@ -6,29 +6,15 @@
 //  Copyright © 2016年 王振宇. All rights reserved.
 //
 
-let weixinKey = "wx2ce113b555a78738"
-
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
-
     var window: UIWindow?
-    var _mapManager: BMKMapManager?
+    var mapManager: BMKMapManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
-        
-        //WX
-        WXApi .registerApp("wx2ce113b555a78738")
-        
-        //Baidu map
-        _mapManager = BMKMapManager()
-        let ret = _mapManager?.start("qNKq8qwjF6CPphYA1OuOxqijKqwdylyx", generalDelegate: self)
-        if ret == false {
-            print("Manager Start Failed")
-        }
+        setupSDK()
         return true
     }
 }
@@ -39,14 +25,24 @@ extension AppDelegate: WXApiDelegate {
         return WXApi.handleOpenURL(url, delegate: self)
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        
         return WXApi.handleOpenURL(url, delegate: self)
-    }
-    func onReq(req: BaseReq!) {
-        
-    }
-    func onResp(resp: BaseResp!) {
-        
     }
 }
 
+//MARK: SDK
+extension AppDelegate {
+    private func setupSDK() {
+        setupWXApi()
+        setupBaiduMap()
+    }
+    private func setupBaiduMap() {
+        WXApi .registerApp(weixinKey)
+    }
+    private func setupWXApi() {
+        mapManager = BMKMapManager()
+        let ret = mapManager?.start(baiduMapKey, generalDelegate: self)
+        if ret == false {
+            print("Manager Start Failed")
+        }
+    }
+}

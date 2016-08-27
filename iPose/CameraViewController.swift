@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-private let itemWH: CGFloat = 100
+private let itemWH: CGFloat = 80
 
 class CameraViewController: IPViewController {
     @IBOutlet var cameraView: CameraSessionView!
@@ -25,7 +25,7 @@ class CameraViewController: IPViewController {
     
     var currentIndexPath: NSIndexPath!
     var dataSource: [PoseItem] = []
-    var isPoseViewHidden = false
+    var isPoseViewHidden = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,19 @@ class CameraViewController: IPViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    override func prefersStatusBarHidden() -> Bool { return true }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+}
+
+//MARK: IBAction
+extension CameraViewController {
+    @IBAction func camaeraClick(sender: AnyObject) {
+        cameraView.captureToggle()
+    }
+    @IBAction func flashClick(sender: AnyObject) {
+        
+    }
     @IBAction func click(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -47,11 +58,12 @@ class CameraViewController: IPViewController {
         cameraView.captureShutter()
     }
     @IBAction func poseItemsViewButtonClick(sender: AnyObject) {
-        collectionViewHeightConstraints.constant = isPoseViewHidden ? 0 : 100
-        UIView.animateWithDuration(0.25) { 
+        collectionViewHeightConstraints.constant = isPoseViewHidden ? 100 : 0
+        UIView.animateWithDuration(0.25) {
             self.view.layoutIfNeeded()
         }
         isPoseViewHidden = !isPoseViewHidden
+        updateCollectionViewOffset()
     }
 }
 
@@ -69,8 +81,8 @@ extension CameraViewController {
     private func commonInit() {
         navigationController?.setToolbarHidden(true, animated: false)
         collectionView.register(PoseImageCollectionCell)
-        collectionView.backgroundColor = UIColor.clearColor()
-        setupCollectionViewOffset()
+        collectionView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        
     }
     private func addCamera() {
         cameraView.delegate = self
@@ -84,10 +96,11 @@ extension CameraViewController {
         flowLayout.itemSize = CGSize(width: itemWH, height: itemWH)
         flowLayout.minimumInteritemSpacing = Space
         flowLayout.minimumLineSpacing = Space
+        flowLayout.sectionInset = UIEdgeInsets(top: 10, left: Space, bottom: 10, right: Space)
     }
-    private func setupCollectionViewOffset() {
+    private func updateCollectionViewOffset() {
         if CGFloat(currentIndexPath.row) * itemWH  > ScreenWidth {
-            collectionView.contentOffset = CGPoint(x: CGFloat(currentIndexPath.row) * itemWH, y: 0)
+            collectionView.contentOffset = CGPoint(x: CGFloat(currentIndexPath.row) * (itemWH + Space), y: 0)
         }
     }
 }

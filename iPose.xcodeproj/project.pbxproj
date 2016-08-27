@@ -855,6 +855,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "55b6cb96-264c-4c34-99a9-c07e9963b246";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -894,6 +895,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "55b6cb96-264c-4c34-99a9-c07e9963b246";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -905,6 +907,8 @@
 			baseConfigurationReference = 94EE30DF3386ABCE19A5B21D /* Pods-iPose.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iPose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -912,8 +916,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -924,6 +929,8 @@
 			baseConfigurationReference = 0F5C3EB97DCCD54893638D0D /* Pods-iPose.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = iPose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -931,8 +938,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.iPose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

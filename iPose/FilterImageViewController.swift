@@ -83,7 +83,7 @@ extension FilterImageViewController: UICollectionViewDelegate, UICollectionViewD
 extension FilterImageViewController {
     @IBAction func shareActionClick() {
         let message = WXMediaMessage()
-        message.setThumbImage(UIImage(named: "photo_camera")!)
+//        message.setThumbImage(UIImage(named: "photo_camera")!)
         
         let object = WXImageObject()
         object.imageData = UIImagePNGRepresentation(image!)
