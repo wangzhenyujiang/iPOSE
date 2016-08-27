@@ -17,6 +17,8 @@
 		F00F2E601D5B60F7005F19AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00F2E5E1D5B60F7005F19AE /* LaunchScreen.storyboard */; };
 		F00F2E6B1D5B60F7005F19AE /* iPoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F2E6A1D5B60F7005F19AE /* iPoseTests.swift */; };
 		F00F2E761D5B60F7005F19AE /* iPoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F2E751D5B60F7005F19AE /* iPoseUITests.swift */; };
+		F012D4CB1D713F4A00452AF2 /* PoseImageShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012D4CA1D713F4A00452AF2 /* PoseImageShowView.swift */; };
+		F012D4CD1D713F8A00452AF2 /* PoseImageShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F012D4CC1D713F8A00452AF2 /* PoseImageShowView.xib */; };
 		F02082431D5CB19900708062 /* PoseImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02082421D5CB19900708062 /* PoseImageCollectionCell.xib */; };
 		F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082441D5CB1DE00708062 /* PoseImageCollectionCell.swift */; };
 		F02082471D5CB4ED00708062 /* PoseChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082461D5CB4ED00708062 /* PoseChildViewController.swift */; };
@@ -132,6 +134,8 @@
 		F00F2E711D5B60F7005F19AE /* iPoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPoseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00F2E751D5B60F7005F19AE /* iPoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPoseUITests.swift; sourceTree = "<group>"; };
 		F00F2E771D5B60F7005F19AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F012D4CA1D713F4A00452AF2 /* PoseImageShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoseImageShowView.swift; path = View/PoseImageShowView.swift; sourceTree = "<group>"; };
+		F012D4CC1D713F8A00452AF2 /* PoseImageShowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PoseImageShowView.xib; path = View/PoseImageShowView.xib; sourceTree = "<group>"; };
 		F02082421D5CB19900708062 /* PoseImageCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PoseImageCollectionCell.xib; path = View/PoseImageCollectionCell.xib; sourceTree = "<group>"; };
 		F02082441D5CB1DE00708062 /* PoseImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoseImageCollectionCell.swift; path = View/PoseImageCollectionCell.swift; sourceTree = "<group>"; };
 		F02082461D5CB4ED00708062 /* PoseChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseChildViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 				F02082421D5CB19900708062 /* PoseImageCollectionCell.xib */,
 				F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */,
 				F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */,
+				F012D4CA1D713F4A00452AF2 /* PoseImageShowView.swift */,
+				F012D4CC1D713F8A00452AF2 /* PoseImageShowView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -653,6 +659,7 @@
 				F00F2E5B1D5B60F6005F19AE /* Main.storyboard in Resources */,
 				F0BE9B961D66D0670003CB2E /* README.txt in Resources */,
 				F0BE9B951D66D0670003CB2E /* read_me.txt in Resources */,
+				F012D4CD1D713F8A00452AF2 /* PoseImageShowView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +739,7 @@
 				F0634E301D5F69D70052A4AE /* CameraShutterButton.m in Sources */,
 				F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */,
 				F00F2E581D5B60F6005F19AE /* MainViewController.swift in Sources */,
+				F012D4CB1D713F4A00452AF2 /* PoseImageShowView.swift in Sources */,
 				F0634E2E1D5F69D70052A4AE /* CameraFlashButton.m in Sources */,
 				F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */,
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,

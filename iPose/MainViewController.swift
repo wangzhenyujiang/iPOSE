@@ -120,12 +120,13 @@ extension MainViewController: BMKGeoCodeSearchDelegate {
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseItem],controllerIndex: Int) {
-        guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
-        controller.currentIndexPath = indexPath
-        controller.dataSource = dataSource
-        let nav = UINavigationController(rootViewController: controller)
-        presentViewController(nav, animated: true, completion: nil)
+//        guard let controller = storyboard?.instantiateViewController(CameraViewController) else { return }
+//        controller.currentIndexPath = indexPath
+//        controller.dataSource = dataSource
+//        let nav = UINavigationController(rootViewController: controller)
+//        presentViewController(nav, animated: true, completion: nil)
 //        navigationController?.pushViewController(controller, animated: true)
+        PoseImageShowView.show(indexPath,items: poseList)
     }
 }
 

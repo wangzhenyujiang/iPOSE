@@ -11,6 +11,12 @@ import Kingfisher
 
 class PoseImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        backgroundColor = UIColor.clearColor()
+        contentView.backgroundColor = UIColor.clearColor()
+        imageView.backgroundColor = UIColor.clearColor()
+    }
 }
 
 extension PoseImageCollectionCell {
