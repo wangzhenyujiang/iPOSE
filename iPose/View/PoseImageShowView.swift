@@ -19,7 +19,11 @@ class PoseImageShowView: UIView {
     private var view: UIView!
     private var showing: Bool = false
     
-    @IBOutlet private weak var buttomView: UIView!
+    @IBOutlet private weak var buttomView: UIView! {
+        didSet {
+            buttomView.backgroundColor = UIColor.clearColor()
+        }
+    }
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
             collectionView.dataSource = self
@@ -43,12 +47,9 @@ class PoseImageShowView: UIView {
         super.layoutSubviews()
         configCollectionLayout()
     }
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let rect = view.frame
-        if !rect.contains(point) {
-            PoseImageShowView.hide()
-        }
-        return super.hitTest(point, withEvent: event)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        PoseImageShowView.hide()
     }
 }
 
@@ -56,7 +57,10 @@ class PoseImageShowView: UIView {
 //MARK: Public
 extension PoseImageShowView  {
     class func show(currentIndex: NSIndexPath, items: [PoseItem]) {
-        if shareInstance.showing || items.count == 0 { return }
+        if shareInstance.showing || items.count == 0 {
+            PoseImageShowView.hide()
+            return
+        }
         shareInstance.alpha = 0
         UIView.animateWithDuration(0.25, animations: {
             shareInstance.alpha = 1
@@ -79,7 +83,7 @@ extension PoseImageShowView  {
 //MARK: Private
 extension PoseImageShowView {
     private func commonInit() {
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.4)
         let contentFrame = CGRectMake(0, 0, ScreenWidth, ScreenWidth * 4 / 3)
         view = NSBundle.mainBundle().loadNibNamed(String(PoseImageShowView), owner: self, options: nil).first as! UIView
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
@@ -112,7 +116,9 @@ extension PoseImageShowView: UICollectionViewDelegate, UICollectionViewDataSourc
 
 //MARK: IBAction
 extension PoseImageShowView {
-    @IBAction func crameaButtonClick(sender: AnyObject) {
+    @IBAction private func crameaButtonClick(sender: AnyObject) {
         
+    }
+    @IBAction private func saveButtonClick(sender: AnyObject) {
     }
 }

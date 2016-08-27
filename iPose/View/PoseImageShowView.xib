@@ -42,11 +42,20 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W83-sB-oZ3">
+                    <rect key="frame" x="244" y="10" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="saveButtonClick:" destination="-1" eventType="touchUpInside" id="qXs-Ei-Ea1"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="W83-sB-oZ3" firstAttribute="top" secondItem="uBq-eK-f8L" secondAttribute="top" constant="10" id="Dwj-Zf-ggc"/>
                 <constraint firstItem="rG9-bf-mk1" firstAttribute="top" secondItem="uBq-eK-f8L" secondAttribute="top" id="E2l-Uz-5AQ"/>
                 <constraint firstAttribute="trailing" secondItem="aPL-Jc-8bK" secondAttribute="trailing" id="FAV-pN-qIn"/>
+                <constraint firstAttribute="trailing" secondItem="W83-sB-oZ3" secondAttribute="trailing" constant="10" id="cP2-7H-WT1"/>
                 <constraint firstAttribute="bottom" secondItem="aPL-Jc-8bK" secondAttribute="bottom" id="ghy-jt-71R"/>
                 <constraint firstItem="rG9-bf-mk1" firstAttribute="leading" secondItem="uBq-eK-f8L" secondAttribute="leading" id="hTi-w6-ube"/>
                 <constraint firstItem="aPL-Jc-8bK" firstAttribute="leading" secondItem="uBq-eK-f8L" secondAttribute="leading" id="kxt-39-BrJ"/>
