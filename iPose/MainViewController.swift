@@ -29,6 +29,7 @@ class MainViewController: IPViewController {
     
     var locService: BMKLocationService!
     var searcher: BMKGeoCodeSearch!
+    private var currentChildControllerIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +65,11 @@ class MainViewController: IPViewController {
 //MARK: UIScrollViewDelegate
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-    }
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if scrollView == self.scrollView {
-            segementView.selectLabelWithIndex(Int(scrollView.contentOffset.x / ScreenWidth))
+        let index = Int(scrollView.contentOffset.x / ScreenWidth)
+        print("\(scrollView.contentOffset.x)")
+        if scrollView == self.scrollView && currentChildControllerIndex != index {
+            currentChildControllerIndex = index
+            segementView.selectLabelWithIndex(index)
         }
     }
 }
@@ -93,6 +94,8 @@ extension MainViewController: BMKLocationServiceDelegate {
 //MARK: TouchLabelDelegate
 extension MainViewController: TouchLabelDelegate {
     func touchLabelWithIndex(index: Int) {
+        if currentChildControllerIndex == index { return }
+        currentChildControllerIndex = index
         showChildControllerByIndex(index)
     }
 }
@@ -102,7 +105,7 @@ extension MainViewController: BMKGeoCodeSearchDelegate {
     func onGetReverseGeoCodeResult(searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
         if error == BMK_SEARCH_NO_ERROR {
             print(result.address)
-            title = result.address
+            print("\(result.address)")
         }else {
             print("Sorrt no result founded")
         }

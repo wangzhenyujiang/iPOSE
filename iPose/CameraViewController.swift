@@ -154,6 +154,15 @@ extension CameraViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView == self.scrollView {
             pageControl.currentPage = Int(scrollView.contentOffset.x / view.bounds.width)
+            if pageControl.currentPage == pageControl.numberOfPages - 1 {
+                UIView.animateWithDuration(0.25, animations: { 
+                    self.pageControl.alpha = 0
+                })
+            }else {
+                UIView.animateWithDuration(0.25, animations: { 
+                    self.pageControl.alpha = 1
+                })
+            }
         }
     }
 }

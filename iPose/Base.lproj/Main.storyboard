@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yr2-L4-LAs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -50,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="252"/>
+            <point key="canvasLocation" x="1117" y="337"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="Gea-xY-TTi">
@@ -65,20 +66,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcP-dH-sS1" customClass="CameraSessionView">
-                                <rect key="frame" x="0.0" y="50" width="600" height="500"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="470"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-bR-sEb">
-                                <rect key="frame" x="280" y="493" width="39" height="37"/>
+                                <rect key="frame" x="280" y="463" width="39" height="37"/>
                             </pageControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-rT-Wzd" userLabel="Buttom View">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXt-w5-yhS">
-                                        <rect key="frame" x="270" y="5" width="60" height="40"/>
+                                        <rect key="frame" x="270" y="10" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="3yj-5Z-jBz"/>
-                                            <constraint firstAttribute="height" constant="40" id="otg-VJ-TKH"/>
+                                            <constraint firstAttribute="width" secondItem="hXt-w5-yhS" secondAttribute="height" multiplier="1:1" id="tie-vG-fJw"/>
                                         </constraints>
                                         <state key="normal" image="photo_camera"/>
                                         <connections>
@@ -86,33 +87,34 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIw-O0-IBV">
-                                        <rect key="frame" x="546" y="10" width="46" height="30"/>
+                                        <rect key="frame" x="546" y="25" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="poseItemsViewButtonClick:" destination="7O7-5g-PO0" eventType="touchUpInside" id="yys-LW-65t"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.45549378309999999" green="0.93848892319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="hXt-w5-yhS" firstAttribute="centerX" secondItem="kXl-rT-Wzd" secondAttribute="centerX" id="NRO-4Z-Psk"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ygg-qC-adF"/>
                                     <constraint firstAttribute="trailing" secondItem="LIw-O0-IBV" secondAttribute="trailing" constant="8" id="kHU-Xc-cmn"/>
                                     <constraint firstItem="LIw-O0-IBV" firstAttribute="centerY" secondItem="kXl-rT-Wzd" secondAttribute="centerY" id="pOH-0x-1oY"/>
                                     <constraint firstItem="hXt-w5-yhS" firstAttribute="centerY" secondItem="kXl-rT-Wzd" secondAttribute="centerY" id="xLQ-G9-xlC"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBD-Dz-vtV">
-                                <rect key="frame" x="0.0" y="50" width="600" height="500"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="470"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2me-ps-UVg">
-                                        <rect key="frame" x="0.0" y="0.0" width="1800" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1800" height="470"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-u5-gfg" userLabel="PreImageView">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="470"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IVV-dJ-p1o" userLabel="BorderView">
-                                                <rect key="frame" x="600" y="0.0" width="600" height="500"/>
+                                                <rect key="frame" x="600" y="0.0" width="600" height="470"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </imageView>
                                         </subviews>
@@ -140,7 +142,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ad5-jz-FD6" userLabel="PosesView">
-                                <rect key="frame" x="0.0" y="522" width="600" height="28"/>
+                                <rect key="frame" x="0.0" y="492" width="600" height="28"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kgO-t9-YqM">
                                         <rect key="frame" x="0.0" y="28" width="600" height="0.0"/>
@@ -240,18 +242,12 @@
                             <constraint firstAttribute="trailing" secondItem="Ad5-jz-FD6" secondAttribute="trailing" id="iGN-ux-8dZ"/>
                             <constraint firstItem="rcP-dH-sS1" firstAttribute="top" secondItem="HHG-if-fqF" secondAttribute="bottom" id="jJV-LM-Y4V"/>
                             <constraint firstItem="rUG-bR-sEb" firstAttribute="centerX" secondItem="BOi-TU-gbk" secondAttribute="centerX" id="k78-ku-edg"/>
-                            <constraint firstItem="AiE-DO-lQ8" firstAttribute="top" secondItem="rcP-dH-sS1" secondAttribute="bottom" constant="50" id="lzd-k3-tqx"/>
                             <constraint firstAttribute="trailing" secondItem="HHG-if-fqF" secondAttribute="trailing" id="qq7-cA-bm6"/>
                             <constraint firstItem="fBD-Dz-vtV" firstAttribute="top" secondItem="rcP-dH-sS1" secondAttribute="top" id="rdg-s1-OIa"/>
                             <constraint firstItem="rcP-dH-sS1" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="tWC-kl-pbv"/>
                             <constraint firstItem="HHG-if-fqF" firstAttribute="leading" secondItem="BOi-TU-gbk" secondAttribute="leading" id="wXE-th-MJn"/>
                             <constraint firstItem="kXl-rT-Wzd" firstAttribute="top" secondItem="Ad5-jz-FD6" secondAttribute="bottom" id="yIh-Qk-JUA"/>
                         </constraints>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="lzd-k3-tqx"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="WAJ-Gy-yy6"/>
                     <connections>
@@ -487,6 +483,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo_camera" width="173" height="127"/>
+        <image name="photo_camera" width="60" height="60"/>
     </resources>
 </document>
