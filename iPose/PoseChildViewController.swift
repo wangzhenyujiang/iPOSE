@@ -17,7 +17,7 @@ protocol PoseChildViewControllerDelegate {
 }
 
 class PoseChildViewController: UIViewController {
-    @IBOutlet weak var collection: UICollectionView! {
+    @IBOutlet private weak var collection: UICollectionView! {
         didSet {
             collection.delegate = self
             collection.dataSource = self
@@ -25,25 +25,14 @@ class PoseChildViewController: UIViewController {
     }
     var requestHelper: RequestHelperType!
     var index: Int = 0
-    var dataSource = [PoseModelType]()
     var delegate: PoseChildViewControllerDelegate?
     
+    private var dataSource = [PoseModelType]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-}
-
-//MARK: Public 
-extension PoseChildViewController {
-    func getDataWith(requestHelper helper: RequestHelperType) {
-        requestHelper = helper
-        requestHelper.startRequest { [weak self] (success, dataSource) in
-            guard let `self` = self else { return }
-            self.dataSource = dataSource
-            self.collection.reloadData()
-        }
+        startRequest()
     }
 }
 
@@ -65,6 +54,13 @@ extension PoseChildViewController {
         flowLayout.minimumLineSpacing = Space
         flowLayout.sectionInset = UIEdgeInsets(top: Space, left: Space, bottom: 0, right: Space)
     }
+    private func startRequest() {
+        requestHelper.startRequest { [weak self] (success, dataSource) in
+            guard let `self` = self else { return }
+            self.dataSource = dataSource
+            self.collection.reloadData()
+        }
+    }
 }
 
 //MARK: UICollectionViewDelegate, UICollectionViewDataSource
@@ -78,6 +74,6 @@ extension PoseChildViewController: UICollectionViewDelegate, UICollectionViewDat
          return dataSource.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        delegate?.poseItemSelected(indexPath, poseList: dataSource,controllerIndex: index)
+        delegate?.poseItemSelected(indexPath, poseList: dataSource, controllerIndex: index)
     }
 }

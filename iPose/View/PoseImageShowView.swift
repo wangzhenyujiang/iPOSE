@@ -16,7 +16,7 @@ class PoseImageShowView: UIView {
     private var view: UIView!
     private var showing: Bool = false
     private var currentShowIndexPath: NSIndexPath?
-    private var dataSource = [PoseModelType]() {
+    private var dataSource: [PoseModelType] = [PoseModelType]() {
         didSet {
             guard let collection = collectionView else { return }
             collection.reloadData()
@@ -146,10 +146,7 @@ extension PoseImageShowView {
     @IBAction private func crameaButtonClick(sender: AnyObject) {
         guard let index = currentShowIndexPath else { return }
         PoseImageShowView.hide()
-        let arr = dataSource.map() {item in
-            return item.preview
-        }
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewNotification, object: nil, userInfo: ["indexPath": index, "dataList": arr]))
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewNotification, object: nil, userInfo: ["indexPath": index]))
     }
     @IBAction private func saveButtonClick(sender: AnyObject) {
         

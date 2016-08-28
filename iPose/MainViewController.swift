@@ -55,14 +55,26 @@ class MainViewController: IPViewController {
     }
 }
 
-//MARK: IBAction
-extension MainViewController {
-    @IBAction func mainViewCaptureButtonAction(sender: AnyObject) {
-        let wxReq = SendMessageToWXReq()
-        wxReq.text = "iPOSE 分享"
-        wxReq.bText = true
-        wxReq.scene = 1
-        WXApi.sendReq(wxReq)
+//MARK: UIScrollViewDelegate
+extension MainViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView == self.scrollView {
+        }
+    }
+}
+
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CategoryLabelCollectionCell
+        cell.titleLabel.text = Titles[indexPath.row]
+        return cell
+    }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Titles.count
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        showChildControllerByIndex(indexPath.row)
     }
 }
 
@@ -98,30 +110,8 @@ extension MainViewController: BMKGeoCodeSearchDelegate {
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
     func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseModelType],controllerIndex: Int) {
+        dataSource = poseList
         PoseImageShowView.show(indexPath,items: poseList)
-    }
-}
-
-//MARK: UIScrollViewDelegate
-extension MainViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView == self.scrollView {
-        }
-    }
-}
-
-//MARK: UICollectionViewDelegate, UICollectionViewDataSource
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CategoryLabelCollectionCell
-        cell.titleLabel.text = Titles[indexPath.row]
-        return cell
-    }
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Titles.count
-    }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        showChildControllerByIndex(indexPath.row)
     }
 }
 
@@ -141,22 +131,15 @@ extension MainViewController {
         for _ in Titles {
             x = CGFloat(i) * ScreenWidth
             guard let controller = storyboard?.instantiateViewController(PoseChildViewController) else { return }
+            controller.index = i
+            controller.delegate = self
+            controller.requestHelper = requestHelpers[i]
+            controllers.append(controller)
             addChildViewController(controller)
             controller.view.frame = CGRect(x: x, y: 0, width: ScreenWidth, height: scrollView.frame.height)
             scrollView.addSubview(controller.view)
             controller.didMoveToParentViewController(self)
-            controller.index = i
-            controller.delegate = self
-            controllers.append(controller)
             i = i + 1
-        }
-        showChildControllerContent()
-    }
-    private func showChildControllerContent() {
-        var index = 0
-        for controller in controllers {
-            controller.getDataWith(requestHelper: requestHelpers[index])
-            index += 1
         }
     }
     private func setupCollectionViewLatout() {
@@ -192,5 +175,16 @@ extension MainViewController {
         controller.dataSource = dataSource
         let nav = UINavigationController(rootViewController: controller)
         presentViewController(nav, animated: true, completion: nil)
+    }
+}
+
+//MARK: IBAction
+extension MainViewController {
+    @IBAction func mainViewCaptureButtonAction(sender: AnyObject) {
+        let wxReq = SendMessageToWXReq()
+        wxReq.text = "iPOSE 分享"
+        wxReq.bText = true
+        wxReq.scene = 1
+        WXApi.sendReq(wxReq)
     }
 }

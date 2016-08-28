@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct PoseModel: PoseModelType {
+class PoseModel: PoseModelType {
     let location : String
     let isLandScape : Int
     let pictureName : String
@@ -37,7 +37,7 @@ struct PoseModel: PoseModelType {
 }
 
 
-struct PoseItem: PoseModelType {
+class PoseItem: PoseModelType {
     let author: String
     let category: String
     let createTime: String
