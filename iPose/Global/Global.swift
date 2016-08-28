@@ -8,6 +8,8 @@
 
 import UIKit
 
+let MainColor = UIColor(red: 0.94, green: 0.33, blue: 0.32, alpha: 1)
+
 let weixinKey = "wx2ce113b555a78738"
 let baiduMapKey = "qNKq8qwjF6CPphYA1OuOxqijKqwdylyx"
 

@@ -50,6 +50,8 @@
 		F07EF0F31D7285A40077CDDB /* SmaRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F21D7285A40077CDDB /* SmaRequestHelper.swift */; };
 		F07EF0F51D7285BC0077CDDB /* BigRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F41D7285BC0077CDDB /* BigRequestHelper.swift */; };
 		F07EF0F71D72876D0077CDDB /* MyHotRequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F61D72876D0077CDDB /* MyHotRequestHelpers.swift */; };
+		F07EF0FC1D72CE6D0077CDDB /* XFSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0FB1D72CE6D0077CDDB /* XFSegementView.m */; };
+		F07EF0FF1D72D7650077CDDB /* HotRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0FE1D72D7650077CDDB /* HotRequestHelper.swift */; };
 		F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */; };
 		F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */; };
 		F0A629A01D5ED42B00ABDBEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299F1D5ED42B00ABDBEC /* Model.swift */; };
@@ -186,6 +188,9 @@
 		F07EF0F21D7285A40077CDDB /* SmaRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmaRequestHelper.swift; path = Helpers/RequestHelpers/SmaRequestHelper.swift; sourceTree = "<group>"; };
 		F07EF0F41D7285BC0077CDDB /* BigRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BigRequestHelper.swift; path = Helpers/RequestHelpers/BigRequestHelper.swift; sourceTree = "<group>"; };
 		F07EF0F61D72876D0077CDDB /* MyHotRequestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyHotRequestHelpers.swift; path = Helpers/RequestHelpers/MyHotRequestHelpers.swift; sourceTree = "<group>"; };
+		F07EF0FA1D72CE6D0077CDDB /* XFSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XFSegementView.h; sourceTree = "<group>"; };
+		F07EF0FB1D72CE6D0077CDDB /* XFSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XFSegementView.m; sourceTree = "<group>"; };
+		F07EF0FE1D72D7650077CDDB /* HotRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HotRequestHelper.swift; path = Helpers/RequestHelpers/HotRequestHelper.swift; sourceTree = "<group>"; };
 		F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extension/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryBoardExtension.swift; path = Extension/StoryBoardExtension.swift; sourceTree = "<group>"; };
 		F0A6299F1D5ED42B00ABDBEC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
@@ -422,6 +427,7 @@
 		F0634E0E1D5F69B40052A4AE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F07EF0F91D72CE6D0077CDDB /* XFSegementView */,
 				F0634E101D5F69D70052A4AE /* CustomizableCamera */,
 			);
 			name = Vendor;
@@ -513,9 +519,19 @@
 				F07EF0F01D7285820077CDDB /* DouRequestHelper.swift */,
 				F07EF0F21D7285A40077CDDB /* SmaRequestHelper.swift */,
 				F07EF0F41D7285BC0077CDDB /* BigRequestHelper.swift */,
+				F07EF0FE1D72D7650077CDDB /* HotRequestHelper.swift */,
 				F07EF0F61D72876D0077CDDB /* MyHotRequestHelpers.swift */,
 			);
 			name = RequestHelpers;
+			sourceTree = "<group>";
+		};
+		F07EF0F91D72CE6D0077CDDB /* XFSegementView */ = {
+			isa = PBXGroup;
+			children = (
+				F07EF0FA1D72CE6D0077CDDB /* XFSegementView.h */,
+				F07EF0FB1D72CE6D0077CDDB /* XFSegementView.m */,
+			);
+			path = XFSegementView;
 			sourceTree = "<group>";
 		};
 		F0A6299D1D5ECD9600ABDBEC /* Model */ = {
@@ -776,6 +792,7 @@
 				F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */,
 				F0634E2F1D5F69D70052A4AE /* CameraFocalReticule.m in Sources */,
 				F07EF0F31D7285A40077CDDB /* SmaRequestHelper.swift in Sources */,
+				F07EF0FC1D72CE6D0077CDDB /* XFSegementView.m in Sources */,
 				F07EF0EB1D7280BD0077CDDB /* RequestHelpers.swift in Sources */,
 				F0634E2D1D5F69D70052A4AE /* CameraDismissButton.m in Sources */,
 				F0634E301D5F69D70052A4AE /* CameraShutterButton.m in Sources */,
@@ -784,6 +801,7 @@
 				F012D4CB1D713F4A00452AF2 /* PoseImageShowView.swift in Sources */,
 				F0634E2E1D5F69D70052A4AE /* CameraFlashButton.m in Sources */,
 				F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */,
+				F07EF0FF1D72D7650077CDDB /* HotRequestHelper.swift in Sources */,
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,
 				F05B5B501D61ED2800DC9769 /* ImageFilterHelper.swift in Sources */,
 				F07EF0F51D7285BC0077CDDB /* BigRequestHelper.swift in Sources */,

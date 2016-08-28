@@ -13,10 +13,16 @@ import SwiftyJSON
 let Titles = ["推荐", "个人", "双人", "小团体", "大团体"]
 
 class MainViewController: IPViewController {
-    @IBOutlet weak var topCollectionView: UICollectionView!
-    @IBOutlet weak var scrollView: UIScrollView!
+   
+    @IBOutlet private weak var topView: UIView!
+    @IBOutlet private weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.delegate = self
+        }
+    }
+    private var segementView: XFSegementView!
     
-    let requestHelpers: [RequestHelperType] = [MyHotRequestHelpers(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), BigRequestHelper()]
+    let requestHelpers: [RequestHelperType] = [HotRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), BigRequestHelper()]
     
     var dataSource = [PoseModelType]()
     var controllers: [PoseChildViewController] = []
@@ -58,23 +64,12 @@ class MainViewController: IPViewController {
 //MARK: UIScrollViewDelegate
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+    }
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if scrollView == self.scrollView {
+            segementView.selectLabelWithIndex(Int(scrollView.contentOffset.x / ScreenWidth))
         }
-    }
-}
-
-//MARK: UICollectionViewDelegate, UICollectionViewDataSource
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CategoryLabelCollectionCell
-        cell.titleLabel.text = Titles[indexPath.row]
-        return cell
-    }
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Titles.count
-    }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        showChildControllerByIndex(indexPath.row)
     }
 }
 
@@ -92,6 +87,13 @@ extension MainViewController: BMKLocationServiceDelegate {
         }else {
             print("反 GEO 检索发送失败")
         }
+    }
+}
+
+//MARK: TouchLabelDelegate
+extension MainViewController: TouchLabelDelegate {
+    func touchLabelWithIndex(index: Int) {
+        showChildControllerByIndex(index)
     }
 }
 
@@ -118,8 +120,16 @@ extension MainViewController: PoseChildViewControllerDelegate {
 //MARK: Private 
 extension MainViewController {
     private func setupUI() {
-        setupCollectionViewLatout()
+        setupSegementView()
         automaticallyAdjustsScrollViewInsets = false
+    }
+    private func setupSegementView() {
+        segementView = XFSegementView(frame: CGRectMake(0, 0, ScreenWidth, 50))
+        segementView.titleArray = Titles
+        segementView.scrollLine.backgroundColor = MainColor
+        segementView.titleSelectedColor = MainColor
+        segementView.touchDelegate = self
+        topView.addSubview(segementView)
     }
     private func displayControllers() {
         if controllers.count > 0 { return }
@@ -141,12 +151,6 @@ extension MainViewController {
             controller.didMoveToParentViewController(self)
             i = i + 1
         }
-    }
-    private func setupCollectionViewLatout() {
-        let flowLayout = topCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSize(width: 100, height: 50)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
     }
     private func currentShowControllerIndex() -> Int {
         let contentOffset = scrollView.contentOffset

@@ -25,7 +25,7 @@ class PoseImageShowView: UIView {
     
     @IBOutlet private weak var buttomView: UIView! {
         didSet {
-            buttomView.backgroundColor = UIColor.clearColor()
+            buttomView.backgroundColor = UIColor.whiteColor()
         }
     }
     @IBOutlet private weak var collectionView: UICollectionView! {
@@ -34,7 +34,7 @@ class PoseImageShowView: UIView {
             collectionView.delegate = self
             collectionView.showsVerticalScrollIndicator = false
             collectionView.showsHorizontalScrollIndicator = false
-            collectionView.backgroundColor = UIColor.clearColor()
+            collectionView.backgroundColor = UIColor.whiteColor()
             collectionView.pagingEnabled = true
             collectionView.register(PoseImageCollectionCell)
         }
@@ -94,8 +94,8 @@ extension PoseImageShowView  {
 //MARK: Private
 extension PoseImageShowView {
     private func commonInit() {
-        backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
-        let contentFrame = CGRectMake(0, 0, ScreenWidth, ScreenWidth * 4 / 3)
+        backgroundColor = UIColor.clearColor()
+        let contentFrame = CGRectMake(0, 0, ScreenWidth, ScreenWidth + 60)
         view = NSBundle.mainBundle().loadNibNamed(String(PoseImageShowView), owner: self, options: nil).first as! UIView
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         view.frame = contentFrame

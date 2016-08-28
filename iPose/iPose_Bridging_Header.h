@@ -21,4 +21,6 @@
 
 #import "WXApi.h"
 
+#import "XFSegementView.h"
+
 #endif /* iPose_Header_h */

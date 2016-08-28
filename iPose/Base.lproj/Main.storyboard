@@ -23,83 +23,34 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Gk2-h9-KNt"/>
                                 </connections>
                             </scrollView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nlk-x0-RdB" userLabel="TopCollectionView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4g-rz-F4J">
                                 <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7FD-nu-j9g"/>
+                                    <constraint firstAttribute="height" constant="50" id="uWf-aA-kZY"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UkP-FK-RPG">
-                                    <size key="itemSize" width="100" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryLabelCollectionCell" id="ZVZ-0B-fne" customClass="CategoryLabelCollectionCell" customModule="iPose" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRN-zu-f63">
-                                                    <rect key="frame" x="29" y="15" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" red="0.45549378309999999" green="0.93848892319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="bRN-zu-f63" firstAttribute="centerX" secondItem="ZVZ-0B-fne" secondAttribute="centerX" id="8x1-DK-e19"/>
-                                            <constraint firstAttribute="trailing" secondItem="bRN-zu-f63" secondAttribute="trailing" id="AIY-n4-znN"/>
-                                            <constraint firstItem="bRN-zu-f63" firstAttribute="top" secondItem="ZVZ-0B-fne" secondAttribute="top" id="AQM-Ps-1kI"/>
-                                            <constraint firstItem="bRN-zu-f63" firstAttribute="centerY" secondItem="ZVZ-0B-fne" secondAttribute="centerY" id="UVP-8j-qsg"/>
-                                            <constraint firstAttribute="bottom" secondItem="bRN-zu-f63" secondAttribute="bottom" id="n2P-1w-C8A"/>
-                                            <constraint firstItem="bRN-zu-f63" firstAttribute="leading" secondItem="ZVZ-0B-fne" secondAttribute="leading" id="oNU-GR-q5X"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="AIY-n4-znN"/>
-                                                <exclude reference="AQM-Ps-1kI"/>
-                                                <exclude reference="n2P-1w-C8A"/>
-                                                <exclude reference="oNU-GR-q5X"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="bRN-zu-f63" id="iWO-Cl-ns7"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="7Sp-Tq-pc4"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cEc-Xt-SzI"/>
-                                </connections>
-                            </collectionView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nlk-x0-RdB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2hn-NG-ksm"/>
+                            <constraint firstItem="G4g-rz-F4J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="07A-23-wNV"/>
                             <constraint firstItem="9W3-SS-SRk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8fD-KQ-Y7T"/>
-                            <constraint firstItem="nlk-x0-RdB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ASH-mT-m5w"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9W3-SS-SRk" secondAttribute="bottom" id="IHA-c3-71u"/>
                             <constraint firstAttribute="trailing" secondItem="9W3-SS-SRk" secondAttribute="trailing" id="IaG-xh-Aiy"/>
-                            <constraint firstItem="9W3-SS-SRk" firstAttribute="top" secondItem="nlk-x0-RdB" secondAttribute="bottom" id="JL6-xj-KNc"/>
-                            <constraint firstAttribute="trailing" secondItem="nlk-x0-RdB" secondAttribute="trailing" id="e5O-rD-nWp"/>
+                            <constraint firstItem="9W3-SS-SRk" firstAttribute="top" secondItem="G4g-rz-F4J" secondAttribute="bottom" id="Kkv-q2-FPq"/>
+                            <constraint firstAttribute="trailing" secondItem="G4g-rz-F4J" secondAttribute="trailing" id="LAE-Uf-vHx"/>
+                            <constraint firstItem="G4g-rz-F4J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tb5-DO-1z2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="iPOSE" id="fQH-By-bLo"/>
                     <connections>
                         <outlet property="scrollView" destination="9W3-SS-SRk" id="DIx-Xh-9VC"/>
-                        <outlet property="topCollectionView" destination="nlk-x0-RdB" id="I4Y-lb-U8I"/>
+                        <outlet property="topView" destination="G4g-rz-F4J" id="CAd-b1-8qC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1202" y="337"/>
+            <point key="canvasLocation" x="1102" y="252"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="Gea-xY-TTi">
