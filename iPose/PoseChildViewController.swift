@@ -13,14 +13,19 @@ import SwiftyJSON
 let Space: CGFloat = 8
 
 protocol PoseChildViewControllerDelegate {
-    func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseItem], controllerIndex: Int)
+    func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseModelType], controllerIndex: Int)
 }
 
 class PoseChildViewController: UIViewController {
-    @IBOutlet weak var collection: UICollectionView!
-    
+    @IBOutlet weak var collection: UICollectionView! {
+        didSet {
+            collection.delegate = self
+            collection.dataSource = self
+        }
+    }
+
     var index: Int = 0
-    var dataSource = [PoseItem]()
+    var dataSource = [PoseModelType]()
     
     var delegate: PoseChildViewControllerDelegate?
     
@@ -54,7 +59,7 @@ extension PoseChildViewController {
 extension PoseChildViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
-        cell.fillData(dataSource[indexPath.row].preview)
+        cell.fillData(dataSource[indexPath.row])
         return cell
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

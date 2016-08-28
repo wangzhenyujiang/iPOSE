@@ -9,7 +9,35 @@
 import Foundation
 import SwiftyJSON
 
-struct PoseItem {
+struct PoseModel: PoseModelType {
+    let location : String
+    let isLandScape : Int
+    let pictureName : String
+    let numberType : String
+    var preview: String
+    var poseImage: String
+    let pictureID : Int
+    
+    init?(info: JSON) {
+        guard let location = info["location"].string else { return nil}
+        guard let isLandScape = info["islandscape"].int else { return nil}
+        guard let pictureName = info["picturename"].string else { return nil}
+        guard let numberType = info["numbertype"].string else { return nil}
+        guard let preview = info["fullpictureurl"].string else { return nil}
+        guard let poseImage = info["linepictureurl"].string else { return nil}
+        guard let pictureID = info["pictureid"].int else { return nil}
+        self.location = location
+        self.isLandScape = isLandScape
+        self.pictureName = pictureName
+        self.numberType = numberType
+        self.preview = preview
+        self.poseImage = poseImage
+        self.pictureID = pictureID
+    }
+}
+
+
+struct PoseItem: PoseModelType {
     let author: String
     let category: String
     let createTime: String
@@ -17,10 +45,10 @@ struct PoseItem {
     let id: Int
     let name: String
     let poseHeight: Int
-    let poseImage: String
+    var poseImage: String
     let poseOrientation: Int
     let poseWidth: Int
-    let preview: String
+    var preview: String
     let tipsImage: String
     
     init?(_ info: JSON) {

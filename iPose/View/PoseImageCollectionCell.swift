@@ -27,7 +27,7 @@ extension PoseImageCollectionCell {
         guard let url = NSURL(string: url) else { return }
         imageView.kf_setImageWithURL(url)
     }
-    func fillData(item: PoseItem) {
+    func fillData(item: PoseModelType) {
         guard let url = NSURL(string: item.preview) else { return }
         imageView.kf_setImageWithURL(url)
     }

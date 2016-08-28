@@ -10,18 +10,22 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let Titles = ["推荐", "一人", "两人", "多人", "景色", "很多人"]
+let Titles = ["推荐", "小团体", "大团体", "情侣", "个人", "收藏"]
 
 class MainViewController: IPViewController {
     
     @IBOutlet weak var topCollectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var dataSource = [PoseItem]()
+    var dataSource = [PoseModelType]()
     var controllers: [PoseChildViewController] = []
     
     var locService: BMKLocationService!
     var searcher: BMKGeoCodeSearch!
+    
+    @IBAction func click(sender: AnyObject) {
+        fillAndReloadChildData()
+    }
     
     
     override func viewDidLoad() {
@@ -37,25 +41,34 @@ class MainViewController: IPViewController {
         searcher = BMKGeoCodeSearch()
         searcher.delegate = self
         
-        Alamofire.request(.POST, "http://iposeserverbae.duapp.com/GetPics.do", parameters: ["popleNumber":"sin"], encoding: .URL, headers: nil).responseJSON { response in
-            print(JSON(response.result.value!))
-        }
-        
-        
-        Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
-            guard let strongSelf = self else  { return }
+        Alamofire.request(.POST, "http://iposeserverbae.duapp.com/GetPics.do", parameters: ["peopleNumber":"sin"], encoding: .URL, headers: nil).responseJSON { [weak self] response in
+            guard let `self` = self else  { return }
             switch response.result {
             case .Success:
                 guard let value = response.result.value else { return }
-                for (_,subJson):(String, JSON) in JSON(value)["data"]["list"] {
-                    guard let item = PoseItem(subJson) else { continue }
-                    strongSelf.dataSource.append(item)
+                for (_,subJson):(String, JSON) in JSON(value)["pictures"] {
+                    guard let item = PoseModel(info: subJson) else { continue }
+                    self.dataSource.append(item)
                 }
-                strongSelf.fillAndReloadChildData()
+                self.fillAndReloadChildData()
             case .Failure(let error):
                 print(error)
             }
         }
+//       Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
+//            guard let strongSelf = self else  { return }
+//            switch response.result {
+//            case .Success:
+//                guard let value = response.result.value else { return }
+//                for (_,subJson):(String, JSON) in JSON(value)["data"]["list"] {
+//                    guard let item = PoseItem(subJson) else { continue }
+//                    strongSelf.dataSource.append(item)
+//                }
+//                strongSelf.fillAndReloadChildData()
+//            case .Failure(let error):
+//                print(error)
+//            }
+//        }
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -119,7 +132,7 @@ extension MainViewController: BMKGeoCodeSearchDelegate {
 
 //MARK: PoseChildViewControllerDelegate
 extension MainViewController: PoseChildViewControllerDelegate {
-    func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseItem],controllerIndex: Int) {
+    func poseItemSelected(indexPath: NSIndexPath, poseList: [PoseModelType],controllerIndex: Int) {
         PoseImageShowView.show(indexPath,items: poseList)
     }
 }

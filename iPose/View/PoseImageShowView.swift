@@ -16,7 +16,7 @@ class PoseImageShowView: UIView {
     private var view: UIView!
     private var showing: Bool = false
     private var currentShowIndexPath: NSIndexPath?
-    private var dataSource = [PoseItem]() {
+    private var dataSource = [PoseModelType]() {
         didSet {
             guard let collection = collectionView else { return }
             collection.reloadData()
@@ -60,7 +60,7 @@ class PoseImageShowView: UIView {
 
 //MARK: Public
 extension PoseImageShowView  {
-    class func show(currentIndex: NSIndexPath, items: [PoseItem]) {
+    class func show(currentIndex: NSIndexPath, items: [PoseModelType]) {
         if shareInstance.showing || items.count == 0 {
             PoseImageShowView.hide()
             return
@@ -120,7 +120,7 @@ extension PoseImageShowView: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
-        cell.fillData(dataSource[indexPath.row].preview)
+        cell.fillData(dataSource[indexPath.row])
         return cell
     }
 }

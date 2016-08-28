@@ -23,15 +23,6 @@ class FilterImageViewController: IPViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
-        
-//        let tview: RenderView = RenderView(frame: self.view.bounds)
-//        view.addSubview(tview)
-//        picture = PictureInput(image:image!.normalizedImage())
-//        filter = MonochromeFilter()
-//        picture --> filter --> tview
-//        picture.processImage()
-        
-        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

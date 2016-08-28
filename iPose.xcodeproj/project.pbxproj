@@ -28,6 +28,7 @@
 		F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082521D5CBCAC00708062 /* NibLoadableView.swift */; };
 		F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */; };
 		F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */; };
+		F036D9C41D71CD5300FD31AA /* PoseModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036D9C31D71CD5300FD31AA /* PoseModelType.swift */; };
 		F05B5B501D61ED2800DC9769 /* ImageFilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05B5B4F1D61ED2800DC9769 /* ImageFilterHelper.swift */; };
 		F0634E2C1D5F69D70052A4AE /* CameraSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0634E131D5F69D70052A4AE /* CameraSessionView.m */; };
 		F0634E2D1D5F69D70052A4AE /* CameraDismissButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F0634E171D5F69D70052A4AE /* CameraDismissButton.m */; };
@@ -145,6 +146,7 @@
 		F02082521D5CBCAC00708062 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = Common/Protocol/NibLoadableView.swift; sourceTree = "<group>"; };
 		F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UICollectionViewCellExtension.swift; path = Extension/UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryLabelCollectionCell.swift; path = View/CategoryLabelCollectionCell.swift; sourceTree = "<group>"; };
+		F036D9C31D71CD5300FD31AA /* PoseModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoseModelType.swift; path = Common/Protocol/PoseModelType.swift; sourceTree = "<group>"; };
 		F05B5B4F1D61ED2800DC9769 /* ImageFilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFilterHelper.swift; path = Common/Helper/ImageFilterHelper.swift; sourceTree = "<group>"; };
 		F0634E121D5F69D70052A4AE /* CameraSessionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSessionView.h; sourceTree = "<group>"; };
 		F0634E131D5F69D70052A4AE /* CameraSessionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSessionView.m; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			children = (
 				F02082501D5CBC5000708062 /* ResuableView.swift */,
 				F02082521D5CBCAC00708062 /* NibLoadableView.swift */,
+				F036D9C31D71CD5300FD31AA /* PoseModelType.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				F0634E311D5F69D70052A4AE /* CameraToggleButton.m in Sources */,
 				F0C78B131D60152C00791FD7 /* FilterImageViewController.swift in Sources */,
 				F0BE9B9E1D674F510003CB2E /* IPCameraViewController.swift in Sources */,
+				F036D9C41D71CD5300FD31AA /* PoseModelType.swift in Sources */,
 				F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */,
 				F006348D1D63224900B72006 /* UIImageExtension.swift in Sources */,
 				F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */,

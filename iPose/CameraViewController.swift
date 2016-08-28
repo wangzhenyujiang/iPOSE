@@ -39,14 +39,14 @@ class CameraViewController: IPViewController {
     @IBOutlet weak var collectionViewHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var poseItem: PoseItem {
+    private var poseItem: PoseModelType {
         get {
             return dataSource[currentIndexPath.row]
         }
     }
     
     var currentIndexPath: NSIndexPath!
-    var dataSource: [PoseItem] = []
+    var dataSource: [PoseModelType] = []
     var isPoseViewHidden = true
     
     override func viewDidLoad() {
@@ -91,6 +91,7 @@ extension CameraViewController {
         isPoseViewHidden = !isPoseViewHidden
         updateCollectionViewOffset()
     }
+    
 }
 
 //MARK: CACameraSessionDelegate
@@ -139,7 +140,7 @@ extension CameraViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
-        cell.fillData(dataSource[indexPath.row].preview)
+        cell.fillData(dataSource[indexPath.row])
         return cell
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
