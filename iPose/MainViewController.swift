@@ -35,20 +35,6 @@ class MainViewController: IPViewController {
        
         searcher = BMKGeoCodeSearch()
         searcher.delegate = self
-        
-               Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
-                    guard let strongSelf = self else  { return }
-                    switch response.result {
-                    case .Success:
-                        guard let value = response.result.value else { return }
-                        for (_,subJson):(String, JSON) in JSON(value)["data"]["list"] {
-                            guard let item = PoseItem(subJson) else { continue }
-                            strongSelf.dataSource.append(item)
-                        }
-                    case .Failure(let error):
-                        print(error)
-                    }
-                }
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
