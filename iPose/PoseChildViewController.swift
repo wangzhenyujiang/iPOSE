@@ -39,16 +39,10 @@ class PoseChildViewController: UIViewController {
 extension PoseChildViewController {
     func getDataWith(requestHelper helper: RequestHelperType) {
         requestHelper = helper
-        Alamofire.request(requestHelper.method, requestHelper.requestUrl, parameters: requestHelper.param, encoding: .URL, headers: nil).responseJSON { [weak self] response in
-            guard let `self` = self else  { return }
-            switch response.result {
-            case .Success:
-                guard let value = response.result.value else { return }
-                self.dataSource = self.requestHelper.parserModel(JSON(value))
-                self.collection.reloadData()
-            case .Failure(let error):
-                print(error)
-            }
+        requestHelper.startRequest { [weak self] (success, dataSource) in
+            guard let `self` = self else { return }
+            self.dataSource = dataSource
+            self.collection.reloadData()
         }
     }
 }

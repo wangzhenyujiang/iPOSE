@@ -14,6 +14,7 @@ class GetPicsRequestHelper: NSObject {
     var requestUrl: String = "http://iposeserverbae.duapp.com/GetPics.do"
     var param: [String : AnyObject] = [:]
     var method: Alamofire.Method = .POST
+    var encoding: ParameterEncoding = .URL
 }
 
 //MARK: RequestHelpers 
@@ -25,5 +26,17 @@ extension GetPicsRequestHelper: RequestHelperType {
             dataSource.append(item)
         }
         return dataSource
+    }
+    func startRequest(complationHandler: (Bool, [PoseModelType]) -> Void) {
+        Alamofire.request(method, requestUrl, parameters: param, encoding: encoding, headers: nil).responseJSON { [weak self] response in
+            guard let `self` = self else  { return }
+            switch response.result {
+            case .Success:
+                guard let value = response.result.value else { return }
+                complationHandler(true, self.parserModel(JSON(value)))
+            case .Failure(_):
+                complationHandler(false, [])
+            }
+        }
     }
 }

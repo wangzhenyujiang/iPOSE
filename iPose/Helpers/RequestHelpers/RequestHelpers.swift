@@ -14,5 +14,7 @@ protocol RequestHelperType {
     var requestUrl: String { get set }
     var param: [String: AnyObject] { get set }
     var method: Alamofire.Method { get set }
+    var encoding: ParameterEncoding { get set }
     func parserModel(json: JSON) -> [PoseModelType]
+    func startRequest(complationHandler: (Bool, [PoseModelType]) -> Void) 
 }
