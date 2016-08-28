@@ -145,7 +145,8 @@ extension CameraViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         currentIndexPath = indexPath
-        preImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
+        preImageView.kf_setImageWithURL(NSURL(string: poseItem.preview)!)
+        borderImageView.kf_setImageWithURL(NSURL(string: poseItem.poseImage)!)
     }
 }
 
