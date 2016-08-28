@@ -23,15 +23,33 @@ class PoseChildViewController: UIViewController {
             collection.dataSource = self
         }
     }
-
+    var requestHelper: RequestHelperType!
     var index: Int = 0
     var dataSource = [PoseModelType]()
-    
     var delegate: PoseChildViewControllerDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+}
+
+//MARK: Public 
+extension PoseChildViewController {
+    func getDataWith(requestHelper helper: RequestHelperType) {
+        requestHelper = helper
+        Alamofire.request(requestHelper.method, requestHelper.requestUrl, parameters: requestHelper.param, encoding: .URL, headers: nil).responseJSON { [weak self] response in
+            guard let `self` = self else  { return }
+            switch response.result {
+            case .Success:
+                guard let value = response.result.value else { return }
+                self.dataSource = self.requestHelper.parserModel(JSON(value))
+                self.collection.reloadData()
+            case .Failure(let error):
+                print(error)
+            }
+        }
     }
 }
 

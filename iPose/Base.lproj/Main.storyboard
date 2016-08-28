@@ -91,13 +91,7 @@
                             <constraint firstAttribute="trailing" secondItem="nlk-x0-RdB" secondAttribute="trailing" id="e5O-rD-nWp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="iPOSE" id="fQH-By-bLo">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Yd1-kL-3RJ">
-                            <connections>
-                                <action selector="click:" destination="BYZ-38-t0r" id="dsw-JI-6Yp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="iPOSE" id="fQH-By-bLo"/>
                     <connections>
                         <outlet property="scrollView" destination="9W3-SS-SRk" id="DIx-Xh-9VC"/>
                         <outlet property="topCollectionView" destination="nlk-x0-RdB" id="I4Y-lb-U8I"/>

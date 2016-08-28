@@ -43,6 +43,13 @@
 		F0634E361D5F69D70052A4AE /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F0634E291D5F69D70052A4AE /* CaptureSessionManager.m */; };
 		F0634E371D5F69D70052A4AE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F0634E2B1D5F69D70052A4AE /* Constants.m */; };
 		F0634E3A1D5F6D8F0052A4AE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0634E391D5F6D8F0052A4AE /* CameraViewController.swift */; };
+		F07EF0EB1D7280BD0077CDDB /* RequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0EA1D7280BD0077CDDB /* RequestHelpers.swift */; };
+		F07EF0ED1D7282760077CDDB /* GetPicsRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0EC1D7282760077CDDB /* GetPicsRequestHelper.swift */; };
+		F07EF0EF1D7285600077CDDB /* SinRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0EE1D7285600077CDDB /* SinRequestHelper.swift */; };
+		F07EF0F11D7285820077CDDB /* DouRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F01D7285820077CDDB /* DouRequestHelper.swift */; };
+		F07EF0F31D7285A40077CDDB /* SmaRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F21D7285A40077CDDB /* SmaRequestHelper.swift */; };
+		F07EF0F51D7285BC0077CDDB /* BigRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F41D7285BC0077CDDB /* BigRequestHelper.swift */; };
+		F07EF0F71D72876D0077CDDB /* MyHotRequestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07EF0F61D72876D0077CDDB /* MyHotRequestHelpers.swift */; };
 		F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */; };
 		F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */; };
 		F0A629A01D5ED42B00ABDBEC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A6299F1D5ED42B00ABDBEC /* Model.swift */; };
@@ -172,6 +179,13 @@
 		F0634E2B1D5F69D70052A4AE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		F0634E381D5F6ABD0052A4AE /* iPose_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iPose_Bridging_Header.h; path = iPose/iPose_Bridging_Header.h; sourceTree = "<group>"; };
 		F0634E391D5F6D8F0052A4AE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F07EF0EA1D7280BD0077CDDB /* RequestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestHelpers.swift; path = Helpers/RequestHelpers/RequestHelpers.swift; sourceTree = "<group>"; };
+		F07EF0EC1D7282760077CDDB /* GetPicsRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetPicsRequestHelper.swift; path = Helpers/RequestHelpers/GetPicsRequestHelper.swift; sourceTree = "<group>"; };
+		F07EF0EE1D7285600077CDDB /* SinRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SinRequestHelper.swift; path = Helpers/RequestHelpers/SinRequestHelper.swift; sourceTree = "<group>"; };
+		F07EF0F01D7285820077CDDB /* DouRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DouRequestHelper.swift; path = Helpers/RequestHelpers/DouRequestHelper.swift; sourceTree = "<group>"; };
+		F07EF0F21D7285A40077CDDB /* SmaRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmaRequestHelper.swift; path = Helpers/RequestHelpers/SmaRequestHelper.swift; sourceTree = "<group>"; };
+		F07EF0F41D7285BC0077CDDB /* BigRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BigRequestHelper.swift; path = Helpers/RequestHelpers/BigRequestHelper.swift; sourceTree = "<group>"; };
+		F07EF0F61D72876D0077CDDB /* MyHotRequestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyHotRequestHelpers.swift; path = Helpers/RequestHelpers/MyHotRequestHelpers.swift; sourceTree = "<group>"; };
 		F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extension/UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryBoardExtension.swift; path = Extension/StoryBoardExtension.swift; sourceTree = "<group>"; };
 		F0A6299F1D5ED42B00ABDBEC /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
@@ -299,6 +313,7 @@
 				F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */,
 				F0BE9B9D1D674F510003CB2E /* IPCameraViewController.swift */,
 				F00F2E591D5B60F6005F19AE /* Main.storyboard */,
+				F07EF0E71D7280690077CDDB /* Helpers */,
 				F0A6299D1D5ECD9600ABDBEC /* Model */,
 				F0C1F3131D5EBECE008F365F /* Global */,
 				F020824C1D5CBAE900708062 /* Extension */,
@@ -479,6 +494,28 @@
 				F0634E2B1D5F69D70052A4AE /* Constants.m */,
 			);
 			path = "Model Classes";
+			sourceTree = "<group>";
+		};
+		F07EF0E71D7280690077CDDB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F07EF0E91D7280890077CDDB /* RequestHelpers */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		F07EF0E91D7280890077CDDB /* RequestHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				F07EF0EA1D7280BD0077CDDB /* RequestHelpers.swift */,
+				F07EF0EC1D7282760077CDDB /* GetPicsRequestHelper.swift */,
+				F07EF0EE1D7285600077CDDB /* SinRequestHelper.swift */,
+				F07EF0F01D7285820077CDDB /* DouRequestHelper.swift */,
+				F07EF0F21D7285A40077CDDB /* SmaRequestHelper.swift */,
+				F07EF0F41D7285BC0077CDDB /* BigRequestHelper.swift */,
+				F07EF0F61D72876D0077CDDB /* MyHotRequestHelpers.swift */,
+			);
+			name = RequestHelpers;
 			sourceTree = "<group>";
 		};
 		F0A6299D1D5ECD9600ABDBEC /* Model */ = {
@@ -738,6 +775,8 @@
 				F0634E321D5F69D70052A4AE /* LaunchCameraButton.m in Sources */,
 				F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */,
 				F0634E2F1D5F69D70052A4AE /* CameraFocalReticule.m in Sources */,
+				F07EF0F31D7285A40077CDDB /* SmaRequestHelper.swift in Sources */,
+				F07EF0EB1D7280BD0077CDDB /* RequestHelpers.swift in Sources */,
 				F0634E2D1D5F69D70052A4AE /* CameraDismissButton.m in Sources */,
 				F0634E301D5F69D70052A4AE /* CameraShutterButton.m in Sources */,
 				F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */,
@@ -747,8 +786,10 @@
 				F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */,
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,
 				F05B5B501D61ED2800DC9769 /* ImageFilterHelper.swift in Sources */,
+				F07EF0F51D7285BC0077CDDB /* BigRequestHelper.swift in Sources */,
 				F0634E351D5F69D70052A4AE /* CameraStyleKitClass.m in Sources */,
 				F0634E371D5F69D70052A4AE /* Constants.m in Sources */,
+				F07EF0EF1D7285600077CDDB /* SinRequestHelper.swift in Sources */,
 				F02082471D5CB4ED00708062 /* PoseChildViewController.swift in Sources */,
 				F0634E2C1D5F69D70052A4AE /* CameraSessionView.m in Sources */,
 				F00F2E561D5B60F6005F19AE /* AppDelegate.swift in Sources */,
@@ -761,11 +802,14 @@
 				F0BE9B9E1D674F510003CB2E /* IPCameraViewController.swift in Sources */,
 				F036D9C41D71CD5300FD31AA /* PoseModelType.swift in Sources */,
 				F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */,
+				F07EF0ED1D7282760077CDDB /* GetPicsRequestHelper.swift in Sources */,
 				F006348D1D63224900B72006 /* UIImageExtension.swift in Sources */,
 				F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */,
 				F0BE9BA11D674F790003CB2E /* IPPreviewView.swift in Sources */,
+				F07EF0F71D72876D0077CDDB /* MyHotRequestHelpers.swift in Sources */,
 				F020824E1D5CBB1500708062 /* UICollectionViewExtension.swift in Sources */,
 				F020824B1D5CB57300708062 /* IPViewController.swift in Sources */,
+				F07EF0F11D7285820077CDDB /* DouRequestHelper.swift in Sources */,
 				F02082511D5CBC5000708062 /* ResuableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

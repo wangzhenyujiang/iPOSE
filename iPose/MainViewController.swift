@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let Titles = ["推荐", "小团体", "大团体", "情侣", "个人", "收藏"]
+let Titles = ["推荐", "个人", "双人", "小团体", "大团体"]
 
 class MainViewController: IPViewController {
-    
     @IBOutlet weak var topCollectionView: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    let requestHelpers: [RequestHelperType] = [MyHotRequestHelpers(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), BigRequestHelper()]
     
     var dataSource = [PoseModelType]()
     var controllers: [PoseChildViewController] = []
@@ -23,52 +24,19 @@ class MainViewController: IPViewController {
     var locService: BMKLocationService!
     var searcher: BMKGeoCodeSearch!
     
-    @IBAction func click(sender: AnyObject) {
-        fillAndReloadChildData()
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         addObsever()
         
         locService = BMKLocationService()
-        locService.delegate = self;
+        locService.delegate = self
         locService.startUserLocationService()
-        
        
         searcher = BMKGeoCodeSearch()
         searcher.delegate = self
         
-        Alamofire.request(.POST, "http://iposeserverbae.duapp.com/GetPics.do", parameters: ["peopleNumber":"sin"], encoding: .URL, headers: nil).responseJSON { [weak self] response in
-            guard let `self` = self else  { return }
-            switch response.result {
-            case .Success:
-                guard let value = response.result.value else { return }
-                for (_,subJson):(String, JSON) in JSON(value)["pictures"] {
-                    guard let item = PoseModel(info: subJson) else { continue }
-                    self.dataSource.append(item)
-                }
-                self.fillAndReloadChildData()
-            case .Failure(let error):
-                print(error)
-            }
-        }
-//       Alamofire.request(.GET, "http://nahaowan.com/api/v2/haowan/pose/list").responseJSON {[weak self] response in
-//            guard let strongSelf = self else  { return }
-//            switch response.result {
-//            case .Success:
-//                guard let value = response.result.value else { return }
-//                for (_,subJson):(String, JSON) in JSON(value)["data"]["list"] {
-//                    guard let item = PoseItem(subJson) else { continue }
-//                    strongSelf.dataSource.append(item)
-//                }
-//                strongSelf.fillAndReloadChildData()
-//            case .Failure(let error):
-//                print(error)
-//            }
-//        }
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -103,7 +71,6 @@ extension MainViewController {
 //MARK: BMKLocationServiceDelegate
 extension MainViewController: BMKLocationServiceDelegate {
     func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
-        print("\(userLocation.location.coordinate.latitude)   \(userLocation.location.coordinate.longitude)")
         locService.delegate = nil
         
         let pt = CLLocationCoordinate2D(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
@@ -185,6 +152,14 @@ extension MainViewController {
             controllers.append(controller)
             i = i + 1
         }
+        showChildControllerContent()
+    }
+    private func showChildControllerContent() {
+        var index = 0
+        for controller in controllers {
+            controller.getDataWith(requestHelper: requestHelpers[index])
+            index += 1
+        }
     }
     private func setupCollectionViewLatout() {
         let flowLayout = topCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -200,13 +175,6 @@ extension MainViewController {
     private func showChildControllerByIndex(index: Int) {
         UIView.animateWithDuration(0.25) {
             self.scrollView.contentOffset = CGPoint(x: CGFloat(index) * ScreenWidth , y: 0)
-        }
-    }
-    private func fillAndReloadChildData() {
-        if controllers.count <= 0  { return }
-        for controller in self.controllers {
-            controller.dataSource = dataSource
-            controller.collection.reloadData()
         }
     }
     private func addObsever() {
