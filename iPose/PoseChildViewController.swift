@@ -36,6 +36,17 @@ class PoseChildViewController: UIViewController {
     }
 }
 
+//MARK: Public
+extension PoseChildViewController {
+    func startRequest() {
+        requestHelper.startRequest { [weak self] (success, dataSource) in
+            guard let `self` = self else { return }
+            self.dataSource = dataSource
+            self.collection.reloadData()
+        }
+    }
+}
+
 //MARK: Private 
 extension PoseChildViewController {
     private func setupUI() {
@@ -53,13 +64,6 @@ extension PoseChildViewController {
         flowLayout.minimumInteritemSpacing = Space
         flowLayout.minimumLineSpacing = Space
         flowLayout.sectionInset = UIEdgeInsets(top: Space, left: Space, bottom: 0, right: Space)
-    }
-    private func startRequest() {
-        requestHelper.startRequest { [weak self] (success, dataSource) in
-            guard let `self` = self else { return }
-            self.dataSource = dataSource
-            self.collection.reloadData()
-        }
     }
 }
 

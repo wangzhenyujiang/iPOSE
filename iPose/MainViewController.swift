@@ -164,7 +164,8 @@ extension MainViewController {
         }
     }
     private func addObsever() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(poseViewCallback(_:)), name: PoseImageShowViewNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(poseViewCallback(_:)), name: PoseImageShowViewCrameaButtonClickNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(poseViewSaveButtonCallback(_:)), name: PoseImageShowViewSaveButtonClickNotification, object: nil)
     }
     private func removeOberver() {
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -180,6 +181,9 @@ extension MainViewController {
         controller.dataSource = dataSource
         let nav = UINavigationController(rootViewController: controller)
         presentViewController(nav, animated: true, completion: nil)
+    }
+    @objc private func poseViewSaveButtonCallback(notification: NSNotification) {
+       controllers.last?.startRequest()
     }
 }
 

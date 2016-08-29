@@ -8,7 +8,11 @@
 
 import UIKit
 
-let PoseImageShowViewNotification = "PoseImageShowViewNotifications"
+let SaveImageName = "star_save"
+let NoSaveImageName = "star_no_save"
+
+let PoseImageShowViewCrameaButtonClickNotification = "PoseImageShowViewCrameaButtonClickNotification"
+let PoseImageShowViewSaveButtonClickNotification = "PoseImageShowViewSaveButtonClickNotification"
 
 class PoseImageShowView: UIView {
     private static let shareInstance = PoseImageShowView()
@@ -18,7 +22,7 @@ class PoseImageShowView: UIView {
     private var currentShowIndexPath: NSIndexPath? {
         didSet {
             guard let index = currentShowIndexPath else { return }
-                saveButton.setImage(UIImage(named: StoreupHelpers.isItemSaved(dataSource[index.row]) ? "star_save":"star_no_save"), forState: .Normal)
+                saveButton.setImage(UIImage(named: StoreupHelpers.isItemSaved(dataSource[index.row]) ? SaveImageName : NoSaveImageName), forState: .Normal)
         }
     }
     private var dataSource: [PoseModelType] = [PoseModelType]() {
@@ -153,7 +157,7 @@ extension PoseImageShowView {
     @IBAction private func crameaButtonClick(sender: AnyObject) {
         guard let index = currentShowIndexPath else { return }
         PoseImageShowView.hide()
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewNotification, object: nil, userInfo: ["indexPath": index]))
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewCrameaButtonClickNotification, object: nil, userInfo: ["indexPath": index]))
     }
     @IBAction private func saveButtonClick(sender: AnyObject) {
         guard let indexPath = currentShowIndexPath else { return }
@@ -162,6 +166,7 @@ extension PoseImageShowView {
         }else {
             StoreupHelpers.addItem(dataSource[indexPath.row])
         }
-        saveButton.setImage(UIImage(named: StoreupHelpers.isItemSaved(dataSource[indexPath.row]) ? "star_save":"star_no_save"), forState: .Normal)
+        saveButton.setImage(UIImage(named: StoreupHelpers.isItemSaved(dataSource[indexPath.row]) ? SaveImageName: NoSaveImageName), forState: .Normal)
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewSaveButtonClickNotification, object: nil, userInfo: nil))
     }
 }
