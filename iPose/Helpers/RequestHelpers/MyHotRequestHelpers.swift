@@ -6,7 +6,6 @@
 //  Copyright © 2016年 王振宇. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 import SwiftyJSON
 

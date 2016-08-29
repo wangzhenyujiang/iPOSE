@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let Titles = ["推荐", "个人", "双人", "小团体", "大团体"]
+let Titles = ["推荐", "个人", "双人", "小团体", "大团体", "收藏"]
 
 class MainViewController: IPViewController {
    
@@ -22,7 +22,7 @@ class MainViewController: IPViewController {
     }
     private var segementView: XFSegementView!
     
-    let requestHelpers: [RequestHelperType] = [HotRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), BigRequestHelper()]
+    let requestHelpers: [RequestHelperType] = [HotRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), BigRequestHelper(), SaveRequestHelper()]
     
     var dataSource = [PoseModelType]()
     var controllers: [PoseChildViewController] = []
@@ -66,7 +66,6 @@ class MainViewController: IPViewController {
 extension MainViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let index = Int(scrollView.contentOffset.x / ScreenWidth)
-        print("\(scrollView.contentOffset.x)")
         if scrollView == self.scrollView && currentChildControllerIndex != index {
             currentChildControllerIndex = index
             segementView.selectLabelWithIndex(index)
@@ -104,7 +103,6 @@ extension MainViewController: TouchLabelDelegate {
 extension MainViewController: BMKGeoCodeSearchDelegate {
     func onGetReverseGeoCodeResult(searcher: BMKGeoCodeSearch!, result: BMKReverseGeoCodeResult!, errorCode error: BMKSearchErrorCode) {
         if error == BMK_SEARCH_NO_ERROR {
-            print(result.address)
             print("\(result.address)")
         }else {
             print("Sorrt no result founded")

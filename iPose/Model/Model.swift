@@ -9,6 +9,11 @@
 import Foundation
 import SwiftyJSON
 
+struct SaveModel: PoseModelType {
+    var preview: String
+    var poseImage: String
+}
+
 class PoseModel: PoseModelType {
     let location : String
     let isLandScape : Int

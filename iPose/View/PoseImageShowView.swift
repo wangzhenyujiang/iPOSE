@@ -149,6 +149,7 @@ extension PoseImageShowView {
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: PoseImageShowViewNotification, object: nil, userInfo: ["indexPath": index]))
     }
     @IBAction private func saveButtonClick(sender: AnyObject) {
-        
+        guard let indexPath = currentShowIndexPath else { return }
+        StoreupHelpers.addItem(dataSource[indexPath.row])
     }
 }
