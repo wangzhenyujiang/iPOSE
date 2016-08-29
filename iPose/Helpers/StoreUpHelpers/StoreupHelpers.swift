@@ -26,10 +26,25 @@ extension StoreupHelpers {
         tempDic.setObject(itemDic, forKey: item.preview)
         DB.setObject(tempDic.copy(), forKey: DBSaveImageKey)
     }
+    private func deleteItem(item: PoseModelType) {
+        guard let dataDic = DB.dictionaryForKey(DBSaveImageKey) else { return }
+        let tempDic: NSMutableDictionary = NSMutableDictionary(dictionary: dataDic)
+        tempDic.removeObjectForKey(item.preview)
+        DB.setObject(tempDic, forKey: DBSaveImageKey)
+    }
 }
 
 //MARK: Public
 extension StoreupHelpers {
+    class func isItemSaved(item: PoseModelType) -> Bool {
+        for model in StoreupHelpers.saveModelArray() {
+            if model.preview == item.preview { return true }
+        }
+        return false
+    }
+    class func deleteItem(item: PoseModelType) {
+        shareInstance.deleteItem(item)
+    }
     class func addItem(item: PoseModelType) {
         shareInstance.addItem(item)
     }

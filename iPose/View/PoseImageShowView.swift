@@ -15,13 +15,20 @@ class PoseImageShowView: UIView {
     
     private var view: UIView!
     private var showing: Bool = false
-    private var currentShowIndexPath: NSIndexPath?
+    private var currentShowIndexPath: NSIndexPath? {
+        didSet {
+            guard let index = currentShowIndexPath else { return }
+                saveButton.setImage(UIImage(named: StoreupHelpers.isItemSaved(dataSource[index.row]) ? "star_save":"star_no_save"), forState: .Normal)
+        }
+    }
     private var dataSource: [PoseModelType] = [PoseModelType]() {
         didSet {
             guard let collection = collectionView else { return }
             collection.reloadData()
         }
     }
+    
+    @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet private weak var buttomView: UIView! {
         didSet {
@@ -150,6 +157,11 @@ extension PoseImageShowView {
     }
     @IBAction private func saveButtonClick(sender: AnyObject) {
         guard let indexPath = currentShowIndexPath else { return }
-        StoreupHelpers.addItem(dataSource[indexPath.row])
+        if StoreupHelpers.isItemSaved(dataSource[indexPath.row]) {
+            StoreupHelpers.deleteItem(dataSource[indexPath.row])
+        }else {
+            StoreupHelpers.addItem(dataSource[indexPath.row])
+        }
+        saveButton.setImage(UIImage(named: StoreupHelpers.isItemSaved(dataSource[indexPath.row]) ? "star_save":"star_no_save"), forState: .Normal)
     }
 }
