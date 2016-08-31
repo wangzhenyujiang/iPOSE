@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
 //MARK: APNs
 extension AppDelegate {
     func registerForPushNotifications(application: UIApplication) {
+        if Platform.isSimulator { return }
         let notificationSettings = UIUserNotificationSettings(
             forTypes: [.Badge, .Sound, .Alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)

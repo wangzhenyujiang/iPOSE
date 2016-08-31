@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let Titles = ["推荐", "个人", "双人", "小团体", "大团体", "收藏"]
+let Titles = ["推荐", "附近","自拍", "双人", "团体", "收藏"]
 
 class MainViewController: IPViewController {
    
@@ -22,7 +22,7 @@ class MainViewController: IPViewController {
     }
     private var segementView: XFSegementView!
     
-    let requestHelpers: [RequestHelperType] = [HotRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), BigRequestHelper(), SaveRequestHelper()]
+    let requestHelpers: [RequestHelperType] = [ HotRequestHelper(), LocationRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), SaveRequestHelper()]
     
     var dataSource = [PoseModelType]()
     var controllers: [PoseChildViewController] = []

@@ -11,7 +11,7 @@ import Foundation
 class HotRequestHelper: GetPicsRequestHelper {
     override init() {
         super.init()
-        self.param = ["topNumber": 20]
+        self.param = ["topNumber": 21]
         self.requestUrl = "http://iposeserverbae.duapp.com/GetTopPic.do"
     }
 }
