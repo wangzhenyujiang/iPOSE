@@ -28,6 +28,7 @@
 		F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082521D5CBCAC00708062 /* NibLoadableView.swift */; };
 		F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */; };
 		F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */; };
+		F02CD6E81D76E67B00C27D39 /* ReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CD6E71D76E67B00C27D39 /* ReportHelper.swift */; };
 		F036D9C41D71CD5300FD31AA /* PoseModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036D9C31D71CD5300FD31AA /* PoseModelType.swift */; };
 		F0432B411D73C6BC00C3ED2F /* SaveRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0432B401D73C6BC00C3ED2F /* SaveRequestHelper.swift */; };
 		F0432B451D73C92100C3ED2F /* StoreupHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0432B441D73C92100C3ED2F /* StoreupHelpers.swift */; };
@@ -158,6 +159,7 @@
 		F02082521D5CBCAC00708062 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = Common/Protocol/NibLoadableView.swift; sourceTree = "<group>"; };
 		F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UICollectionViewCellExtension.swift; path = Extension/UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryLabelCollectionCell.swift; path = View/CategoryLabelCollectionCell.swift; sourceTree = "<group>"; };
+		F02CD6E71D76E67B00C27D39 /* ReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportHelper.swift; path = Helpers/ReportHelpers/ReportHelper.swift; sourceTree = "<group>"; };
 		F036D9C31D71CD5300FD31AA /* PoseModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoseModelType.swift; path = Common/Protocol/PoseModelType.swift; sourceTree = "<group>"; };
 		F0432B401D73C6BC00C3ED2F /* SaveRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveRequestHelper.swift; path = Helpers/RequestHelpers/SaveRequestHelper.swift; sourceTree = "<group>"; };
 		F0432B441D73C92100C3ED2F /* StoreupHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreupHelpers.swift; path = Helpers/StoreUpHelpers/StoreupHelpers.swift; sourceTree = "<group>"; };
@@ -423,6 +425,14 @@
 			name = Protocol;
 			sourceTree = "<group>";
 		};
+		F02CD6E51D76E66300C27D39 /* ReportHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				F02CD6E71D76E67B00C27D39 /* ReportHelper.swift */,
+			);
+			name = ReportHelpers;
+			sourceTree = "<group>";
+		};
 		F0432B431D73C8FC00C3ED2F /* StoreUpHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +530,7 @@
 		F07EF0E71D7280690077CDDB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F02CD6E51D76E66300C27D39 /* ReportHelpers */,
 				F0432B431D73C8FC00C3ED2F /* StoreUpHelpers */,
 				F07EF0E91D7280890077CDDB /* RequestHelpers */,
 			);
@@ -823,6 +834,7 @@
 				F00F2E581D5B60F6005F19AE /* MainViewController.swift in Sources */,
 				F012D4CB1D713F4A00452AF2 /* PoseImageShowView.swift in Sources */,
 				F0634E2E1D5F69D70052A4AE /* CameraFlashButton.m in Sources */,
+				F02CD6E81D76E67B00C27D39 /* ReportHelper.swift in Sources */,
 				F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */,
 				F07EF0FF1D72D7650077CDDB /* HotRequestHelper.swift in Sources */,
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,

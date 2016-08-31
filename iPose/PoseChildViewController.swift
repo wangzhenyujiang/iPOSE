@@ -32,6 +32,9 @@ class PoseChildViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         startRequest()
     }
 }
@@ -79,13 +82,6 @@ extension PoseChildViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         delegate?.poseItemSelected(indexPath, poseList: dataSource, controllerIndex: index)
-        Alamofire.request(.POST, "http://iposeserverbae.duapp.com/HotReport.do", parameters: ["pictureID":"\(dataSource[indexPath.row].pictureID)"], encoding: .URL, headers: nil).responseJSON { response in
-            switch response.result {
-            case .Success(let value):
-                print("\(JSON(value))")
-            case .Failure(let err):
-                print("ERROR \(err)")
-            }
-        }
+        ReportHelper.reportHotPictureId(dataSource[indexPath.row].pictureID)
     }
 }

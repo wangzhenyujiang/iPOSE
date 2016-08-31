@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
@@ -41,16 +39,7 @@ extension AppDelegate {
         for i in 0..<deviceToken.length {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
-        print("Device Token:", tokenString)
-        Alamofire.request(.POST, "http://iposeserverbae.duapp.com/reportid.do", parameters: ["devicesid": tokenString], encoding: .JSON, headers: nil).responseJSON { response in
-            print("sdasdf")
-            switch response.result {
-            case .Success(let value):
-                print("\(JSON(value))")
-            case .Failure(let err):
-                print("ERROR \(err)")
-            }
-        }
+        ReportHelper.reportDeviceToken(tokenString)
     }
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("Failed to register:", error)
