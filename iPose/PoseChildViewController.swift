@@ -33,6 +33,7 @@ class PoseChildViewController: UIViewController {
     var index: Int = 0
     var delegate: PoseChildViewControllerDelegate?
     
+    private let HUD = JGProgressHUD(style: JGProgressHUDStyle.ExtraLight)
     private var dataSource = [PoseModelType]()
     
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ extension PoseChildViewController {
     func startRequest() {
         requestHelper.startRequest { [weak self] (success, dataSource) in
             guard let `self` = self else { return }
-            HUD.dismissAnimated(false)
+            self.HUD.dismissAnimated(false)
             if success {
                 self.dataSource = dataSource
                 self.collection.reloadData()

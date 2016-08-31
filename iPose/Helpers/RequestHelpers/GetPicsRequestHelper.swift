@@ -33,6 +33,7 @@ extension GetPicsRequestHelper: RequestHelperType {
             case .Success:
                 guard let value = response.result.value else { return }
                 complationHandler(true, self.parserModel(JSON(value)))
+                print("\(JSON(value))")
             case .Failure(_):
                 complationHandler(false, [])
             }
