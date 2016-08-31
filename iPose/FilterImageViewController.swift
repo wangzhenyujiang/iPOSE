@@ -114,7 +114,7 @@ extension FilterImageViewController {
         let message = WXMediaMessage()
         
         let object = WXImageObject()
-        object.imageData = UIImagePNGRepresentation(image!)
+        object.imageData = UIImagePNGRepresentation(UIImage.fixOrientation(image).resize(CGSize(width: imageView.bounds.width * scale, height: imageView.bounds.height * scale))!)
         message.mediaObject = object
         
         let request = SendMessageToWXReq()
