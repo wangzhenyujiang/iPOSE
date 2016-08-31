@@ -16,7 +16,7 @@ class StoreupHelpers: NSObject {
 //MARK: Private
 extension StoreupHelpers {
     private func addItem(item: PoseModelType) {
-        let itemDic = ["preview": item.preview, "poseImage": item.poseImage]
+        let itemDic = ["preview": item.preview, "poseImage": item.poseImage, "suoluetuurl": item.suoluetuurl]
         guard let dataDic = DB.dictionaryForKey(DBSaveImageKey) else {
             let tempDic = [item.preview: itemDic]
             DB.setObject(tempDic, forKey: DBSaveImageKey)
@@ -53,7 +53,7 @@ extension StoreupHelpers {
         var result: [PoseModelType] = []
         for key in dataDic.keys {
             guard let tempDic = dataDic[key] else { continue }
-            result.append(SaveModel(pictureID: 0, preview: tempDic["preview"] as! String, poseImage: tempDic["poseImage"] as! String))
+            result.append(SaveModel(pictureID: 0, preview: tempDic["preview"] as! String, poseImage: tempDic["poseImage"] as! String, suoluetuurl: tempDic["suoluetuurl"] as! String))
         }
         return result
     }

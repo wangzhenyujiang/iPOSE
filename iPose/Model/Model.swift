@@ -13,6 +13,7 @@ struct SaveModel: PoseModelType {
     var pictureID: Int = 0
     var preview: String
     var poseImage: String
+    var suoluetuurl: String = ""
 }
 
 class PoseModel: PoseModelType {
@@ -23,6 +24,7 @@ class PoseModel: PoseModelType {
     var preview: String
     var poseImage: String
     let pictureID : Int
+    var suoluetuurl: String
     
     init?(info: JSON) {
         guard let location = info["location"].string else { return nil}
@@ -32,6 +34,7 @@ class PoseModel: PoseModelType {
         guard let preview = info["fullpictureurl"].string else { return nil}
         guard let poseImage = info["linepictureurl"].string else { return nil}
         guard let pictureID = info["pictureid"].int else { return nil}
+        guard let suoluetuurl = info["suoluetuurl"].string else { return nil}
         self.location = location
         self.isLandScape = isLandScape
         self.pictureName = pictureName
@@ -39,6 +42,7 @@ class PoseModel: PoseModelType {
         self.preview = preview
         self.poseImage = poseImage
         self.pictureID = pictureID
+        self.suoluetuurl = suoluetuurl
     }
 }
 
@@ -57,6 +61,7 @@ class PoseItem: PoseModelType {
     let poseWidth: Int
     var preview: String
     let tipsImage: String
+    var suoluetuurl: String = ""
     
     init?(_ info: JSON) {
         guard let author = info["author"].string else { return nil}

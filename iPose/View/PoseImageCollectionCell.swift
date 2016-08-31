@@ -30,7 +30,7 @@ extension PoseImageCollectionCell {
         fillImageWith(url)
     }
     func fillData(item: PoseModelType) {
-        guard let url = NSURL(string: item.preview) else { return }
+        guard let url = NSURL(string: item.suoluetuurl) else { return }
         fillImageWith(url)
     }
     func fillImage(image: UIImage) {
