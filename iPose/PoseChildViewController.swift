@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import JGProgressHUD
 
 let Space: CGFloat = 8
 
@@ -23,11 +24,19 @@ class PoseChildViewController: UIViewController {
             collection.dataSource = self
         }
     }
+    @IBOutlet private weak var emptyView: UIView! {
+        didSet {
+            emptyView.alpha = 1
+        }
+    }
+    
+    
     var requestHelper: RequestHelperType!
     var index: Int = 0
     var delegate: PoseChildViewControllerDelegate?
     
     private var dataSource = [PoseModelType]()
+    private let HUD = JGProgressHUD(style: JGProgressHUDStyle.Light)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +44,7 @@ class PoseChildViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        HUD.showInView(view)
         startRequest()
     }
 }
@@ -44,8 +54,14 @@ extension PoseChildViewController {
     func startRequest() {
         requestHelper.startRequest { [weak self] (success, dataSource) in
             guard let `self` = self else { return }
-            self.dataSource = dataSource
-            self.collection.reloadData()
+            self.HUD.dismissAnimated(false)
+            if success {
+                self.dataSource = dataSource
+                self.collection.reloadData()
+                self.showEmptyView(false)
+            }else {
+                self.showEmptyView(true)
+            }
         }
     }
 }
@@ -58,6 +74,7 @@ extension PoseChildViewController {
         collection.backgroundColor = UIColor.clearColor()
         collection.showsVerticalScrollIndicator = false
         collection.showsHorizontalScrollIndicator = false
+        HUD.textLabel.text = "Loading"
         configLayout()
     }
     private func configLayout() {
@@ -67,6 +84,11 @@ extension PoseChildViewController {
         flowLayout.minimumInteritemSpacing = Space
         flowLayout.minimumLineSpacing = Space
         flowLayout.sectionInset = UIEdgeInsets(top: Space, left: Space, bottom: 0, right: Space)
+    }
+    private func showEmptyView(show: Bool) {
+        UIView.animateWithDuration(0.25, animations: {
+            self.emptyView.alpha = show ? 1 : 0
+        })
     }
 }
 

@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (3.3.1)
   - BaiduMapKit (2.10.2)
+  - JGProgressHUD (1.3.1)
   - Kingfisher (2.3.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
   - BaiduMapKit
+  - JGProgressHUD
   - Kingfisher
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
+  JGProgressHUD: 153053a21d81208cb5f659691996bcefce6a9885
   Kingfisher: 6d3fbada4829cbc7b89e883e8218c28afeb64e42
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 8bdb41d84e3c990d1c599e9c536d10922925bf43
+PODFILE CHECKSUM: 8c27a0c55f02cd6bdfcf00fe1a4d2a72c0160a78
 
 COCOAPODS: 1.0.0

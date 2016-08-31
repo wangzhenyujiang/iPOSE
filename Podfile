@@ -7,4 +7,5 @@ pod 'Alamofire'
 pod 'Kingfisher'
 pod 'SwiftyJSON'
 pod 'BaiduMapKit'
+pod 'JGProgressHUD'
 end

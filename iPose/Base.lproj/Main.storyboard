@@ -289,6 +289,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-fa-Bne">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-bb-HpB">
+                                        <rect key="frame" x="272.5" y="252.5" width="55" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="EHj-03-jIZ"/>
+                                            <constraint firstAttribute="width" constant="55" id="h0r-e7-3mu"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gW5-bb-HpB" firstAttribute="centerY" secondItem="oTn-fa-Bne" secondAttribute="centerY" id="Els-aV-StW"/>
+                                    <constraint firstItem="gW5-bb-HpB" firstAttribute="centerX" secondItem="oTn-fa-Bne" secondAttribute="centerX" id="v4F-0z-OTc"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-kD-4c4">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QdQ-aw-IQM">
@@ -317,13 +334,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3RC-kD-4c4" firstAttribute="leading" secondItem="cXG-Qv-UXo" secondAttribute="leading" id="CXg-mV-Doc"/>
+                            <constraint firstAttribute="trailing" secondItem="oTn-fa-Bne" secondAttribute="trailing" id="KBV-a7-yKM"/>
                             <constraint firstItem="B54-38-xea" firstAttribute="top" secondItem="3RC-kD-4c4" secondAttribute="bottom" id="Ugr-iG-3OY"/>
                             <constraint firstItem="3RC-kD-4c4" firstAttribute="top" secondItem="MDo-uD-ZLE" secondAttribute="bottom" id="bQu-Hh-Ehc"/>
+                            <constraint firstItem="oTn-fa-Bne" firstAttribute="top" secondItem="MDo-uD-ZLE" secondAttribute="bottom" id="eg6-e4-EJc"/>
+                            <constraint firstItem="oTn-fa-Bne" firstAttribute="leading" secondItem="cXG-Qv-UXo" secondAttribute="leading" id="fdl-4q-g3E"/>
+                            <constraint firstItem="B54-38-xea" firstAttribute="top" secondItem="oTn-fa-Bne" secondAttribute="bottom" id="k2z-dl-hOd"/>
                             <constraint firstAttribute="trailing" secondItem="3RC-kD-4c4" secondAttribute="trailing" id="uk7-Nt-Y4M"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collection" destination="3RC-kD-4c4" id="pLZ-K0-lbv"/>
+                        <outlet property="emptyView" destination="oTn-fa-Bne" id="Z3z-f0-c89"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="El5-Bp-MLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,6 +519,7 @@
     </scenes>
     <resources>
         <image name="close" width="35" height="35"/>
+        <image name="emptyImage" width="285" height="361"/>
         <image name="flash" width="35" height="35"/>
         <image name="photo_camera" width="60" height="60"/>
         <image name="pose" width="35" height="35"/>

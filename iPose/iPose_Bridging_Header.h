@@ -23,4 +23,6 @@
 
 #import "XFSegementView.h"
 
+#import <JGProgressHUD/JGProgressHUD.h>
+
 #endif /* iPose_Header_h */

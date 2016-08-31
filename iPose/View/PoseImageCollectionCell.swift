@@ -9,9 +9,10 @@
 import UIKit
 import Kingfisher
 
+private let placeholderImage = "placeholderImage"
+
 class PoseImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,18 +23,27 @@ class PoseImageCollectionCell: UICollectionViewCell {
     }
 }
 
-extension PoseImageCollectionCell: ImageFilterable {}
-
+//MARK: Public
 extension PoseImageCollectionCell {
     func fillData(url: String) {
         guard let url = NSURL(string: url) else { return }
-        imageView.kf_setImageWithURL(url)
+        fillImageWith(url)
     }
     func fillData(item: PoseModelType) {
         guard let url = NSURL(string: item.preview) else { return }
-        imageView.kf_setImageWithURL(url)
+        fillImageWith(url)
     }
     func fillImage(image: UIImage) {
         imageView.image = image
     }
 }
+
+//MARK: Private
+extension PoseImageCollectionCell {
+    private func fillImageWith(url: NSURL) {
+        imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: [KingfisherOptionsInfoItem.Transition(ImageTransition.Fade(0.5))], progressBlock: nil, completionHandler: nil)
+    }
+}
+
+//MARK: ImageFilterable
+extension PoseImageCollectionCell: ImageFilterable {}

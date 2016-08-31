@@ -22,7 +22,7 @@ class MainViewController: IPViewController {
     }
     private var segementView: XFSegementView!
     
-    let requestHelpers: [RequestHelperType] = [ HotRequestHelper(), LocationRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), SaveRequestHelper()]
+    let requestHelpers: [RequestHelperType] = [HotRequestHelper(), LocationRequestHelper(), SinRequestHelper(), DouRequestHelper(), SmaRequestHelper(), SaveRequestHelper()]
     
     var dataSource = [PoseModelType]()
     var controllers: [PoseChildViewController] = []
@@ -77,7 +77,6 @@ extension MainViewController: UIScrollViewDelegate {
 extension MainViewController: BMKLocationServiceDelegate {
     func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
         locService.delegate = nil
-        
         let pt = CLLocationCoordinate2D(latitude: userLocation.location.coordinate.latitude, longitude: userLocation.location.coordinate.longitude)
         let reserseGeoCodeSearchOption = BMKReverseGeoCodeOption()
         reserseGeoCodeSearchOption.reverseGeoPoint = pt
