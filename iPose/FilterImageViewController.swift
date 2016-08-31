@@ -10,17 +10,23 @@ import UIKit
 import GPUImage
 import CoreImage
 
-private let itemW: CGFloat = 100
+private let itemW: CGFloat = 60
 private let itemH: CGFloat = 100
 
 class FilterImageViewController: IPViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageView: UIImageView!
-    var image: UIImage?
     
-    var filter:[BasicOperation] = [ColorMatrixFilter(), WhiteBalance()]
+    
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
+    var image: UIImage!
+    
     var picture:PictureInput!
+    var titles: [String] = ["朦胧", "黑白"]
+    var filters: [() -> UIImage?] = [UIImage().sepiaTone, UIImage().noir]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +47,26 @@ extension FilterImageViewController {
 extension FilterImageViewController {
     private func commonInit() {
         guard let temp = image else { return }
-        imageView.image = temp
-        title = "添加滤镜"
-        collectionView.register(PoseImageCollectionCell)
+        imageView.image = temp.resize(CGSize(width: imageView.bounds.width * scale, height: imageView.bounds.height * scale))
+        imageView.image = UIImage.fixOrientation(imageView.image)
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+//            if let image = self.imageView.image?.noir() {
+//                dispatch_async(dispatch_get_main_queue(), {
+//                    print("\(image.imageOrientation.rawValue)")
+//                    self.imageView.image = image
+//                })
+//            }
+//        }
+        saveButton.backgroundColor = MainColor
+        saveButton.border()
+        saveButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        shareButton.backgroundColor = MainColor
+        shareButton.border()
+        shareButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        collectionView.register(FilterControllerCell)
         collectionView.backgroundColor = UIColor.clearColor()
         configLayout()
+        title = "添加滤镜"
     }
     private func configLayout() {
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -58,21 +79,32 @@ extension FilterImageViewController {
 //MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension FilterImageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
-        if let image = image {
-            cell.imageView.image = image
-            cell.filter(cell.imageView.image!, filter: filter[indexPath.row]) { image in
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as FilterControllerCell
+        if indexPath.row == 0 {
+            if let image = UIImage.fixOrientation(imageView.image).noir(){
+                cell.imageView.image = image
+            }
+        }else if indexPath.row == 1 {
+            if let image = UIImage.fixOrientation(imageView.image).sepiaTone(){
                 cell.imageView.image = image
             }
         }
+        cell.label.text = titles[indexPath.row]
         return cell
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filter.count
+        return filters.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let filteredImage = image!.filterWithOperation(filter[indexPath.row])
-        imageView.image = filteredImage
+        if indexPath.row == 0 {
+            if let image = UIImage.fixOrientation(imageView.image).noir(){
+                imageView.image = image
+            }
+        }else if indexPath.row == 1 {
+            if let image = UIImage.fixOrientation(imageView.image).sepiaTone(){
+                imageView.image = image
+            }
+        }
     }
 }
 

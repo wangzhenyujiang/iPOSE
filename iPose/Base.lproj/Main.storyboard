@@ -399,32 +399,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPS-Yg-CTg">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCv-wB-kVH">
-                                        <rect key="frame" x="277" y="10" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDV-TQ-gCo">
-                                        <rect key="frame" x="552" y="10" width="40" height="30"/>
-                                        <state key="normal" title="Share"/>
+                                        <rect key="frame" x="304" y="0.0" width="288" height="42"/>
+                                        <state key="normal" title="分享"/>
                                         <connections>
                                             <action selector="shareActionClick" destination="htF-UM-PUq" eventType="touchUpInside" id="iVJ-AQ-rEU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7H-uO-T35">
-                                        <rect key="frame" x="8" y="10" width="48" height="30"/>
-                                        <state key="normal" title="Cancle"/>
+                                        <rect key="frame" x="8" y="0.0" width="288" height="42"/>
+                                        <state key="normal" title="保存"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="XCv-wB-kVH" firstAttribute="centerX" secondItem="DPS-Yg-CTg" secondAttribute="centerX" id="Fh8-NF-pSu"/>
+                                    <constraint firstItem="XDV-TQ-gCo" firstAttribute="top" secondItem="DPS-Yg-CTg" secondAttribute="top" id="9ba-vf-kXn"/>
                                     <constraint firstItem="k7H-uO-T35" firstAttribute="centerY" secondItem="DPS-Yg-CTg" secondAttribute="centerY" id="Fv3-vT-2i7"/>
                                     <constraint firstAttribute="height" constant="50" id="GnP-N4-ep0"/>
-                                    <constraint firstItem="XCv-wB-kVH" firstAttribute="centerY" secondItem="DPS-Yg-CTg" secondAttribute="centerY" id="ZNa-mI-D2n"/>
+                                    <constraint firstAttribute="bottom" secondItem="k7H-uO-T35" secondAttribute="bottom" constant="8" id="UgO-pf-jj5"/>
                                     <constraint firstItem="XDV-TQ-gCo" firstAttribute="centerY" secondItem="DPS-Yg-CTg" secondAttribute="centerY" id="bP5-kK-O6W"/>
                                     <constraint firstAttribute="trailing" secondItem="XDV-TQ-gCo" secondAttribute="trailing" constant="8" id="hEc-yD-k1R"/>
+                                    <constraint firstItem="k7H-uO-T35" firstAttribute="width" secondItem="XDV-TQ-gCo" secondAttribute="width" id="hfP-dR-h8C"/>
                                     <constraint firstItem="k7H-uO-T35" firstAttribute="leading" secondItem="DPS-Yg-CTg" secondAttribute="leading" constant="8" id="iKX-Sb-OKv"/>
+                                    <constraint firstItem="k7H-uO-T35" firstAttribute="top" secondItem="DPS-Yg-CTg" secondAttribute="top" id="l6o-SF-KnW"/>
+                                    <constraint firstItem="XDV-TQ-gCo" firstAttribute="leading" secondItem="k7H-uO-T35" secondAttribute="trailing" constant="8" id="xAd-VS-2dQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="XDV-TQ-gCo" secondAttribute="bottom" constant="8" id="yGk-YX-Jjx"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fv3-vT-2i7"/>
+                                        <exclude reference="bP5-kK-O6W"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -436,6 +442,8 @@
                             <constraint firstItem="DPS-Yg-CTg" firstAttribute="top" secondItem="WoI-Pe-Gn3" secondAttribute="bottom" id="B9r-dZ-bpj"/>
                             <constraint firstAttribute="trailing" secondItem="m8E-Te-CpF" secondAttribute="trailing" id="QKt-mV-NeA"/>
                             <constraint firstItem="m8E-Te-CpF" firstAttribute="top" secondItem="F4R-7Q-qME" secondAttribute="bottom" id="Vte-rg-Ftx"/>
+                            <constraint firstItem="m8E-Te-CpF" firstAttribute="height" secondItem="KEW-Yj-PLh" secondAttribute="height" id="YvA-42-g27"/>
+                            <constraint firstItem="WoI-Pe-Gn3" firstAttribute="top" secondItem="m8E-Te-CpF" secondAttribute="bottom" id="dZC-Xp-fRM"/>
                             <constraint firstItem="3w4-Vm-UVj" firstAttribute="top" secondItem="m8E-Te-CpF" secondAttribute="bottom" constant="100" id="frC-Tm-jfp"/>
                             <constraint firstItem="WoI-Pe-Gn3" firstAttribute="leading" secondItem="KEW-Yj-PLh" secondAttribute="leading" id="hRp-N5-o5Z"/>
                             <constraint firstAttribute="trailing" secondItem="WoI-Pe-Gn3" secondAttribute="trailing" id="kXu-WQ-2Wz"/>
@@ -443,6 +451,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="YvA-42-g27"/>
+                                <exclude reference="3Tc-th-i97"/>
                                 <exclude reference="frC-Tm-jfp"/>
                             </mask>
                         </variation>
@@ -450,6 +460,8 @@
                     <connections>
                         <outlet property="collectionView" destination="WoI-Pe-Gn3" id="Kbn-gB-kQv"/>
                         <outlet property="imageView" destination="m8E-Te-CpF" id="p2Q-uR-qwc"/>
+                        <outlet property="saveButton" destination="k7H-uO-T35" id="HVi-rj-kkh"/>
+                        <outlet property="shareButton" destination="XDV-TQ-gCo" id="6gh-5h-83y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OB4-3S-LuV" userLabel="First Responder" sceneMemberID="firstResponder"/>

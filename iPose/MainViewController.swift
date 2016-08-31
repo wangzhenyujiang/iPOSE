@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-let Titles = ["推荐", "附近","自拍", "双人", "团体", "收藏"]
+private let Titles = ["推荐", "附近","自拍", "双人", "团体", "收藏"]
 
 class MainViewController: IPViewController {
    

@@ -62,11 +62,11 @@ class CameraViewController: IPViewController {
             self.scrollView.alpha = 1
         }
     }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
     override func prefersStatusBarHidden() -> Bool { return true }
 }
 
@@ -97,6 +97,7 @@ extension CameraViewController {
 extension CameraViewController: CACameraSessionDelegate {
     func didCaptureImage(image: UIImage!) {
         guard let controller  = storyboard?.instantiateViewController(FilterImageViewController) else { return }
+        print("\(image.imageOrientation.rawValue)")
         controller.image = image
         navigationController?.pushViewController(controller, animated: true)
     }

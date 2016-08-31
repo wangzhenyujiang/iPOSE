@@ -28,6 +28,10 @@
 		F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082521D5CBCAC00708062 /* NibLoadableView.swift */; };
 		F02082551D5CBCE900708062 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */; };
 		F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */; };
+		F02B51ED1D7731BD00AD7A1C /* AFImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B51EB1D7731BD00AD7A1C /* AFImageExtension.swift */; };
+		F02B51EE1D7731BD00AD7A1C /* AFImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02B51EC1D7731BD00AD7A1C /* AFImageVIewExtension.swift */; };
+		F02B51F31D7739C800AD7A1C /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B51F21D7739C800AD7A1C /* ImageUtil.m */; };
+		F02B51F61D773D9300AD7A1C /* UIImageCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F02B51F51D773D9300AD7A1C /* UIImageCategory.m */; };
 		F02CD6E81D76E67B00C27D39 /* ReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CD6E71D76E67B00C27D39 /* ReportHelper.swift */; };
 		F02CD6EA1D76FC9500C27D39 /* LocationRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CD6E91D76FC9500C27D39 /* LocationRequestHelper.swift */; };
 		F036D9C41D71CD5300FD31AA /* PoseModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F036D9C31D71CD5300FD31AA /* PoseModelType.swift */; };
@@ -77,6 +81,9 @@
 		F0C885C01D5D654C00B2ECF0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BF1D5D654C00B2ECF0 /* CoreMedia.framework */; };
 		F0C885C51D5D6A7200B2ECF0 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0E64F0C1D75CFBD00DCDB4C /* ImageFilterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */; };
+		F0FCF0D41D774029009255B4 /* FilterControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCF0D31D774029009255B4 /* FilterControllerCell.swift */; };
+		F0FCF0D71D774042009255B4 /* FilterControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FCF0D61D774042009255B4 /* FilterControllerCell.xib */; };
+		F0FCF0D91D77475F009255B4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCF0D81D77475F009255B4 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +167,13 @@
 		F02082521D5CBCAC00708062 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = Common/Protocol/NibLoadableView.swift; sourceTree = "<group>"; };
 		F02082541D5CBCE900708062 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UICollectionViewCellExtension.swift; path = Extension/UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		F02082561D5CC1D900708062 /* CategoryLabelCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryLabelCollectionCell.swift; path = View/CategoryLabelCollectionCell.swift; sourceTree = "<group>"; };
+		F02B51EB1D7731BD00AD7A1C /* AFImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageExtension.swift; sourceTree = "<group>"; };
+		F02B51EC1D7731BD00AD7A1C /* AFImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFImageVIewExtension.swift; sourceTree = "<group>"; };
+		F02B51F01D7739C800AD7A1C /* ColorMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMatrix.h; sourceTree = "<group>"; };
+		F02B51F11D7739C800AD7A1C /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
+		F02B51F21D7739C800AD7A1C /* ImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
+		F02B51F41D773D9300AD7A1C /* UIImageCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIImageCategory.h; path = Extension/UIImageCategory.h; sourceTree = "<group>"; };
+		F02B51F51D773D9300AD7A1C /* UIImageCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIImageCategory.m; path = Extension/UIImageCategory.m; sourceTree = "<group>"; };
 		F02CD6E71D76E67B00C27D39 /* ReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportHelper.swift; path = Helpers/ReportHelpers/ReportHelper.swift; sourceTree = "<group>"; };
 		F02CD6E91D76FC9500C27D39 /* LocationRequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationRequestHelper.swift; path = Helpers/RequestHelpers/LocationRequestHelper.swift; sourceTree = "<group>"; };
 		F036D9C31D71CD5300FD31AA /* PoseModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoseModelType.swift; path = Common/Protocol/PoseModelType.swift; sourceTree = "<group>"; };
@@ -224,6 +238,9 @@
 		F0C885BD1D5D653000B2ECF0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F0C885BF1D5D654C00B2ECF0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFilterable.swift; path = Common/Protocol/ImageFilterable.swift; sourceTree = "<group>"; };
+		F0FCF0D31D774029009255B4 /* FilterControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterControllerCell.swift; path = View/FilterControllerCell.swift; sourceTree = "<group>"; };
+		F0FCF0D61D774042009255B4 /* FilterControllerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FilterControllerCell.xib; path = View/FilterControllerCell.xib; sourceTree = "<group>"; };
+		F0FCF0D81D77475F009255B4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Extension/UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +399,8 @@
 				F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */,
 				F012D4CA1D713F4A00452AF2 /* PoseImageShowView.swift */,
 				F012D4CC1D713F8A00452AF2 /* PoseImageShowView.xib */,
+				F0FCF0D31D774029009255B4 /* FilterControllerCell.swift */,
+				F0FCF0D61D774042009255B4 /* FilterControllerCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -412,6 +431,7 @@
 				F0A629981D5EC10700ABDBEC /* UIViewControllerExtension.swift */,
 				F0A6299B1D5EC1E100ABDBEC /* StoryBoardExtension.swift */,
 				F006348C1D63224900B72006 /* UIImageExtension.swift */,
+				F0FCF0D81D77475F009255B4 /* UIViewExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -425,6 +445,25 @@
 				F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */,
 			);
 			name = Protocol;
+			sourceTree = "<group>";
+		};
+		F02B51EA1D7731BD00AD7A1C /* AFImageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F02B51EB1D7731BD00AD7A1C /* AFImageExtension.swift */,
+				F02B51EC1D7731BD00AD7A1C /* AFImageVIewExtension.swift */,
+			);
+			path = AFImageHelper;
+			sourceTree = "<group>";
+		};
+		F02B51EF1D7739C800AD7A1C /* FilterModel */ = {
+			isa = PBXGroup;
+			children = (
+				F02B51F01D7739C800AD7A1C /* ColorMatrix.h */,
+				F02B51F11D7739C800AD7A1C /* ImageUtil.h */,
+				F02B51F21D7739C800AD7A1C /* ImageUtil.m */,
+			);
+			path = FilterModel;
 			sourceTree = "<group>";
 		};
 		F02CD6E51D76E66300C27D39 /* ReportHelpers */ = {
@@ -454,8 +493,12 @@
 		F0634E0E1D5F69B40052A4AE /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				F02B51EF1D7739C800AD7A1C /* FilterModel */,
+				F02B51EA1D7731BD00AD7A1C /* AFImageHelper */,
 				F07EF0F91D72CE6D0077CDDB /* XFSegementView */,
 				F0634E101D5F69D70052A4AE /* CustomizableCamera */,
+				F02B51F41D773D9300AD7A1C /* UIImageCategory.h */,
+				F02B51F51D773D9300AD7A1C /* UIImageCategory.m */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -747,6 +790,7 @@
 				F00F2E601D5B60F7005F19AE /* LaunchScreen.storyboard in Resources */,
 				F00F2E5D1D5B60F7005F19AE /* Assets.xcassets in Resources */,
 				F02082431D5CB19900708062 /* PoseImageCollectionCell.xib in Resources */,
+				F0FCF0D71D774042009255B4 /* FilterControllerCell.xib in Resources */,
 				F0634E331D5F69D70052A4AE /* Cool Camera Mockup.sketch in Resources */,
 				F00F2E5B1D5B60F6005F19AE /* Main.storyboard in Resources */,
 				F0BE9B961D66D0670003CB2E /* README.txt in Resources */,
@@ -826,11 +870,13 @@
 			files = (
 				F0634E321D5F69D70052A4AE /* LaunchCameraButton.m in Sources */,
 				F02082571D5CC1D900708062 /* CategoryLabelCollectionCell.swift in Sources */,
+				F0FCF0D41D774029009255B4 /* FilterControllerCell.swift in Sources */,
 				F0634E2F1D5F69D70052A4AE /* CameraFocalReticule.m in Sources */,
 				F0432B451D73C92100C3ED2F /* StoreupHelpers.swift in Sources */,
 				F07EF0F31D7285A40077CDDB /* SmaRequestHelper.swift in Sources */,
 				F07EF0FC1D72CE6D0077CDDB /* XFSegementView.m in Sources */,
 				F07EF0EB1D7280BD0077CDDB /* RequestHelpers.swift in Sources */,
+				F02B51ED1D7731BD00AD7A1C /* AFImageExtension.swift in Sources */,
 				F0634E2D1D5F69D70052A4AE /* CameraDismissButton.m in Sources */,
 				F0634E301D5F69D70052A4AE /* CameraShutterButton.m in Sources */,
 				F02082531D5CBCAC00708062 /* NibLoadableView.swift in Sources */,
@@ -838,11 +884,13 @@
 				F012D4CB1D713F4A00452AF2 /* PoseImageShowView.swift in Sources */,
 				F0634E2E1D5F69D70052A4AE /* CameraFlashButton.m in Sources */,
 				F02CD6E81D76E67B00C27D39 /* ReportHelper.swift in Sources */,
+				F02B51F61D773D9300AD7A1C /* UIImageCategory.m in Sources */,
 				F0A6299C1D5EC1E100ABDBEC /* StoryBoardExtension.swift in Sources */,
 				F07EF0FF1D72D7650077CDDB /* HotRequestHelper.swift in Sources */,
 				F02082451D5CB1DE00708062 /* PoseImageCollectionCell.swift in Sources */,
 				F05B5B501D61ED2800DC9769 /* ImageFilterHelper.swift in Sources */,
 				F0432B411D73C6BC00C3ED2F /* SaveRequestHelper.swift in Sources */,
+				F0FCF0D91D77475F009255B4 /* UIViewExtension.swift in Sources */,
 				F07EF0F51D7285BC0077CDDB /* BigRequestHelper.swift in Sources */,
 				F0634E351D5F69D70052A4AE /* CameraStyleKitClass.m in Sources */,
 				F0634E371D5F69D70052A4AE /* Constants.m in Sources */,
@@ -855,6 +903,7 @@
 				F0A629A01D5ED42B00ABDBEC /* Model.swift in Sources */,
 				F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */,
 				F0634E311D5F69D70052A4AE /* CameraToggleButton.m in Sources */,
+				F02B51F31D7739C800AD7A1C /* ImageUtil.m in Sources */,
 				F0C78B131D60152C00791FD7 /* FilterImageViewController.swift in Sources */,
 				F0BE9B9E1D674F510003CB2E /* IPCameraViewController.swift in Sources */,
 				F036D9C41D71CD5300FD31AA /* PoseModelType.swift in Sources */,
@@ -862,6 +911,7 @@
 				F07EF0ED1D7282760077CDDB /* GetPicsRequestHelper.swift in Sources */,
 				F006348D1D63224900B72006 /* UIImageExtension.swift in Sources */,
 				F0A629991D5EC10700ABDBEC /* UIViewControllerExtension.swift in Sources */,
+				F02B51EE1D7731BD00AD7A1C /* AFImageVIewExtension.swift in Sources */,
 				F0BE9BA11D674F790003CB2E /* IPPreviewView.swift in Sources */,
 				F07EF0F71D72876D0077CDDB /* MyHotRequestHelpers.swift in Sources */,
 				F020824E1D5CBB1500708062 /* UICollectionViewExtension.swift in Sources */,

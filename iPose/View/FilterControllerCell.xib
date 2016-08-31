@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterControllerCell" id="UqV-Ty-rL0" customClass="FilterControllerCell" customModule="iPose" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="148" height="166"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="148" height="166"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aol-Sj-osb">
+                        <rect key="frame" x="0.0" y="0.0" width="148" height="21"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dka-Vf-wwu">
+                        <rect key="frame" x="0.0" y="21" width="148" height="145"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Aol-Sj-osb" secondAttribute="trailing" id="C46-75-O95"/>
+                <constraint firstItem="Aol-Sj-osb" firstAttribute="leading" secondItem="UqV-Ty-rL0" secondAttribute="leading" id="DK6-wd-Lb7"/>
+                <constraint firstItem="dka-Vf-wwu" firstAttribute="leading" secondItem="UqV-Ty-rL0" secondAttribute="leading" id="FFx-Ll-ExZ"/>
+                <constraint firstItem="dka-Vf-wwu" firstAttribute="top" secondItem="Aol-Sj-osb" secondAttribute="bottom" id="IrJ-UI-7yU"/>
+                <constraint firstItem="dka-Vf-wwu" firstAttribute="top" secondItem="UqV-Ty-rL0" secondAttribute="top" id="TkD-2c-0VN"/>
+                <constraint firstItem="Aol-Sj-osb" firstAttribute="top" secondItem="UqV-Ty-rL0" secondAttribute="top" id="Tsm-EY-N20"/>
+                <constraint firstAttribute="bottom" secondItem="dka-Vf-wwu" secondAttribute="bottom" id="Uy3-gn-c1y"/>
+                <constraint firstAttribute="trailing" secondItem="Aol-Sj-osb" secondAttribute="trailing" id="VGU-fE-WFM"/>
+                <constraint firstAttribute="trailing" secondItem="dka-Vf-wwu" secondAttribute="trailing" id="aUn-W0-FCT"/>
+                <constraint firstAttribute="trailing" secondItem="dka-Vf-wwu" secondAttribute="trailing" id="djR-G8-Vtd"/>
+                <constraint firstItem="Aol-Sj-osb" firstAttribute="top" secondItem="dka-Vf-wwu" secondAttribute="bottom" id="lDz-k4-Tmd"/>
+                <constraint firstItem="dka-Vf-wwu" firstAttribute="leading" secondItem="UqV-Ty-rL0" secondAttribute="leading" id="lJa-92-YN3"/>
+                <constraint firstItem="Aol-Sj-osb" firstAttribute="leading" secondItem="UqV-Ty-rL0" secondAttribute="leading" id="mBN-IY-e7G"/>
+                <constraint firstAttribute="bottom" secondItem="Aol-Sj-osb" secondAttribute="bottom" id="tVP-xJ-KhD"/>
+                <constraint firstItem="dka-Vf-wwu" firstAttribute="top" secondItem="Aol-Sj-osb" secondAttribute="bottom" id="yj0-ws-xmM"/>
+            </constraints>
+            <size key="customSize" width="148" height="166"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="DK6-wd-Lb7"/>
+                    <exclude reference="VGU-fE-WFM"/>
+                    <exclude reference="lDz-k4-Tmd"/>
+                    <exclude reference="tVP-xJ-KhD"/>
+                    <exclude reference="TkD-2c-0VN"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imageView" destination="dka-Vf-wwu" id="yS6-ju-P7D"/>
+                <outlet property="label" destination="Aol-Sj-osb" id="de4-4X-y6P"/>
+            </connections>
+            <point key="canvasLocation" x="498" y="303"/>
+        </collectionViewCell>
+    </objects>
+</document>

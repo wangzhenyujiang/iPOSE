@@ -44,6 +44,3 @@ extension PoseImageCollectionCell {
         imageView.kf_setImageWithURL(url, placeholderImage: nil, optionsInfo: [KingfisherOptionsInfoItem.Transition(ImageTransition.Fade(0.5))], progressBlock: nil, completionHandler: nil)
     }
 }
-
-//MARK: ImageFilterable
-extension PoseImageCollectionCell: ImageFilterable {}

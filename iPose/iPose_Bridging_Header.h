@@ -25,4 +25,9 @@
 
 #import <JGProgressHUD/JGProgressHUD.h>
 
+#import "ColorMatrix.h"
+#import "ImageUtil.h"
+
+#import "UIImageCategory.h"
+
 #endif /* iPose_Header_h */

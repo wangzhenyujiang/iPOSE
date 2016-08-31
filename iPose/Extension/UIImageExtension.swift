@@ -22,3 +22,40 @@ extension UIImage {
         return image
     }
 }
+
+extension UIImage
+{
+    //棕褐色复古滤镜（老照片效果）
+    func sepiaTone() -> UIImage?
+    {
+        let imageData = UIImagePNGRepresentation(self)
+        let inputImage = CoreImage.CIImage(data: imageData!)
+        let context = CIContext(options:nil)
+        let filter = CIFilter(name:"CISepiaTone")
+        filter!.setValue(inputImage, forKey: kCIInputImageKey)
+        filter!.setValue(0.8, forKey: "inputIntensity")
+        if let outputImage = filter!.outputImage {
+            let outImage = context.createCGImage(outputImage, fromRect: outputImage.extent)
+            return UIImage(CGImage: outImage)
+        }
+        return nil
+    }
+}
+
+extension UIImage
+{
+    //黑白效果滤镜
+    func noir() -> UIImage?
+    {
+        let imageData = UIImagePNGRepresentation(self)
+        let inputImage = CoreImage.CIImage(data: imageData!)
+        let context = CIContext(options:nil)
+        let filter = CIFilter(name:"CIPhotoEffectNoir")
+        filter!.setValue(inputImage, forKey: kCIInputImageKey)
+        if let outputImage = filter!.outputImage {
+            let outImage = context.createCGImage(outputImage, fromRect: outputImage.extent)
+            return UIImage(CGImage: outImage)
+        }
+        return nil
+    }
+}

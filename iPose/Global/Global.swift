@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import JGProgressHUD
+
+let scale = UIScreen.mainScreen().scale
 
 let MainColor = UIColor(red: 0.94, green: 0.33, blue: 0.32, alpha: 1)
 
