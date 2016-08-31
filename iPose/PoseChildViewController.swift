@@ -26,25 +26,19 @@ class PoseChildViewController: UIViewController {
     }
     @IBOutlet private weak var emptyView: UIView! {
         didSet {
-            emptyView.alpha = 1
+            emptyView.alpha = 0
         }
     }
-    
-    
     var requestHelper: RequestHelperType!
     var index: Int = 0
     var delegate: PoseChildViewControllerDelegate?
     
     private var dataSource = [PoseModelType]()
-    private let HUD = JGProgressHUD(style: JGProgressHUDStyle.Light)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        HUD.showInView(view)
+        HUD.showInView(parentViewController?.view)
         startRequest()
     }
 }
@@ -54,7 +48,7 @@ extension PoseChildViewController {
     func startRequest() {
         requestHelper.startRequest { [weak self] (success, dataSource) in
             guard let `self` = self else { return }
-            self.HUD.dismissAnimated(false)
+            HUD.dismissAnimated(false)
             if success {
                 self.dataSource = dataSource
                 self.collection.reloadData()

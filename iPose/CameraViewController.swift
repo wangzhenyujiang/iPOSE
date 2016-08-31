@@ -91,15 +91,14 @@ extension CameraViewController {
         isPoseViewHidden = !isPoseViewHidden
         updateCollectionViewOffset()
     }
-    
 }
 
 //MARK: CACameraSessionDelegate
 extension CameraViewController: CACameraSessionDelegate {
     func didCaptureImage(image: UIImage!) {
-//        guard let controller  = storyboard?.instantiateViewController(FilterImageViewController) else { return }
-//        controller.image = image
-//        navigationController?.pushViewController(controller, animated: true)
+        guard let controller  = storyboard?.instantiateViewController(FilterImageViewController) else { return }
+        controller.image = image
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

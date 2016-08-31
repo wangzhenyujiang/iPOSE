@@ -289,23 +289,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-fa-Bne">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-bb-HpB">
-                                        <rect key="frame" x="272.5" y="252.5" width="55" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="EHj-03-jIZ"/>
-                                            <constraint firstAttribute="width" constant="55" id="h0r-e7-3mu"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="gW5-bb-HpB" firstAttribute="centerY" secondItem="oTn-fa-Bne" secondAttribute="centerY" id="Els-aV-StW"/>
-                                    <constraint firstItem="gW5-bb-HpB" firstAttribute="centerX" secondItem="oTn-fa-Bne" secondAttribute="centerX" id="v4F-0z-OTc"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3RC-kD-4c4">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QdQ-aw-IQM">
@@ -330,6 +313,23 @@
                                     <outlet property="delegate" destination="xLu-CU-sKV" id="PZv-oL-Ll6"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTn-fa-Bne">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="gW5-bb-HpB">
+                                        <rect key="frame" x="272.5" y="232.5" width="55" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="EHj-03-jIZ"/>
+                                            <constraint firstAttribute="width" constant="55" id="h0r-e7-3mu"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="gW5-bb-HpB" firstAttribute="centerY" secondItem="oTn-fa-Bne" secondAttribute="centerY" constant="-20" id="Els-aV-StW"/>
+                                    <constraint firstItem="gW5-bb-HpB" firstAttribute="centerX" secondItem="oTn-fa-Bne" secondAttribute="centerX" id="v4F-0z-OTc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
