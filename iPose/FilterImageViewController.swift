@@ -8,8 +8,10 @@
 
 import UIKit
 import GPUImage
+import CoreImage
 
-private let itemWH: CGFloat = 100
+private let itemW: CGFloat = 100
+private let itemH: CGFloat = 100
 
 class FilterImageViewController: IPViewController {
 
@@ -17,8 +19,8 @@ class FilterImageViewController: IPViewController {
     @IBOutlet weak var imageView: UIImageView!
     var image: UIImage?
     
+    var filter:[BasicOperation] = [ColorMatrixFilter(), WhiteBalance()]
     var picture:PictureInput!
-    var filter:MonochromeFilter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ extension FilterImageViewController {
     }
     private func configLayout() {
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSize(width: itemWH, height: itemWH)
+        flowLayout.itemSize = CGSize(width: itemW, height: itemH)
         flowLayout.minimumInteritemSpacing = Space
         flowLayout.minimumLineSpacing = Space
     }
@@ -59,14 +61,18 @@ extension FilterImageViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PoseImageCollectionCell
         if let image = image {
             cell.imageView.image = image
+            cell.filter(cell.imageView.image!, filter: filter[indexPath.row]) { image in
+                cell.imageView.image = image
+            }
         }
         return cell
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return filter.count
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let filteredImage = image!.filterWithOperation(filter[indexPath.row])
+        imageView.image = filteredImage
     }
 }
 
@@ -74,7 +80,6 @@ extension FilterImageViewController: UICollectionViewDelegate, UICollectionViewD
 extension FilterImageViewController {
     @IBAction func shareActionClick() {
         let message = WXMediaMessage()
-//        message.setThumbImage(UIImage(named: "photo_camera")!)
         
         let object = WXImageObject()
         object.imageData = UIImagePNGRepresentation(image!)

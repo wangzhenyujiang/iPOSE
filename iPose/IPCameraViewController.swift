@@ -125,7 +125,11 @@ extension IPCameraViewController {
                 PHPhotoLibrary.requestAuthorization({ status in
                     if status == PHAuthorizationStatus.Authorized {
                         PHPhotoLibrary.sharedPhotoLibrary().performChanges({
-                            PHAssetCreationRequest.creationRequestForAsset().addResourceWithType(PHAssetResourceType.Photo, data: imageData, options: nil)
+                            if #available(iOS 9.0, *) {
+                                PHAssetCreationRequest.creationRequestForAsset().addResourceWithType(PHAssetResourceType.Photo, data: imageData, options: nil)
+                            } else {
+                                // Fallback on earlier versions
+                            }
                             }, completionHandler: { success, error in
                         })
                     }

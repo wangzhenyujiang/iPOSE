@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yr2-L4-LAs">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -351,7 +352,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="UX7-3n-Gx3"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AhZ-Ka-2Fp">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AhZ-Ka-2Fp">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -359,7 +360,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="74T-x8-i5v">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="25" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -407,10 +408,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DPS-Yg-CTg" secondAttribute="trailing" id="2ec-Sh-ILS"/>
+                            <constraint firstItem="WoI-Pe-Gn3" firstAttribute="top" secondItem="m8E-Te-CpF" secondAttribute="bottom" id="3Tc-th-i97"/>
                             <constraint firstItem="DPS-Yg-CTg" firstAttribute="leading" secondItem="KEW-Yj-PLh" secondAttribute="leading" id="7no-kt-Bhq"/>
                             <constraint firstItem="3w4-Vm-UVj" firstAttribute="top" secondItem="DPS-Yg-CTg" secondAttribute="bottom" id="8P1-i0-ECP"/>
                             <constraint firstItem="DPS-Yg-CTg" firstAttribute="top" secondItem="WoI-Pe-Gn3" secondAttribute="bottom" id="B9r-dZ-bpj"/>
-                            <constraint firstItem="WoI-Pe-Gn3" firstAttribute="top" secondItem="m8E-Te-CpF" secondAttribute="bottom" id="LGs-oJ-UhO"/>
                             <constraint firstAttribute="trailing" secondItem="m8E-Te-CpF" secondAttribute="trailing" id="QKt-mV-NeA"/>
                             <constraint firstItem="m8E-Te-CpF" firstAttribute="top" secondItem="F4R-7Q-qME" secondAttribute="bottom" id="Vte-rg-Ftx"/>
                             <constraint firstItem="3w4-Vm-UVj" firstAttribute="top" secondItem="m8E-Te-CpF" secondAttribute="bottom" constant="100" id="frC-Tm-jfp"/>

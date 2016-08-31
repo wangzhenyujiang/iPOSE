@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PoseModelType {
+    var pictureID: Int { get }
     var preview: String { get }
     var poseImage: String { get }
 }

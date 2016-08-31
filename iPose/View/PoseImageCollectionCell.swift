@@ -22,6 +22,8 @@ class PoseImageCollectionCell: UICollectionViewCell {
     }
 }
 
+extension PoseImageCollectionCell: ImageFilterable {}
+
 extension PoseImageCollectionCell {
     func fillData(url: String) {
         guard let url = NSURL(string: url) else { return }

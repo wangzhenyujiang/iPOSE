@@ -74,6 +74,7 @@
 		F0C885BE1D5D653000B2ECF0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BD1D5D653000B2ECF0 /* AVFoundation.framework */; };
 		F0C885C01D5D654C00B2ECF0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BF1D5D654C00B2ECF0 /* CoreMedia.framework */; };
 		F0C885C51D5D6A7200B2ECF0 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F0E64F0C1D75CFBD00DCDB4C /* ImageFilterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,7 @@
 		F0C885BB1D5D652400B2ECF0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		F0C885BD1D5D653000B2ECF0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F0C885BF1D5D654C00B2ECF0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageFilterable.swift; path = Common/Protocol/ImageFilterable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +418,7 @@
 				F02082501D5CBC5000708062 /* ResuableView.swift */,
 				F02082521D5CBCAC00708062 /* NibLoadableView.swift */,
 				F036D9C31D71CD5300FD31AA /* PoseModelType.swift */,
+				F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -659,7 +662,12 @@
 				TargetAttributes = {
 					F00F2E511D5B60F6005F19AE = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2C4PYBTY58;
+						DevelopmentTeam = B63G32L3QA;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F00F2E651D5B60F7005F19AE = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -843,6 +851,7 @@
 				F07EF0F71D72876D0077CDDB /* MyHotRequestHelpers.swift in Sources */,
 				F020824E1D5CBB1500708062 /* UICollectionViewExtension.swift in Sources */,
 				F020824B1D5CB57300708062 /* IPViewController.swift in Sources */,
+				F0E64F0C1D75CFBD00DCDB4C /* ImageFilterable.swift in Sources */,
 				F07EF0F11D7285820077CDDB /* DouRequestHelper.swift in Sources */,
 				F02082511D5CBC5000708062 /* ResuableView.swift in Sources */,
 			);
@@ -923,9 +932,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Liu (JAZ7VV757P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Liu (JAZ7VV757P)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -945,7 +956,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "55b6cb96-264c-4c34-99a9-c07e9963b246";
+				PROVISIONING_PROFILE = "6d1e04d4-7d37-4fbd-8a55-9ab7315ace15";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -970,9 +981,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Liu (JAZ7VV757P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Liu (JAZ7VV757P)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -985,7 +998,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "55b6cb96-264c-4c34-99a9-c07e9963b246";
+				PROVISIONING_PROFILE = "6d1e04d4-7d37-4fbd-8a55-9ab7315ace15";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -999,14 +1012,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = iPose/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mazingwang.ipose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;
@@ -1021,14 +1035,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = iPose/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDKExport",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPose;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mazingwang.ipose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = iPose/iPose_Bridging_Header.h;

@@ -53,7 +53,7 @@ extension StoreupHelpers {
         var result: [PoseModelType] = []
         for key in dataDic.keys {
             guard let tempDic = dataDic[key] else { continue }
-            result.append(SaveModel(preview: tempDic["preview"] as! String, poseImage: tempDic["poseImage"] as! String))
+            result.append(SaveModel(pictureID: 0, preview: tempDic["preview"] as! String, poseImage: tempDic["poseImage"] as! String))
         }
         return result
     }

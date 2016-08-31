@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct SaveModel: PoseModelType {
+    var pictureID: Int = 0
     var preview: String
     var poseImage: String
 }
@@ -43,6 +44,7 @@ class PoseModel: PoseModelType {
 
 
 class PoseItem: PoseModelType {
+    var pictureID: Int = 0
     let author: String
     let category: String
     let createTime: String
