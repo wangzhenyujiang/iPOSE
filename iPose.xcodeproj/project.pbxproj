@@ -15,8 +15,6 @@
 		F00F2E5B1D5B60F6005F19AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00F2E591D5B60F6005F19AE /* Main.storyboard */; };
 		F00F2E5D1D5B60F7005F19AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00F2E5C1D5B60F7005F19AE /* Assets.xcassets */; };
 		F00F2E601D5B60F7005F19AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F00F2E5E1D5B60F7005F19AE /* LaunchScreen.storyboard */; };
-		F00F2E6B1D5B60F7005F19AE /* iPoseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F2E6A1D5B60F7005F19AE /* iPoseTests.swift */; };
-		F00F2E761D5B60F7005F19AE /* iPoseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F2E751D5B60F7005F19AE /* iPoseUITests.swift */; };
 		F012D4CB1D713F4A00452AF2 /* PoseImageShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F012D4CA1D713F4A00452AF2 /* PoseImageShowView.swift */; };
 		F012D4CD1D713F8A00452AF2 /* PoseImageShowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F012D4CC1D713F8A00452AF2 /* PoseImageShowView.xib */; };
 		F02082431D5CB19900708062 /* PoseImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02082421D5CB19900708062 /* PoseImageCollectionCell.xib */; };
@@ -70,7 +68,6 @@
 		F0BE9BA11D674F790003CB2E /* IPPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */; };
 		F0C1F3151D5EBEEB008F365F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1F3141D5EBEEB008F365F /* Global.swift */; };
 		F0C78B131D60152C00791FD7 /* FilterImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */; };
-		F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; };
 		F0C885B41D5D64F900B2ECF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */; };
 		F0C885B51D5D64F900B2ECF0 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885B21D5D64F900B2ECF0 /* Kingfisher.framework */; };
 		F0C885B61D5D64F900B2ECF0 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885B31D5D64F900B2ECF0 /* SwiftyJSON.framework */; };
@@ -79,50 +76,11 @@
 		F0C885BC1D5D652400B2ECF0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BB1D5D652400B2ECF0 /* OpenGLES.framework */; };
 		F0C885BE1D5D653000B2ECF0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BD1D5D653000B2ECF0 /* AVFoundation.framework */; };
 		F0C885C01D5D654C00B2ECF0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0C885BF1D5D654C00B2ECF0 /* CoreMedia.framework */; };
-		F0C885C51D5D6A7200B2ECF0 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F0E64F0C1D75CFBD00DCDB4C /* ImageFilterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64F0B1D75CFBD00DCDB4C /* ImageFilterable.swift */; };
 		F0FCF0D41D774029009255B4 /* FilterControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCF0D31D774029009255B4 /* FilterControllerCell.swift */; };
 		F0FCF0D71D774042009255B4 /* FilterControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FCF0D61D774042009255B4 /* FilterControllerCell.xib */; };
 		F0FCF0D91D77475F009255B4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FCF0D81D77475F009255B4 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F00F2E671D5B60F7005F19AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F00F2E4A1D5B60F6005F19AE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F00F2E511D5B60F6005F19AE;
-			remoteInfo = iPose;
-		};
-		F00F2E721D5B60F7005F19AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F00F2E4A1D5B60F6005F19AE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F00F2E511D5B60F6005F19AE;
-			remoteInfo = iPose;
-		};
-		F0C885AA1D5D64E400B2ECF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCD1B1251C66A262001F2BDC;
-			remoteInfo = GPUImage;
-		};
-		F0C885AC1D5D64E400B2ECF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BCD1B12F1C66A262001F2BDC;
-			remoteInfo = GPUImageTests;
-		};
-		F0C885AE1D5D64F100B2ECF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BCD1B1241C66A262001F2BDC;
-			remoteInfo = GPUImage;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F0C885C21D5D6A1400B2ECF0 /* CopyFiles */ = {
@@ -131,7 +89,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F0C885C51D5D6A7200B2ECF0 /* GPUImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,10 +107,8 @@
 		F00F2E5C1D5B60F7005F19AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = iPose/Assets.xcassets; sourceTree = "<group>"; };
 		F00F2E5F1D5B60F7005F19AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F00F2E611D5B60F7005F19AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = iPose/Info.plist; sourceTree = "<group>"; };
-		F00F2E661D5B60F7005F19AE /* iPoseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPoseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00F2E6A1D5B60F7005F19AE /* iPoseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPoseTests.swift; sourceTree = "<group>"; };
 		F00F2E6C1D5B60F7005F19AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F00F2E711D5B60F7005F19AE /* iPoseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPoseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F00F2E751D5B60F7005F19AE /* iPoseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPoseUITests.swift; sourceTree = "<group>"; };
 		F00F2E771D5B60F7005F19AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F012D4CA1D713F4A00452AF2 /* PoseImageShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoseImageShowView.swift; path = View/PoseImageShowView.swift; sourceTree = "<group>"; };
@@ -228,7 +183,6 @@
 		F0BE9BA01D674F790003CB2E /* IPPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPPreviewView.swift; path = View/IPPreviewView.swift; sourceTree = "<group>"; };
 		F0C1F3141D5EBEEB008F365F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Global/Global.swift; sourceTree = "<group>"; };
 		F0C78B121D60152C00791FD7 /* FilterImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterImageViewController.swift; sourceTree = "<group>"; };
-		F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "GPUImage-iOS.xcodeproj"; path = "iPose/framework/GPUImage-iOS.xcodeproj"; sourceTree = "<group>"; };
 		F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/iPose-erctzadvebfqnbgafqorbrvmhgyf/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		F0C885B21D5D64F900B2ECF0 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/iPose-erctzadvebfqnbgafqorbrvmhgyf/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		F0C885B31D5D64F900B2ECF0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/iPose-erctzadvebfqnbgafqorbrvmhgyf/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -257,23 +211,8 @@
 				F0C885B41D5D64F900B2ECF0 /* Alamofire.framework in Frameworks */,
 				F0C885B51D5D64F900B2ECF0 /* Kingfisher.framework in Frameworks */,
 				F0C885B61D5D64F900B2ECF0 /* SwiftyJSON.framework in Frameworks */,
-				F0C885B01D5D64F900B2ECF0 /* GPUImage.framework in Frameworks */,
 				3E86B30A84DCC7407C43B935 /* Pods_iPose.framework in Frameworks */,
 				9ED0C0DC1A906B81EF2A0BDD /* Pods_iPose.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F00F2E631D5B60F7005F19AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F00F2E6E1D5B60F7005F19AE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +230,6 @@
 				F0C885B11D5D64F900B2ECF0 /* Alamofire.framework */,
 				F0C885B21D5D64F900B2ECF0 /* Kingfisher.framework */,
 				F0C885B31D5D64F900B2ECF0 /* SwiftyJSON.framework */,
-				F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */,
 				60A63AFCDD2D82DBB929408A /* Pods_iPose.framework */,
 			);
 			name = Frameworks;
@@ -329,8 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				F00F2E521D5B60F6005F19AE /* iPose.app */,
-				F00F2E661D5B60F7005F19AE /* iPoseTests.xctest */,
-				F00F2E711D5B60F7005F19AE /* iPoseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -637,15 +573,6 @@
 			name = Global;
 			sourceTree = "<group>";
 		};
-		F0C885A61D5D64E400B2ECF0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */,
-				F0C885AD1D5D64E400B2ECF0 /* GPUImageTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -664,48 +591,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				F0C885AF1D5D64F100B2ECF0 /* PBXTargetDependency */,
 			);
 			name = iPose;
 			productName = iPose;
 			productReference = F00F2E521D5B60F6005F19AE /* iPose.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F00F2E651D5B60F7005F19AE /* iPoseTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F00F2E7D1D5B60F7005F19AE /* Build configuration list for PBXNativeTarget "iPoseTests" */;
-			buildPhases = (
-				F00F2E621D5B60F7005F19AE /* Sources */,
-				F00F2E631D5B60F7005F19AE /* Frameworks */,
-				F00F2E641D5B60F7005F19AE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F00F2E681D5B60F7005F19AE /* PBXTargetDependency */,
-			);
-			name = iPoseTests;
-			productName = iPoseTests;
-			productReference = F00F2E661D5B60F7005F19AE /* iPoseTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F00F2E701D5B60F7005F19AE /* iPoseUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F00F2E801D5B60F7005F19AE /* Build configuration list for PBXNativeTarget "iPoseUITests" */;
-			buildPhases = (
-				F00F2E6D1D5B60F7005F19AE /* Sources */,
-				F00F2E6E1D5B60F7005F19AE /* Frameworks */,
-				F00F2E6F1D5B60F7005F19AE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F00F2E731D5B60F7005F19AE /* PBXTargetDependency */,
-			);
-			name = iPoseUITests;
-			productName = iPoseUITests;
-			productReference = F00F2E711D5B60F7005F19AE /* iPoseUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -726,16 +616,6 @@
 							};
 						};
 					};
-					F00F2E651D5B60F7005F19AE = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2C4PYBTY58;
-						TestTargetID = F00F2E511D5B60F6005F19AE;
-					};
-					F00F2E701D5B60F7005F19AE = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 2C4PYBTY58;
-						TestTargetID = F00F2E511D5B60F6005F19AE;
-					};
 				};
 			};
 			buildConfigurationList = F00F2E4D1D5B60F6005F19AE /* Build configuration list for PBXProject "iPose" */;
@@ -749,37 +629,12 @@
 			mainGroup = F00F2E491D5B60F6005F19AE;
 			productRefGroup = F00F2E531D5B60F6005F19AE /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F0C885A61D5D64E400B2ECF0 /* Products */;
-					ProjectRef = F0C885A51D5D64E400B2ECF0 /* GPUImage-iOS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F00F2E511D5B60F6005F19AE /* iPose */,
-				F00F2E651D5B60F7005F19AE /* iPoseTests */,
-				F00F2E701D5B60F7005F19AE /* iPoseUITests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F0C885AB1D5D64E400B2ECF0 /* GPUImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GPUImage.framework;
-			remoteRef = F0C885AA1D5D64E400B2ECF0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		F0C885AD1D5D64E400B2ECF0 /* GPUImageTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GPUImageTests.xctest;
-			remoteRef = F0C885AC1D5D64E400B2ECF0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F00F2E501D5B60F6005F19AE /* Resources */ = {
@@ -796,20 +651,6 @@
 				F0BE9B961D66D0670003CB2E /* README.txt in Resources */,
 				F0BE9B951D66D0670003CB2E /* read_me.txt in Resources */,
 				F012D4CD1D713F8A00452AF2 /* PoseImageShowView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F00F2E641D5B60F7005F19AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F00F2E6F1D5B60F7005F19AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,41 +764,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F00F2E621D5B60F7005F19AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F00F2E6B1D5B60F7005F19AE /* iPoseTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F00F2E6D1D5B60F7005F19AE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F00F2E761D5B60F7005F19AE /* iPoseUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F00F2E681D5B60F7005F19AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F00F2E511D5B60F6005F19AE /* iPose */;
-			targetProxy = F00F2E671D5B60F7005F19AE /* PBXContainerItemProxy */;
-		};
-		F00F2E731D5B60F7005F19AE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F00F2E511D5B60F6005F19AE /* iPose */;
-			targetProxy = F00F2E721D5B60F7005F19AE /* PBXContainerItemProxy */;
-		};
-		F0C885AF1D5D64F100B2ECF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = GPUImage;
-			targetProxy = F0C885AE1D5D64F100B2ECF0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F00F2E591D5B60F6005F19AE /* Main.storyboard */ = {
@@ -1117,52 +924,6 @@
 			};
 			name = Release;
 		};
-		F00F2E7E1D5B60F7005F19AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = iPoseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPoseTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPose.app/iPose";
-			};
-			name = Debug;
-		};
-		F00F2E7F1D5B60F7005F19AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = iPoseTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPoseTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPose.app/iPose";
-			};
-			name = Release;
-		};
-		F00F2E811D5B60F7005F19AE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = iPoseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPoseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = iPose;
-			};
-			name = Debug;
-		};
-		F00F2E821D5B60F7005F19AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = iPoseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mazingwang.OMG.com.iPoseUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = iPose;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1180,24 +941,6 @@
 			buildConfigurations = (
 				F00F2E7B1D5B60F7005F19AE /* Debug */,
 				F00F2E7C1D5B60F7005F19AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F00F2E7D1D5B60F7005F19AE /* Build configuration list for PBXNativeTarget "iPoseTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F00F2E7E1D5B60F7005F19AE /* Debug */,
-				F00F2E7F1D5B60F7005F19AE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F00F2E801D5B60F7005F19AE /* Build configuration list for PBXNativeTarget "iPoseUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F00F2E811D5B60F7005F19AE /* Debug */,
-				F00F2E821D5B60F7005F19AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
